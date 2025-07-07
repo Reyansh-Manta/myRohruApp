@@ -50,6 +50,10 @@ const userSchema = new Schema(
         postoffice: {
             type: String,
             required: true
+        },
+        otp: {
+            type: String,
+            // required: true
         }
 
     },
@@ -93,9 +97,18 @@ userSchema.methods.generateRefreshToken = function () {
     )
 }
 
-userSchema.methods.generateOTP = function() {
+userSchema.methods.generateOTP = async function() {
     const otp = Math.floor(100000 + Math.random() * 900000).toString();
-    otp = otp.padStart(6, '0'); // Ensure OTP is 6 digits
+    otp = otp.slice(0, 6); // Ensure OTP is exactly 6 digits
+    otp = await bcrypt.hash(otp, 10); // Hash the OTP for security
+    const createdAt = Date.now();
+    return otp, createdAt;
+}
+
+userSchema.methods.isOTPValid = async function(otp, createdAt) {
+    const isValid = await bcrypt.compare(otp, this.otp)
+    const isExpired = (Date.now() - createdAt) > (10 * 60 * 1000); // 10 minutes expiry
+    return isValid && !isExpired;
 }
         
 
