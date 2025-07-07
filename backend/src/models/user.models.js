@@ -50,10 +50,6 @@ const userSchema = new Schema(
         postoffice: {
             type: String,
             required: true
-        },
-        communityScore: {
-            type: Number,
-            default: 0
         }
 
     },
