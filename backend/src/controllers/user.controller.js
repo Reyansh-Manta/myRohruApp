@@ -3,9 +3,12 @@ import asyncHandler from '../utils/asyncHandler.js';
 import ApiError from '../utils/ApiErrors.js';
 import ApiResponse from '../utils/ApiResponse.js';
 import { uploadOnCloudinary, deleteFromCloudinary } from '../utils/uploadOnCloudinary.js';
+import {generateOTP, isOTPValid} from '../models/user.model.js';
 
 const registerUser = asyncHandler(async (req, res) => {
-    const { username, fullName, email, password, phoneNumber, village, postoffice } = req.body;
+    const { username, fullName, email, password, village, postoffice } = req.body;
+
+    const phoneNumber = req.number
 
     if (!username || !fullName || !email || !password || !phoneNumber || !village || !postoffice) {
         throw new ApiError(400, 'All fields are required');
@@ -27,6 +30,10 @@ const registerUser = asyncHandler(async (req, res) => {
     if (!profilePicture) {
         throw new ApiError(500, 'Failed to upload profile picture');
     }
+
+    // const {otp, otpCreatedAt} = generateOTP();
+    // const userotp = req.body.otp
+    // isOTPValid(userotp, otpCreatedAt);
 
     const user = await User.create({
         fullName,
