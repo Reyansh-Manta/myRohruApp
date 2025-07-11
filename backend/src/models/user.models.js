@@ -107,7 +107,7 @@ userSchema.methods.generateOTP = async function() {
 
 userSchema.methods.isOTPValid = async function(userotp, otp, createdAt) {
     const isValid = await bcrypt.compare(userotp, otp)
-    const isExpired = (Date.now() - createdAt) > (10 * 60 * 1000); // 10 minutes expiry
+    const isExpired = (Date.now() - createdAt) > (10 * 60 * 500); // 5 minutes expiry
     return isValid && !isExpired;
 }
         
