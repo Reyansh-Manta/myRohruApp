@@ -1,9 +1,8 @@
-import User from '../models/user.model.js';
-import asyncHandler from '../utils/asyncHandler.js';
-import ApiError from '../utils/ApiErrors.js';
-import ApiResponse from '../utils/ApiResponse.js';
-import { uploadOnCloudinary, deleteFromCloudinary } from '../utils/uploadOnCloudinary.js';
-import { generateOTP, isOTPValid } from '../models/user.model.js';
+import { User } from '../models/user.models.js';
+import { asyncHandler } from '../utils/asyncHandler.js';
+import { ApiError } from '../utils/ApiErrors.js';
+import { ApiResponse } from '../utils/ApiResponse.js';
+import { uploadOnCloudinary, deleteFromCloudinary } from '../utils/cloudinary.js';
 import { createClient } from 'redis'
 
 const getNumber = asyncHandler(async (req, res) => {
@@ -165,7 +164,8 @@ const verifyOtp = asyncHandler(async (req, res, next) => {
         }
         else {
             if (isExpired) {
-                await User.findOneAndDelete({phoneNumber: phoneNumber})
+                await User.findOneAndDelete({ phoneNumber: phoneNumber })
+                deleteFromCloudinary(User.findOne({ phoneNumber: phoneNumber }).profilePicture);
                 return res
                     .status(400)
                     .json(new ApiError(400, 'OTP expired, please register again'));
@@ -176,7 +176,9 @@ const verifyOtp = asyncHandler(async (req, res, next) => {
 })
 
 export {
+    getNumber,
     registerUser,
     sendOtp,
-    ResendOtp
+    ResendOtp,
+    verifyOtp
 }
