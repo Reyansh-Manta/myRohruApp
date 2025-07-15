@@ -97,19 +97,19 @@ userSchema.methods.generateRefreshToken = function () {
     )
 }
 
-userSchema.methods.generateOTP = function() {
-    const otp = Math.floor(100000 + Math.random() * 900000).toString();
-    otp = otp.slice(0, 6); // Ensure OTP is exactly 6 digits
-    hashedotp = bcrypt.hash(otp, 10); // Hash the OTP for security
-    const createdAt = Date.now();
-    return {hashedotp, createdAt, OrignalOtp: otp};
-}
+// userSchema.methods.generateOTP = async function() {
+//     const otp = Math.floor(100000 + Math.random() * 900000).toString().slice(0, 6);
+//     // otp = otp.slice(0, 6); // Ensure OTP is exactly 6 digits
+//     hashedotp = await bcrypt.hash(otp, 10); // Hash the OTP for security
+//     const createdAt = Date.now();
+//     return {hashedotp, createdAt, OrignalOtp: otp};
+// }
 
-userSchema.methods.isOTPValid = async function(userotp, otp, createdAt) {
-    const isValid = await bcrypt.compare(userotp, otp)
-    const isExpired = (Date.now() - createdAt) > (10 * 60 * 500); // 5 minutes expiry
-    return isValid && !isExpired;
-}
+// userSchema.methods.isOTPValid = async function(userotp, otp, createdAt) {
+//     const isValid = await bcrypt.compare(userotp, otp)
+//     const isExpired = (Date.now() - createdAt) > (10 * 60 * 500); // 5 minutes expiry
+//     return isValid && !isExpired;
+// }
         
 
 

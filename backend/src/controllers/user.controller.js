@@ -4,12 +4,13 @@ import { ApiError } from '../utils/ApiErrors.js';
 import { ApiResponse } from '../utils/ApiResponse.js';
 import { uploadOnCloudinary, deleteFromCloudinary } from '../utils/cloudinary.js';
 import { createClient } from 'redis'
-import  store from '../utils/tempstorage.js';
+import store from '../utils/tempstorage.js';
+import { generateOTP } from '../utils/generateOtp.js';
 
 const getNumber = asyncHandler(async (req, res) => {
 
     const { number } = req.body
-    console.log(number);
+    // console.log(number);
 
     if (!number) {
         throw new ApiError(400, 'Phone number is required');
@@ -30,9 +31,9 @@ const getNumber = asyncHandler(async (req, res) => {
 
 const registerUser = asyncHandler(async (req, res) => {
     const { username, fullName, email, password, village, postoffice } = req.body;
-    
+
     const phoneNumber = store.get('userNumber');
-  if (!username || !fullName || !email || !password || !phoneNumber || !village || !postoffice) {
+    if (!username || !fullName || !email || !password || !phoneNumber || !village || !postoffice) {
         throw new ApiError(400, 'All fields are required');
     }
 
@@ -65,7 +66,7 @@ const registerUser = asyncHandler(async (req, res) => {
         profilePicture: profilePicture?.url || "",
     })
 
-     const createdUser = await User.findById(user._id).select(
+    const createdUser = await User.findById(user._id).select(
         "-password -refreshToken"
     )
 
@@ -92,7 +93,7 @@ const sendOtp = asyncHandler(async (req, res) => {
         const phoneNumber = store.get('userNumber');
 
         // console.log(phoneNumber);
-        
+
 
         if (!phoneNumber) {
             throw new ApiError(400, 'phone number not recieved in sendOtp middleware');
@@ -100,7 +101,7 @@ const sendOtp = asyncHandler(async (req, res) => {
 
         const { hashedotp, createdAt, OrignalOtp } = await generateOTP();
 
-        if (!hashedotp || !createdAt) {
+        if (!hashedotp || !createdAt || !OrignalOtp) {
             throw new ApiError(500, 'Failed to generate OTP');
         }
 
@@ -131,21 +132,21 @@ const ResendOtp = asyncHandler(async (req, res) => {
 
         const phoneNumber = store.get('userNumber');
 
-        if (!num) {
+        if (!phoneNumber) {
             throw new ApiError(400, 'Phone number is required');
         }
 
-        const { otp, otpCreatedAt } = generateOTP();
+        const { hashedotp, createdAt, OrignalOtp } = await generateOTP();
 
-        if (!OrignalOtp || !OrignalOtpCreatedAt) {
+        if (!hashedotp || !createdAt || !OrignalOtp) {
             throw new ApiError(500, 'Failed to generate OTP');
         }
 
         // await client.setEx(otp, 300, JSON.stringify(OrignalOtp))
         // await client.setEx(otpCreatedAt, 300, JSON.stringify(OrignalOtpCreatedAt))
 
-        store.set('otp', JSON.stringify(OrignalOtp));
-        store.set('otpCreatedAt', JSON.stringify(OrignalOtpCreatedAt));
+        store.set('otp', hashedotp);
+        store.set('otpCreatedAt', createdAt);
 
         return res
             .status(200)
@@ -157,7 +158,7 @@ const ResendOtp = asyncHandler(async (req, res) => {
     }
 })
 
-const verifyOtp = asyncHandler(async (req, res, next) => {
+const verifyOtpWhileRegistration = asyncHandler(async (req, res, next) => {
 
     while (true) {
         const { userotp } = req.body
@@ -184,8 +185,8 @@ const verifyOtp = asyncHandler(async (req, res, next) => {
 
         const otpCheck = isOTPValid(userotp, otp, otpCreatedAt);
 
-        const count = 0
-        count++
+        // const count = 0
+        // count++
 
         const isExpired = (Date.now() - otpCreatedAt) > (10 * 60 * 500)
 
@@ -207,10 +208,59 @@ const verifyOtp = asyncHandler(async (req, res, next) => {
     }
 })
 
+const verifyOtpWhileLogin = asyncHandler(async (req, res, next) => {
+
+    while (true) {
+        const { userotp } = req.body
+
+        // const client = createClient();
+        // await client.connect();
+
+        // const otp = await client.get('otp');
+        // const otpCreatedAt = await client.get('otpCreatedAt');
+        // const phoneNumber = await client.get('userNumber');
+
+        const phoneNumber = store.get('userNumber');
+        const otp = store.get('otp');
+        const otpCreatedAt = store.get('otpCreatedAt');
+
+
+        if (!otp || !otpCreatedAt) {
+            throw new ApiError(400, 'OTP not found or expired');
+        }
+
+        if (!userotp) {
+            throw new ApiError(400, 'OTP is required');
+        }
+
+        const otpCheck = isOTPValid(userotp, otp, otpCreatedAt);
+
+        // const count = 0
+        // count++
+
+        const isExpired = (Date.now() - otpCreatedAt) > (10 * 60 * 500)
+
+        if (otpCheck) {
+            return res
+                .status(200)
+                .json(new ApiResponse(200, {}, 'OTP verified successfully'));
+        }
+        else {
+            if (isExpired) {
+                return res
+                    .status(400)
+                    .json(new ApiError(400, 'OTP expired, please try again'));
+            }
+        }
+
+    }
+})
+
 export {
     getNumber,
     registerUser,
     sendOtp,
     ResendOtp,
-    verifyOtp
+    verifyOtpWhileRegistration,
+    verifyOtpWhileLogin
 }
