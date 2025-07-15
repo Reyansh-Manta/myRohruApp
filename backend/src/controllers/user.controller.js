@@ -4,25 +4,37 @@ import { ApiError } from '../utils/ApiErrors.js';
 import { ApiResponse } from '../utils/ApiResponse.js';
 import { uploadOnCloudinary, deleteFromCloudinary } from '../utils/cloudinary.js';
 import { createClient } from 'redis'
+import  store from '../utils/tempstorage.js';
 
 const getNumber = asyncHandler(async (req, res) => {
-    const number = req.body
-    const client = createClient()
-    await client.connect()
 
-    await client.setEx(userNumber, 300, JSON.stringify(number))
+    const { number } = req.body
+
+    if (!number) {
+        throw new ApiError(400, 'Phone number is required');
+    }
+
+console.log(number);
+
+
+    // const client = createClient()
+    // await client.connect()
+
+    // await client.setEx(userNumber, 300, JSON.stringify(number))
+
+    store.set('userNumber', JSON.stringify(number));
+
+    return res
+        .status(200)
+        .json(new ApiResponse(200, { number }, 'Phone number received successfully'));
 
 })
 
 const registerUser = asyncHandler(async (req, res) => {
     const { username, fullName, email, password, village, postoffice } = req.body;
-
-    const client = createClient();
-    await client.connect();
-
-    const phoneNumber = await client.get('userNumber');
-
-    if (!username || !fullName || !email || !password || !phoneNumber || !village || !postoffice) {
+    
+    const phoneNumber = store.get('userNumber');
+  if (!username || !fullName || !email || !password || !phoneNumber || !village || !postoffice) {
         throw new ApiError(400, 'All fields are required');
     }
 
@@ -32,7 +44,7 @@ const registerUser = asyncHandler(async (req, res) => {
         throw new ApiError(400, 'Username, email, or phone number already exists');
     }
 
-    const profilePictureLocalPath = req.files?.profilePicture[0]?.path;
+    const profilePictureLocalPath = req.file?.profilePicture[0]?.path;
 
     if (!profilePictureLocalPath) {
         throw new ApiError(400, 'Profile picture is required');
@@ -69,10 +81,12 @@ const sendOtp = asyncHandler(async (req, res) => {
 
     try {
 
-        const client = createClient();
-        await client.connect();
+        // const client = createClient();
+        // await client.connect();
 
-        const number = await client.get('userNumber');
+        // const number = await client.get('userNumber');
+
+        const phoneNumber = store.get('userNumber');
 
         if (!number) {
             throw new ApiError(400, 'phone number not recieved in sendOtp middleware');
@@ -84,8 +98,11 @@ const sendOtp = asyncHandler(async (req, res) => {
             throw new ApiError(500, 'Failed to generate OTP');
         }
 
-        await client.setEx(otp, 300, JSON.stringify(OrignalOtp))
-        await client.setEx(otpCreatedAt, 300, JSON.stringify(OrignalOtpCreatedAt))
+        // await client.setEx(otp, 300, JSON.stringify(OrignalOtp))
+        // await client.setEx(otpCreatedAt, 300, JSON.stringify(OrignalOtpCreatedAt))
+
+        store.set('otp', JSON.stringify(OrignalOtp));
+        store.set('otpCreatedAt', JSON.stringify(OrignalOtpCreatedAt));
 
         return res
             .status(200)
@@ -101,10 +118,12 @@ const sendOtp = asyncHandler(async (req, res) => {
 const ResendOtp = asyncHandler(async (req, res) => {
     try {
 
-        const client = createClient();
-        await client.connect();
+        // const client = createClient();
+        // await client.connect();
 
-        const num = await client.get('userNumber');
+        // const num = await client.get('userNumber');
+
+        const phoneNumber = store.get('userNumber');
 
         if (!num) {
             throw new ApiError(400, 'Phone number is required');
@@ -116,8 +135,11 @@ const ResendOtp = asyncHandler(async (req, res) => {
             throw new ApiError(500, 'Failed to generate OTP');
         }
 
-        await client.setEx(otp, 300, JSON.stringify(OrignalOtp))
-        await client.setEx(otpCreatedAt, 300, JSON.stringify(OrignalOtpCreatedAt))
+        // await client.setEx(otp, 300, JSON.stringify(OrignalOtp))
+        // await client.setEx(otpCreatedAt, 300, JSON.stringify(OrignalOtpCreatedAt))
+
+        store.set('otp', JSON.stringify(OrignalOtp));
+        store.set('otpCreatedAt', JSON.stringify(OrignalOtpCreatedAt));
 
         return res
             .status(200)
@@ -134,12 +156,16 @@ const verifyOtp = asyncHandler(async (req, res, next) => {
     while (true) {
         const { userotp } = req.body
 
-        const client = createClient();
-        await client.connect();
+        // const client = createClient();
+        // await client.connect();
 
-        const otp = await client.get('otp');
-        const otpCreatedAt = await client.get('otpCreatedAt');
-        const phoneNumber = await client.get('userNumber');
+        // const otp = await client.get('otp');
+        // const otpCreatedAt = await client.get('otpCreatedAt');
+        // const phoneNumber = await client.get('userNumber');
+
+        const phoneNumber = store.get('userNumber');
+        const otp = store.get('otp');
+        const otpCreatedAt = store.get('otpCreatedAt');
 
 
         if (!otp || !otpCreatedAt) {
