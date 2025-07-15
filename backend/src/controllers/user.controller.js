@@ -9,20 +9,18 @@ import  store from '../utils/tempstorage.js';
 const getNumber = asyncHandler(async (req, res) => {
 
     const { number } = req.body
+    console.log(number);
 
     if (!number) {
         throw new ApiError(400, 'Phone number is required');
     }
-
-console.log(number);
-
 
     // const client = createClient()
     // await client.connect()
 
     // await client.setEx(userNumber, 300, JSON.stringify(number))
 
-    store.set('userNumber', JSON.stringify(number));
+    store.set('userNumber', number);
 
     return res
         .status(200)
@@ -44,7 +42,7 @@ const registerUser = asyncHandler(async (req, res) => {
         throw new ApiError(400, 'Username, email, or phone number already exists');
     }
 
-    const profilePictureLocalPath = req.file?.profilePicture[0]?.path;
+    const profilePictureLocalPath = req.file?.path;
 
     if (!profilePictureLocalPath) {
         throw new ApiError(400, 'Profile picture is required');
@@ -65,15 +63,20 @@ const registerUser = asyncHandler(async (req, res) => {
         village,
         postoffice,
         profilePicture: profilePicture?.url || "",
-    }).select('-password -refreshToken');
+    })
 
-    if (!user) {
+     const createdUser = await User.findById(user._id).select(
+        "-password -refreshToken"
+    )
+
+
+    if (!createdUser) {
         throw new ApiError(500, 'Failed to create user');
     }
 
     return res
         .status(200)
-        .json(new ApiResponse(200, user, 'User registered successfully'));
+        .json(new ApiResponse(200, createdUser, 'User registered successfully'));
 
 })
 
@@ -88,21 +91,24 @@ const sendOtp = asyncHandler(async (req, res) => {
 
         const phoneNumber = store.get('userNumber');
 
-        if (!number) {
+        // console.log(phoneNumber);
+        
+
+        if (!phoneNumber) {
             throw new ApiError(400, 'phone number not recieved in sendOtp middleware');
         }
 
-        const { OrignalOtp, OrignalOtpCreatedAt } = await generateOTP();
+        const { hashedotp, createdAt, OrignalOtp } = await generateOTP();
 
-        if (!OrignalOtp || !OrignalOtpCreatedAt) {
+        if (!hashedotp || !createdAt) {
             throw new ApiError(500, 'Failed to generate OTP');
         }
 
         // await client.setEx(otp, 300, JSON.stringify(OrignalOtp))
         // await client.setEx(otpCreatedAt, 300, JSON.stringify(OrignalOtpCreatedAt))
 
-        store.set('otp', JSON.stringify(OrignalOtp));
-        store.set('otpCreatedAt', JSON.stringify(OrignalOtpCreatedAt));
+        store.set('otp', hashedotp);
+        store.set('otpCreatedAt', createdAt);
 
         return res
             .status(200)
@@ -110,7 +116,7 @@ const sendOtp = asyncHandler(async (req, res) => {
 
 
     } catch (error) {
-        throw new ApiError(500, 'Internal Server Error', error.message);
+        throw new ApiError(500, 'Internal Server Error in sendOtp', error.message);
     }
 
 })
