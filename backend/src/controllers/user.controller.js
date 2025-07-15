@@ -6,6 +6,23 @@ import { uploadOnCloudinary, deleteFromCloudinary } from '../utils/cloudinary.js
 import { createClient } from 'redis'
 import store from '../utils/tempstorage.js';
 import { generateOTP } from '../utils/generateOtp.js';
+import { isOTPValid } from '../utils/isOtpValid.js';
+
+const generateAccessAndRefreshTokens = async (userId) => {
+    try {
+        const user = await User.findById(userId)
+        const accessToken = user.generateAccessTokens()
+        const refreshToken = user.generateRefreshTokens()
+
+        user.refreshToken = refreshToken
+        await user.save({ validateBeforeSave: false })
+
+        return { accessToken, refreshToken }
+
+    } catch (error) {
+        throw new ApiError(500, "Error generating Access and Refresh tokens")
+    }
+}
 
 const getNumber = asyncHandler(async (req, res) => {
 
@@ -183,26 +200,26 @@ const verifyOtpWhileRegistration = asyncHandler(async (req, res, next) => {
             throw new ApiError(400, 'OTP is required');
         }
 
-        const otpCheck = isOTPValid(userotp, otp, otpCreatedAt);
+        //  if(isOTPValid(userotp, otp, otpCreatedAt));
 
         // const count = 0
         // count++
 
-        const isExpired = (Date.now() - otpCreatedAt) > (10 * 60 * 500)
+        // const isExpired = (Date.now() - otpCreatedAt) > (10 * 60 * 500)
 
-        if (otpCheck) {
+        if (isOTPValid(userotp, otp, otpCreatedAt)) {
+            await User.findOneAndUpdate(
+                { phoneNumber },
+                { verified: true },
+                { new: true, runValidators: true })
             return res
                 .status(200)
                 .json(new ApiResponse(200, {}, 'OTP verified successfully'));
         }
         else {
-            if (isExpired) {
-                await User.findOneAndDelete({ phoneNumber: phoneNumber })
-                deleteFromCloudinary(User.findOne({ phoneNumber: phoneNumber }).profilePicture);
-                return res
-                    .status(400)
-                    .json(new ApiError(400, 'OTP expired, please register again'));
-            }
+
+            throw new ApiError(400, 'Invalid OTP, please try again');
+
         }
 
     }
@@ -233,14 +250,14 @@ const verifyOtpWhileLogin = asyncHandler(async (req, res, next) => {
             throw new ApiError(400, 'OTP is required');
         }
 
-        const otpCheck = isOTPValid(userotp, otp, otpCreatedAt);
+        // isOTPValid(userotp, otp, otpCreatedAt);
 
         // const count = 0
         // count++
 
-        const isExpired = (Date.now() - otpCreatedAt) > (10 * 60 * 500)
+        // const isExpired = (Date.now() - otpCreatedAt) > (10 * 60 * 500)
 
-        if (otpCheck) {
+        if (isOTPValid(userotp, otp, otpCreatedAt)) {
             return res
                 .status(200)
                 .json(new ApiResponse(200, {}, 'OTP verified successfully'));
@@ -262,5 +279,6 @@ export {
     sendOtp,
     ResendOtp,
     verifyOtpWhileRegistration,
-    verifyOtpWhileLogin
+    verifyOtpWhileLogin,
+    generateAccessAndRefreshTokens
 }
