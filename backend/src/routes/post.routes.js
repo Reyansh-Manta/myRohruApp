@@ -5,6 +5,6 @@ import { createPost } from "../controllers/post.controller.js";
 
 const router = Router()
 
-router.route("/createPost").post(createPost)
+router.route("/createPost").post(verifyJWT, createPost)
 
 export default router;

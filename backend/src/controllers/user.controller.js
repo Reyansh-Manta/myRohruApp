@@ -11,8 +11,8 @@ import { isOTPValid } from '../utils/isOtpValid.js';
 const generateAccessAndRefreshTokens = async (userId) => {
     try {
         const user = await User.findById(userId)
-        const accessToken = user.generateAccessTokens()
-        const refreshToken = user.generateRefreshTokens()
+        const accessToken = user.generateAccessToken()
+        const refreshToken = user.generateRefreshToken()
 
         user.refreshToken = refreshToken
         await user.save({ validateBeforeSave: false })
@@ -96,6 +96,209 @@ const registerUser = asyncHandler(async (req, res) => {
         .status(200)
         .json(new ApiResponse(200, createdUser, 'User registered successfully'));
 
+})
+
+const loginUser = asyncHandler(async (req, res) => {
+
+    // req body -> data
+    // username or email
+    //find the user
+    //password check
+    //access and referesh token
+    //send cookie
+
+    const { email, password, phoneNumber } = req.body
+
+    if (!email && !phoneNumber) {
+        throw new ApiError(404, "username or email required")
+    }
+
+    const user = await User.findOne({
+        $or: [{ email }, { phoneNumber }]
+    })
+
+    if (!user) {
+        throw new ApiError(408, "user does not exist")
+    }
+
+    if (!password) {
+        throw new ApiError(404, "password required")
+    }
+
+    const isPasswordValid = await user.isPasswordCorrect(password)
+
+    if (!isPasswordValid) {
+        throw new ApiError(404, "incorrect user credentials")
+    }
+
+    const { accessToken, refreshToken } = await generateAccessAndRefreshTokens(user._id)
+
+    const loggedInUser = await User.findById(user._id).select("-password -refreshToken")
+
+    const options = {
+        httpOnly: true,
+        secure: true
+    }
+
+    return res
+        .status(200)
+        .cookie("refreshToken", refreshToken, options)
+        .cookie("accessToken", accessToken, options)
+        .json(
+            new ApiResponse(
+                200,
+                {
+                    user: loggedInUser, accessToken, refreshToken
+                },
+                "user logged in successfully"
+            )
+        )
+})
+
+const logoutUser = asyncHandler(async (req, res) => {
+    await User.findByIdAndUpdate(
+        req.user._id,
+        {
+            $unset: {
+                refreshToken: 1
+            }
+        },
+        {
+            new: true
+        }
+    )
+    const options = {
+        httpOnly: true,
+        secure: true
+    }
+    return res
+        .status(200)
+        .clearCookie("accessToken", options)
+        .clearCookie("refreshToken", options)
+        .json(new ApiResponse(
+            200, {}, "User logged out"
+        ))
+})
+
+const refreshAccessToken = asyncHandler(async (req, res) => {
+
+    const incomingRefreshToken = req.cookies.refreshToken || req.body.refreshToken
+    if (!incomingRefreshToken) {
+        throw new ApiError(401, "unauthorized request")
+    }
+
+    try {
+        const decodedToken = jwt.verify(
+            incomingRefreshToken,
+            process.env.REFRESH_TOKEN_SECRET
+        )
+
+        const user = await User.findById(decodedToken?._id)
+
+        if (!user) {
+            throw new ApiError(401, "invalid refrehToken")
+        }
+
+        if (incomingRefreshToken !== user?.refreshToken) {
+            throw new ApiError(401, "refresh token is expired or used")
+        }
+
+        const options = {
+            httpOnly: true,
+            secure: true
+        }
+
+        const { accessToken, newrefreshToken } = await generateAccessAndRefreshTokens(user._id)
+
+        return res
+            .status(200)
+            .cookie("refreshToken", newrefreshToken, options)
+            .cookie("accessToken", accessToken, options)
+            .json(
+                new ApiResponse(
+                    200,
+                    { accessToken, refreshToken: newrefreshToken },
+                    "Access token refreshed"
+                )
+            )
+
+    } catch (error) {
+        throw new ApiError(401, error?.message || "invalid refresh token")
+    }
+
+})
+
+const changeCurrentPassword = asyncHandler(async (req, res) => {
+    const { oldPassword, newPassword } = req.body
+
+    const user = await User.findById(req.user._id)
+
+    const oldPasswordValidation = user.isPasswordCorrect(oldPassword)
+
+    if (!oldPasswordValidation) {
+        throw new ApiError(400, "Password incorrect")
+    }
+
+    user.password = newPassword
+    await user.save("ValidateBeforeSave: false")
+
+    return res
+        .status(200)
+        .json(new ApiResponse(200, {}, "Password updated"))
+
+})
+
+const getCurrentUser = asyncHandler(async (req, res) => {
+
+    const user = req.user
+
+    return res
+        .status(200)
+        .json(new ApiResponse(200, user, "fetched the current user"))
+})
+
+const updateFullName = asyncHandler(async (req, res) => {
+    const { fullName } = req.body
+
+    if (!fullName) {
+        throw new ApiError(401, "fullName is required")
+    }
+
+    const user = await User.findByIdAndUpdate(
+        req.user._id,
+        {
+            $set: {
+                fullName
+            }
+        },
+        { new: true }
+    ).select("-password")
+
+    return res
+        .status(200)
+        .json(new ApiResponse(200, user, "fullName was updated"))
+})
+
+const updateEmail = asyncHandler(async (req, res) => {
+    const { email } = req.body
+
+    if (!email) {
+        throw new ApiError(401, "email is required")
+    }
+
+    const user = await User.findByIdAndUpdate(
+        req.user._id,
+        {
+            $set: {
+                email
+            }
+        },
+        { new: true }
+    ).select("-password")
+
+    return res
+        .status(200)
+        .json(new ApiResponse(200, user, "email was updated"))
 })
 
 const sendOtp = asyncHandler(async (req, res) => {
@@ -200,13 +403,6 @@ const verifyOtpWhileRegistration = asyncHandler(async (req, res, next) => {
             throw new ApiError(400, 'OTP is required');
         }
 
-        //  if(isOTPValid(userotp, otp, otpCreatedAt));
-
-        // const count = 0
-        // count++
-
-        // const isExpired = (Date.now() - otpCreatedAt) > (10 * 60 * 500)
-
         if (isOTPValid(userotp, otp, otpCreatedAt)) {
             await User.findOneAndUpdate(
                 { phoneNumber },
@@ -276,9 +472,16 @@ const verifyOtpWhileLogin = asyncHandler(async (req, res, next) => {
 export {
     getNumber,
     registerUser,
+    loginUser,
     sendOtp,
     ResendOtp,
     verifyOtpWhileRegistration,
     verifyOtpWhileLogin,
-    generateAccessAndRefreshTokens
+    generateAccessAndRefreshTokens,
+    updateEmail,
+    updateFullName,
+    changeCurrentPassword,
+    getCurrentUser,
+    logoutUser,
+    refreshAccessToken
 }

@@ -5,19 +5,20 @@ import { ApiError } from '../utils/ApiErrors.js';
 import { ApiResponse } from '../utils/ApiResponse.js';
 import { uploadOnCloudinary, deleteFromCloudinary } from '../utils/cloudinary.js';
 
+
 const createPost = asyncHandler(async (req, res) => {
     const { content, title, category } = req.body;
-    const userId = "68769ec6d50f90f6808bc05a"
-    // req.user._id;
+    
+    req.user._id;
 
     if (!content || !title || !category) {
         throw new ApiError(400, 'Content, title, and category are required');
     }
 
-    const user = await User.findById(userId)
-    // req.user.username || req.user.fullName || 'Anonymous';
+    // const user = await User.findById(userId)
+    const userId = req.user.username || req.user.fullName || 'Anonymous';
 
-    const postedBy = user.username || user.fullName || 'Anonymous';
+    // const postedBy = user.username || user.fullName || 'Anonymous';
 
     const postData = {
         user: userId,
