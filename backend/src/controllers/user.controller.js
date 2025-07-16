@@ -7,6 +7,7 @@ import { createClient } from 'redis'
 import store from '../utils/tempstorage.js';
 import { generateOTP } from '../utils/generateOtp.js';
 import { isOTPValid } from '../utils/isOtpValid.js';
+import jwt from 'jsonwebtoken';
 
 const generateAccessAndRefreshTokens = async (userId) => {
     try {
