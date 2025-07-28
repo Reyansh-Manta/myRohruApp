@@ -2,8 +2,10 @@
 
 import axios from "axios"
 import { useState } from "react"
+import { useRouter } from "next/navigation";
 
 export default function LoginPage() {
+    const router = useRouter()
     const [email, setemail] = useState("")
     const [phoneNumber , setnum] = useState("")
     const [password , setpassword] = useState("")
@@ -14,21 +16,24 @@ export default function LoginPage() {
         
         try {
 
-            const response = await axios({
-                method: 'post',
-                url: `http://localhost:${process.env.PORT}/api/v1/users/loginUser`,
-                data: {
-                    email: email ,
-                    phoneNumber: phoneNumber ,
-                    password: password
+            const response = await axios.post( 'http://localhost:2001/api/v1/users/loginUser' ,{
+                    email,
+                    phoneNumber,
+                    password
                 },
+                {
                 withCredentials: true
-            })
-            
-            const data = await response.json()
+                }
+        )
 
-            if(response.ok){
+            const data = await response.data
+
+            if(response.status === 200){
                 setmessage("logged in successfully")
+
+                setTimeout(() => {
+                    router.push('/')
+                }, 1000);
             }
             else{
                 setmessage("response not generated properly in loginPage")

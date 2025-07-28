@@ -28,8 +28,6 @@ const generateAccessAndRefreshTokens = async (userId) => {
 const getNumber = asyncHandler(async (req, res) => {
 
     const { number } = req.body
-    // console.log(number);
-
     if (!number) {
         throw new ApiError(400, 'Phone number is required');
     }
