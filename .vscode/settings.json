@@ -1,0 +1,9 @@
+{
+    "workbench.colorTheme": "Bearded Theme Black & Diamond",
+    "workbench.colorCustomizations": {
+        "contrastBorder": "#448AFF",
+        "sideBar.border": "#448AFF",
+        "focusBorder": "#FF4081",
+        "notebook.cellBorderColor": "#0D47A1"
+    }
+}
