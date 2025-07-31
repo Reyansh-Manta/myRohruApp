@@ -4,44 +4,24 @@ import { useRouter } from "next/navigation"
 import axios from "axios"
 import { useEffect } from "react"
 import styles from "./page.module.css"
+import { useUser } from "./context/UserContext"
 
 export default function HomePage() {
 
     const router = useRouter()
+    const {loggedIn, checking} = useUser()
 
     useEffect(() => {
-        async function check() {
-            try {
-                console.log('fjr');
-
-                await axios.get('http://localhost:2001/api/v1/users/current-user', {
-                    withCredentials: true
-                })
-            }
-            catch (error) {
+        console.log(checking);
+        
+        if (!loggedIn && checking) {
             router.push('/unprotected-home')
         }
-            
-        }
-        
-        check()
-    }, [router])
-
+    }, [])
+    
     return (
         <>
-            <div className={styles.toplogo}>
-                <div className={styles.logo}>
-                    <img src="/My.png" alt="" />
-                </div>
-                <div className={styles.navr}>
-                    <a href="/dashboard"><h3>Dashboard</h3></a>
-                </div>
-            </div>
-            <div>
-                <div className="weatbox">
-
-                </div>
-            </div>
+            
         </>
     )
 }

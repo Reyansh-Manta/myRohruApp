@@ -1,0 +1,34 @@
+.nav{
+    background-color: aliceblue;
+    border-bottom: 3px solid black;
+    border-top: 1px solid black;
+    box-shadow: inset;
+    display: flex;
+    position: sticky;
+    top: 0px;
+    font-size: larger;
+    padding: 20px;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0px;
+}
+
+.list{
+    display: flex;
+    list-style: none;
+    gap: 20px;
+    margin: 0;
+    padding: 0;
+}
+
+.link{
+    text-decoration: none;
+    color: black;
+    font-weight: 500;
+    transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.link:hover {
+  color: rgb(24, 124, 191);
+  transform: scale(1.05);
+}
