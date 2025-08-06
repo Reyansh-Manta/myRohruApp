@@ -5,6 +5,7 @@ import axios from "axios"
 import { useEffect } from "react"
 import styles from "./page.module.css"
 import { useUser } from "./context/UserContext"
+import Navbar from "./components/Navbar/page"
 
 export default function HomePage() {
 
@@ -17,11 +18,12 @@ export default function HomePage() {
         if (!loggedIn && checking) {
             router.push('/unprotected-home')
         }
-    }, [])
+    }, [!checking])
     
     return (
         <>
-            
+        <Navbar/>
+            HIHI
         </>
     )
 }

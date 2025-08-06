@@ -7,94 +7,94 @@ import { useRouter } from "next/navigation";
 export default function LoginPage() {
     const router = useRouter()
     const [email, setemail] = useState("")
-    const [phoneNumber , setnum] = useState("")
-    const [password , setpassword] = useState("")
+    const [phoneNumber, setnum] = useState("")
+    const [password, setpassword] = useState("")
     const [message, setmessage] = useState(null)
 
     const handleSubmit = async (e) => {
-        e.preventDefault() 
-        
+        e.preventDefault()
+
         try {
 
-            const response = await axios.post( 'http://localhost:2001/api/v1/users/loginUser' ,{
-                    email,
-                    phoneNumber,
-                    password
-                },
+            const response = await axios.post('http://localhost:2001/api/v1/users/loginUser', {
+                email,
+                phoneNumber,
+                password
+            },
                 {
-                withCredentials: true
+                    withCredentials: true
                 }
-        )
+            )
 
             const data = await response.data
 
-            if(response.status === 200){
+            if (response.status === 200) {
                 setmessage("logged in successfully")
 
                 setTimeout(() => {
                     router.push('/')
                 }, 1000);
             }
-            else{
+            else {
                 setmessage("response not generated properly in loginPage")
             }
 
         } catch (error) {
-            console.error("error sending post request in login page",error)
+            console.error("error sending post request in login page", error)
             setmessage("error sending post request in login page")
         }
     }
 
-    return(
+    return (
         <div>
             <form onSubmit={handleSubmit}>
-                <input 
+                <input
                     type="email"
                     placeholder="Email"
                     required
                     value={email}
-                    onChange={(e)=>setemail(e.target.value)}
-                     style={{
+                    onChange={(e) => setemail(e.target.value)}
+                    style={{
                         display: "block",
                         marginBottom: "10px",
                         width: "300px",
                         borderRadius: "8px",
                         padding: "6px",
                     }}
-                    />
-                <input 
+                />
+                <input
                     type="number"
                     placeholder="Phone number"
                     required
                     value={phoneNumber}
-                    onChange={(e)=>setnum(e.target.value)}
-                     style={{
+                    onChange={(e) => setnum(e.target.value)}
+                    style={{
                         display: "block",
                         marginBottom: "10px",
                         width: "300px",
                         borderRadius: "8px",
                         padding: "6px",
                     }}
-                    />
-                <input 
+                />
+                <input
                     type="password"
                     placeholder="Password"
                     required
                     value={password}
-                    onChange={(e)=>setpassword(e.target.value)}
-                     style={{
+                    onChange={(e) => setpassword(e.target.value)}
+                    style={{
                         display: "block",
                         marginBottom: "10px",
                         width: "300px",
                         borderRadius: "8px",
                         padding: "6px",
                     }}
-                    />
-                <button type="submit">SUBMIT</button>  
-                  
+                />
+                <button type="submit">SUBMIT</button>
+
             </form>
-        {message}
+            {message}
         </div>
     )
-    
+
 }
