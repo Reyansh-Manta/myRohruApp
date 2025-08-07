@@ -1,6 +1,9 @@
-.toplogo{
+.cute{
   display: flex;
+  justify-content: center;
+  align-items: center;
 }
-.navr{
-  display: flex;
+.bg{
+  z-index: -1;
+  position: absolute;
 }

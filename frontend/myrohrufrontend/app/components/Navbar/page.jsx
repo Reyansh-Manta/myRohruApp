@@ -23,7 +23,7 @@ export default function Navbar({children}) {
             <>
             <nav className={styles.nav}>
                 <a href="/">
-                    <img src="/My.png" alt="logo" />
+                    <img src="/My.png" alt="logo" style={{height: "85px" , top:"10px", position: "relative"}}/>
                 </a>
                 <ul className={styles.list}>
                     <Link className={`${styles.dashboard} ${styles.link}`} href={"/dashboard"}>
