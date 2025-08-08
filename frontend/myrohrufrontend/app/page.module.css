@@ -39,3 +39,9 @@
   align-items: center;
   gap: 40px;
 }
+
+.sign{
+  width: 20vw;
+  margin-left: 50px;
+  font-size: 28;
+}

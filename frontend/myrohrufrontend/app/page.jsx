@@ -22,8 +22,8 @@ export default function HomePage() {
 
     return (
         <>
-            <img src="./chandernahan-lake.jpg" alt="" style={{ width: "100vw", opacity: "0.08", height: "100vh", position:"fixed", top: "0px" }} className={styles.bg} />
-            
+            <img src="./bg.jpg" alt="" style={{ width: "100vw", opacity: "0.3", height: "100vh", position: "fixed", top: "0px" }} className={styles.bg} />
+
             <div className={styles.main}>
                 <Navbar />
                 <div className={styles.cute}>
@@ -32,24 +32,36 @@ export default function HomePage() {
                 <div className={styles.up}>
                     <div className={styles.up1}>
                         <div className={`${styles.sign} ${styles.cards}`}>
-                            <img src="./Sweet_no_bg.png" alt="" style={{width: "35vw", optacity: "0.2"}}/>
+                            <h1>From Rohru?</h1>
+                            <h1>Explore</h1>
+                            <h1>these!!!</h1>
                         </div>
                         <div className={`${styles.d1} ${styles.cards}`}>
-                            <img src="./Sweet(2).png" alt="" style={{width: "20vw", borderRadius:"15px", border:"3px", borderColor:"black", borderStyle:"solid"}}/>
+                            <a href="/local">
+                                <img src="./Sweet(16).png" alt="" style={{ width: "20vw", borderRadius: "15px", border: "3px", borderColor: "black", borderStyle: "solid" }} />
+                            </a>
                         </div>
                         <div className={`${styles.d2} ${styles.cards}`}>
-                            <img src="./Sweet(3).png" alt="" style={{width: "20vw", borderRadius:"15px", border:"3px", borderColor:"black", borderStyle:"solid"}}/>
+                            <a href="/events">
+                                <img src="./Sweet(14).png" alt="" style={{ width: "20vw", borderRadius: "15px", border: "3px", borderColor: "black", borderStyle: "solid" }} />
+                            </a>
                         </div>
                     </div>
                     <div className={styles.up2}>
                         <div className={`${styles.d3} ${styles.cards}`}>
-                            <img src="./Sweet(5).png" alt="" style={{width: "20vw", borderRadius:"15px", border:"3px", borderColor:"black", borderStyle:"solid"}}/>
+                            <a href="/general">
+                                <img src="./Sweet(12).png" alt="" style={{ width: "20vw", borderRadius: "15px", border: "3px", borderColor: "black", borderStyle: "solid" }} />
+                            </a>
                         </div>
                         <div className={`${styles.d4} ${styles.cards}`}>
-                            <img src="./Sweet(6).png" alt="" style={{width: "20vw", borderRadius:"15px", border:"3px", borderColor:"black", borderStyle:"solid"}}/>
+                            <a href="/weathernroads">
+                                <img src="./Sweet(10).png" alt="" style={{ width: "20vw", borderRadius: "15px", border: "3px", borderColor: "black", borderStyle: "solid" }} />
+                            </a>
                         </div>
                         <div className={`${styles.d5} ${styles.cards}`}>
-                            <img src="./Sweet(7).png" alt="" style={{width: "20vw", borderRadius:"15px", border:"3px", borderColor:"black", borderStyle:"solid"}}/>
+                            <a href="/orchards">
+                                <img src="./Sweet(9).png" alt="" style={{ width: "20vw", borderRadius: "15px", border: "3px", borderColor: "black", borderStyle: "solid" }} />
+                            </a>
                         </div>
                     </div>
                 </div>
