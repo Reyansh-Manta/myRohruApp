@@ -1,9 +1,41 @@
-.cute{
+.cute {
   display: flex;
   justify-content: center;
   align-items: center;
 }
-.bg{
+
+
+
+.bg {
   z-index: -1;
   position: absolute;
+}
+
+.up {
+  margin: 20px;
+  /* display: flex; */
+  /* justify-content: space-between; */
+  /* align-items: center; */
+}
+
+.up1 {
+  display: flex;
+  /* justify-content: space-between; */
+  align-items: center;
+  gap: 40px;
+}
+
+.cards {
+  /* border: 2px solid black; */
+  border-radius: 15px;
+}
+
+.up2 {
+  margin: 20px;
+  padding-left: 15vw;
+  padding-right: 15vw;
+  display: flex;
+  /* justify-content: space-between; */
+  align-items: center;
+  gap: 40px;
 }

@@ -22,22 +22,35 @@ export default function HomePage() {
 
     return (
         <>
-            <img src="./chandernahan-lake.jpg" alt="" style={{ width: "100vw", opacity: "0.07", height: "100vh" }} className={styles.bg} />
-            <Navbar />
+            <img src="./chandernahan-lake.jpg" alt="" style={{ width: "100vw", opacity: "0.08", height: "100vh", position:"fixed", top: "0px" }} className={styles.bg} />
+            
             <div className={styles.main}>
+                <Navbar />
                 <div className={styles.cute}>
                     {/* <img src="./Welcome to(1).png" alt="" style={{height: "110px"}} /> */}
                 </div>
                 <div className={styles.up}>
-                    <div>
-                        <div className={styles.sign}>
+                    <div className={styles.up1}>
+                        <div className={`${styles.sign} ${styles.cards}`}>
                             <img src="./Sweet_no_bg.png" alt="" style={{width: "35vw", optacity: "0.2"}}/>
                         </div>
-                        <div className={styles.d1}></div>
+                        <div className={`${styles.d1} ${styles.cards}`}>
+                            <img src="./Sweet(2).png" alt="" style={{width: "20vw", borderRadius:"15px", border:"3px", borderColor:"black", borderStyle:"solid"}}/>
+                        </div>
+                        <div className={`${styles.d2} ${styles.cards}`}>
+                            <img src="./Sweet(3).png" alt="" style={{width: "20vw", borderRadius:"15px", border:"3px", borderColor:"black", borderStyle:"solid"}}/>
+                        </div>
                     </div>
-                    <div>
-                        <div className={styles.d2}></div>
-                        <div className={styles.d3}></div>
+                    <div className={styles.up2}>
+                        <div className={`${styles.d3} ${styles.cards}`}>
+                            <img src="./Sweet(5).png" alt="" style={{width: "20vw", borderRadius:"15px", border:"3px", borderColor:"black", borderStyle:"solid"}}/>
+                        </div>
+                        <div className={`${styles.d4} ${styles.cards}`}>
+                            <img src="./Sweet(6).png" alt="" style={{width: "20vw", borderRadius:"15px", border:"3px", borderColor:"black", borderStyle:"solid"}}/>
+                        </div>
+                        <div className={`${styles.d5} ${styles.cards}`}>
+                            <img src="./Sweet(7).png" alt="" style={{width: "20vw", borderRadius:"15px", border:"3px", borderColor:"black", borderStyle:"solid"}}/>
+                        </div>
                     </div>
                 </div>
                 <div className={styles.down}>
