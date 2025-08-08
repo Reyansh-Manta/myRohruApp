@@ -16,7 +16,7 @@ export default function LoginPage() {
 
         try {
 
-            const response = await axios.post('http://localhost:2001/api/v1/users/loginUser', {
+            const response = await axios.post('http://localhost:2002/api/v1/users/loginUser', {
                 email,
                 phoneNumber,
                 password

@@ -13,7 +13,7 @@ export function UserProvider({children}){
     useEffect(() => {
       const checklogin = async()=>{
         try {
-            await axios.get('http://localhost:2001/api/v1/users/current-user', {
+            await axios.get('http://localhost:2002/api/v1/users/current-user', {
                 withCredentials: true
             })
             setloggedIn(true)

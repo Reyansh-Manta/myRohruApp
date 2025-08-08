@@ -20,7 +20,7 @@ export default function Navbar({children}) {
 
     if (islog) {
         return (
-            <>
+            <div style={{opacity: "0.9"}}>
             <nav className={styles.nav}>
                 <a href="/">
                     <img src="/My.png" alt="logo" style={{height: "85px" , top:"10px", position: "relative"}}/>
@@ -35,12 +35,12 @@ export default function Navbar({children}) {
                 </ul>
             </nav>
             {children}
-            </>
+            </div>
         )
     }
     else {
         return (
-            <>
+            <div>
             <nav className={styles.nav}>
                 <a href="/home">
                     <img src="/My.png" alt="logo" />
@@ -58,7 +58,7 @@ export default function Navbar({children}) {
                 </ul>
             </nav>
             {children}
-            </>
+            </div>
         )
     }
 }
