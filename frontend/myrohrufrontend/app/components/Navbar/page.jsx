@@ -42,8 +42,8 @@ export default function Navbar({children}) {
         return (
             <div>
             <nav className={styles.nav}>
-                <a href="/home">
-                    <img src="/My.png" alt="logo" />
+                <a href="/">
+                    <img src="/My.png" alt="logo" style={{height: "85px" , top:"10px", position: "relative"}}/>
                 </a>
                 <ul className={styles.list}>
                     <Link className={`${styles.dashboard} ${styles.link}`} href={"/login"}>

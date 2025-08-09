@@ -37,7 +37,7 @@ export default function HomePage() {
                             <p>these!!!</p>
                         </div>
                         <div className={`${styles.d1} ${styles.cards}`}>
-                            <a href="/local">
+                            <a href="/local-feed">
                                 <img src="./Sweet(16).png" alt="" style={{ width: "20vw", borderRadius: "15px", border: "3px", borderColor: "black", borderStyle: "solid" }} />
                             </a>
                         </div>
@@ -79,7 +79,7 @@ export default function HomePage() {
                             </a>
                         </div>
                         <div className={`${styles.sign} ${styles.cards}`}>
-                            <p>Not from Rohru?</p>
+                            <p>A Visitor?</p>
                             <p>Explore</p>
                             <p>these!!!</p>
                         </div>
