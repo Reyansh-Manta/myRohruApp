@@ -32,9 +32,9 @@ export default function HomePage() {
                 <div className={styles.up}>
                     <div className={styles.up1}>
                         <div className={`${styles.sign} ${styles.cards}`}>
-                            <h1>From Rohru?</h1>
-                            <h1>Explore</h1>
-                            <h1>these!!!</h1>
+                            <p>From Rohru?</p>
+                            <p>Explore</p>
+                            <p>these!!!</p>
                         </div>
                         <div className={`${styles.d1} ${styles.cards}`}>
                             <a href="/local">
@@ -65,11 +65,37 @@ export default function HomePage() {
                         </div>
                     </div>
                 </div>
+
                 <div className={styles.down}>
-                    <div className={styles.sign}></div>
-                    <div className={styles.d1}></div>
-                    <div className={styles.d2}></div>
-                    <div className={styles.d3}></div>
+                    <div className={styles.down1}>
+                        <div className={`${styles.sign} ${styles.cards}`}>
+                            <a href="/wiki">
+                                <img src="./Sweet(19).png" alt="" style={{ width: "20vw", borderRadius: "15px", border: "3px", borderColor: "black", borderStyle: "solid" }} />
+                            </a>
+                        </div>
+                        <div className={`${styles.d6} ${styles.cards}`}>
+                            <a href="/must-visit">
+                                <img src="./Sweet(20).png" alt="" style={{ width: "20vw", borderRadius: "15px", border: "3px", borderColor: "black", borderStyle: "solid" }} />
+                            </a>
+                        </div>
+                        <div className={`${styles.sign} ${styles.cards}`}>
+                            <p>Not from Rohru?</p>
+                            <p>Explore</p>
+                            <p>these!!!</p>
+                        </div>
+                    </div>
+                    <div className={styles.down2}>
+                        <div className={`${styles.d7} ${styles.cards}`}>
+                            <a href="/accomodations">
+                                <img src="./Sweet(21).png" alt="" style={{ width: "20vw", borderRadius: "15px", border: "3px", borderColor: "black", borderStyle: "solid" }} />
+                            </a>
+                        </div>
+                        <div className={`${styles.d8} ${styles.cards}`}>
+                            <a href="/tips-from-locals">
+                                <img src="./Sweet(22).png" alt="" style={{ width: "20vw", borderRadius: "15px", border: "3px", borderColor: "black", borderStyle: "solid" }} />
+                            </a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </>

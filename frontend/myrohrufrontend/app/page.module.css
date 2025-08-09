@@ -13,6 +13,7 @@
 
 .up {
   margin: 20px;
+  border-bottom: 5px solid black;
   /* display: flex; */
   /* justify-content: space-between; */
   /* align-items: center; */
@@ -43,5 +44,25 @@
 .sign{
   width: 20vw;
   margin-left: 50px;
-  font-size: 28;
+  font-size: 35px;
+  font-weight: 900;
+}
+
+.down{
+  margin: 20px;
+}
+
+.down1{
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  margin-left: 15vw;
+}
+
+.down2{
+  margin: 20px;
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  margin-left: 18.5vw;
 }
