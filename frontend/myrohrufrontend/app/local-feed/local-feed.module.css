@@ -1,0 +1,47 @@
+.p1 {
+    font-style: italic;
+    font-size: 3rem;
+    font-weight: bolder;
+    display: inline-block;
+    color: #046dff;
+    /* text-shadow: 2px 2px 8px rgba(0, 128, 255, 0.5); */
+}
+.p2 {
+    font-style: italic;
+    font-size: 3rem;
+    font-weight: bolder;
+    display: inline-block;
+    color: rgb(255, 123, 0);
+    /* text-shadow: 2px 2px 8px rgba(255, 94, 0, 0.5); */
+}
+.cp{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px;
+}
+.glowButton {
+    background: #ffe8ca;
+    border: none;
+    border-radius: 15px;
+    padding: 0.5em 0.8em;
+    color: inherit;
+    cursor: pointer;
+    transition: box-shadow 0.2s;
+    outline: none;
+    font-weight: 600;
+    font-size: large;
+}
+
+.glowButton:active {
+    box-shadow: 0 0 12px 3px rgba(4, 109, 255, 0.5);
+}
+
+.new{
+    padding: 11px;
+    margin: 10px;
+}
+.trending{
+    padding: 11px;
+    margin: 10px;
+}
