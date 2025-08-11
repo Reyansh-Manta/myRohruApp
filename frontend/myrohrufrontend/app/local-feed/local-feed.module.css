@@ -6,6 +6,7 @@
     color: #046dff;
     /* text-shadow: 2px 2px 8px rgba(0, 128, 255, 0.5); */
 }
+
 .p2 {
     font-style: italic;
     font-size: 3rem;
@@ -14,12 +15,14 @@
     color: rgb(255, 123, 0);
     /* text-shadow: 2px 2px 8px rgba(255, 94, 0, 0.5); */
 }
-.cp{
+
+.cp {
     display: flex;
     justify-content: center;
     align-items: center;
     margin: 10px;
 }
+
 .glowButton {
     background: #ffe8ca;
     border: none;
@@ -37,11 +40,111 @@
     box-shadow: 0 0 12px 3px rgba(4, 109, 255, 0.5);
 }
 
-.new{
+.new {
     padding: 11px;
     margin: 10px;
 }
-.trending{
+
+.trending {
     padding: 11px;
     margin: 10px;
+}
+
+.bgimage {
+    opacity: 0.5;
+    position: fixed;
+    z-index: -1;
+}
+
+.container {
+    width: 40vw;
+    height: 29vw;
+    background-color: #ffe8ca;
+    opacity: 0.9;
+    position: relative;
+    left: 30vw;
+    font-size: 35px;
+}
+
+.incont {
+    width: 37vw;
+    height: 19vw;
+    background-color: white;
+    position: relative;
+    left: 1.5vw;
+    top: 1.5vw;
+}
+
+.title {
+    position: relative;
+    left: 1.5vw;
+    top: 2.5vw;
+    font-size: 35px;
+    font-weight: bolder;
+}
+
+.author {
+    position: absolute;
+    left: 1.5vw;
+    bottom: 1vw;
+    font-size: 20px;
+    font-weight: bold;
+}
+.date {
+    position: absolute;
+    right: 1.5vw;
+    bottom: 1vw;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+@media screen and (max-width: 1125px) and (min-width: 890px) {
+    .title {
+        position: relative;
+        left: 1.5vw;
+        top: 2.5vw;
+        font-size: 28px;
+        font-weight: bolder;
+    }
+
+    .author {
+        position: absolute;
+        left: 1.5vw;
+        bottom: 1vw;
+        font-size: 16px;
+        font-weight: bold;
+    }
+    .date {
+        position: absolute;
+        right: 1.5vw;
+        bottom: 1vw;
+        font-size: 16px;
+        font-weight: bold;
+    }
+
+}
+
+@media screen and (max-width: 890px) and (min-width: 600px) {
+    .title {
+        position: relative;
+        left: 1.5vw;
+        top: 2.5vw;
+        font-size: 20px;
+        font-weight: bolder;
+    }
+
+    .author {
+        position: absolute;
+        left: 1.5vw;
+        bottom: 1vw;
+        font-size: 13px;
+        font-weight: bold;
+    }
+    .date {
+        position: absolute;
+        right: 1.5vw;
+        bottom: 1vw;
+        font-size: 13px;
+        font-weight: bold;
+    }
 }

@@ -111,12 +111,30 @@ const editPostImage = asyncHandler(async (req, res) => {
     
 })
 
+const fetchPostsByCategory = asyncHandler(async (req, res) => {
+    const { category } = req.params;
 
+    if (!category) {
+        throw new ApiError(400, 'Category is required');
+    }
+
+    const posts = await Post.find({ category });
+    const { sortBy } = req.query;
+
+    if (sortBy === 'time') {
+        posts.sort((a, b) => b.createdAt - a.createdAt);
+    } else if (sortBy === 'likes') {
+        posts.sort((a, b) => (b.likes?.length || 0) - (a.likes?.length || 0));
+    }
+
+    return res.status(200).json(new ApiResponse(200, posts, 'Posts retrieved successfully'));
+})
 
 export {
     createPost,
     getPostById,
     deletePost,
     editPost,
-    editPostImage
+    editPostImage,
+    fetchPostsByCategory
 }
