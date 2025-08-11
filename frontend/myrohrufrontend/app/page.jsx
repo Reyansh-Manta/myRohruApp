@@ -22,7 +22,7 @@ export default function HomePage() {
 
     return (
         <>
-            <img src="./bg.jpg" alt="" style={{ width: "100vw", opacity: "0.8", height: "100vh", position: "fixed", top: "0px" }} className={styles.bg} />
+            {/* <img src="./bg.jpg" alt="" style={{ width: "100vw", opacity: "0.8", height: "100vh", position: "fixed", top: "0px" }} className={styles.bg} /> */}
 
             <div className={styles.main}>
                 <Navbar />

@@ -4,7 +4,9 @@
   align-items: center;
 }
 
-
+.main{
+  background-color: rgb(234, 223, 210);
+}
 
 .bg {
   z-index: -1;
