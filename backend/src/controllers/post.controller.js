@@ -121,11 +121,13 @@ const fetchPostsByCategory = asyncHandler(async (req, res) => {
     const posts = await Post.find({ category });
     const { sortBy } = req.query;
 
-    if (sortBy === 'time') {
+    if (sortBy === 'new') {
         posts.sort((a, b) => b.createdAt - a.createdAt);
     } else if (sortBy === 'likes') {
         posts.sort((a, b) => (b.likes?.length || 0) - (a.likes?.length || 0));
     }
+
+    // console.log(posts);
 
     return res.status(200).json(new ApiResponse(200, posts, 'Posts retrieved successfully'));
 })
