@@ -21,7 +21,7 @@ const postSchema = new Schema(
             required: true
         },
         category: {
-            type: String,
+            type: Array,
             enum: ['local-feed', 'general-announcements', 'events', 'weather-and-roads', 'orchards', 'tips-for-tourists', 'must-visit-locations', 'accomodation-and-local-facilities'],
             required: true
         },
