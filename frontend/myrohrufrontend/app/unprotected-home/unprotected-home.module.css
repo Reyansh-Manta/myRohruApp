@@ -1,70 +1,211 @@
-.cute {
+@import url('https://fonts.googleapis.com/css2?family=Bungee&family=Carter+One&family=Caveat+Brush&display=swap');
+
+.caveat-brush-regular {
+  font-family: "Caveat Brush", cursive;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.carter-one-regular {
+  font-family: "Carter One", system-ui;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.bungee-regular {
+  font-family: "Bungee", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.mainins {
   display: flex;
-  justify-content: center;
+  width: 100vw;
+  height: 82vh;
   align-items: center;
 }
 
-/* .main{
-  background-color: rgb(234, 223, 210);
-} */
+/* mainright */
 
-.bg {
-  z-index: -1;
-  position: absolute;
+@media screen and (min-width: 1220px) {
+  .mainright {
+    position: relative;
+    width: 120vw;
+    padding: 20px;
+    height: 82vh;
+    right: 90px;
+    justify-items: center;
+    display: flex;
+    top: 50px;
+    gap: 20px;
+    flex-wrap: wrap;
+
+  }
 }
 
-.up {
-  margin: 20px;
-  border-bottom: 5px solid black;
-  /* display: flex; */
-  /* justify-content: space-between; */
-  /* align-items: center; */
+@media screen and (max-width: 1220px) {
+  .mainright {
+    position: relative;
+    width: 145vw;
+    padding: 20px;
+    height: 82vh;
+    right: 65px;
+    justify-items: center;
+    display: flex;
+    top: 50px;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
 }
 
-.up1 {
-  display: flex;
-  /* justify-content: space-between; */
-  align-items: center;
-  gap: 40px;
+
+/* boxes */
+
+
+@media screen and (min-width: 1220px) {
+  .box1 {
+    background-color: #8c52ff;
+    width: 20vw;
+    height: 27vh;
+    position: static;
+  }
+
+  .box2 {
+    background-color: #752ffe;
+    width: 27vw;
+    height: 27vh;
+    position: static;
+  }
+
+  .box3 {
+    background-color: #8c52ff;
+    width: 20vw;
+    height: 60vh;
+    position: static;
+  }
+
+  .box4 {
+    background-color: #752ffe;
+    width: 27vw;
+    height: 30.3vh;
+    position: relative;
+    /* top: -300px; */
+    top: -32.6vh;
+  }
+
+  .box5 {
+    background-color: #8c52ff;
+    width: 20vw;
+    height: 30.3vh;
+    position: relative;
+    /* top: -300px; */
+    top: -32.6vh;
+  }
+
+  /* box texts */
+
+  
+
 }
 
-.cards {
-  /* border: 2px solid black; */
-  border-radius: 15px;
+@media screen and (max-width: 1220px) and (min-width: 900px) {
+  .box1 {
+    background-color: #8c52ff;
+    width: 19vw;
+    height: 24vh;
+    position: static;
+  }
+
+  .box2 {
+    background-color: #752ffe;
+    width: 25vw;
+    height: 24vh;
+    position: static;
+  }
+
+  .box3 {
+    background-color: #8c52ff;
+    width: 21vw;
+    height: 49vh;
+    position: static;
+  }
+
+  .box4 {
+    background-color: #752ffe;
+    width: 26vw;
+    height: 23vh;
+    position: relative;
+    /* top: -268px; */
+    top: -29vh;
+  }
+
+  .box5 {
+    background-color: #8c52ff;
+    width: 18vw;
+    height: 23vh;
+    position: relative;
+    top: -29vh;
+  }
 }
 
-.up2 {
-  margin: 20px;
-  padding-left: 15vw;
-  padding-right: 15vw;
-  display: flex;
-  /* justify-content: space-between; */
-  align-items: center;
-  gap: 40px;
+
+/* mainleft */
+
+
+@media screen and (min-width: 1200px) {
+  .mainleft {
+    position: relative;
+    margin: -50px;
+    bottom: 20px;
+    /* top: 27vh; */
+    width: 700px;
+    height: 15vw;
+    left: -50px;
+    font-family: 'Bungee';
+    transform: rotate(270deg);
+    display: flex;
+    align-items: center;
+    justify-items: center;
+    color: #004aad;
+    font-size: 35;
+  }
 }
 
-.sign{
-  width: 20vw;
-  margin-left: 50px;
-  font-size: 35px;
-  font-weight: 900;
+
+@media screen and (max-width: 1200px) and (min-width: 785px) {
+  .mainleft {
+    position: relative;
+    margin: -50px;
+    bottom: 100px;
+    /* top: 27vh; */
+    width: 700px;
+    height: 15vw;
+    left: -50px;
+    font-family: 'Bungee';
+    transform: rotate(270deg);
+    display: flex;
+    align-items: center;
+    justify-items: center;
+    color: #004aad;
+    font-size: 35;
+  }
 }
 
-.down{
-  margin: 20px;
-}
-
-.down1{
-  display: flex;
-  align-items: center;
-  gap: 40px;
-  margin-left: 15vw;
-}
-
-.down2{
-  margin: 20px;
-  display: flex;
-  align-items: center;
-  gap: 40px;
-  margin-left: 18.5vw;
+@media screen and (max-width: 785px) and (min-width: 400px) {
+  .mainleft {
+    position: relative;
+    margin: 10px;
+    bottom: 20px;
+    /* top: 27vh; */
+    width: 550px;
+    height: 15vw;
+    left: -50px;
+    font-family: 'Bungee';
+    transform: rotate(270deg);
+    display: flex;
+    align-items: center;
+    justify-items: center;
+    color: #004aad;
+    font-size: 20;
+  }
 }
