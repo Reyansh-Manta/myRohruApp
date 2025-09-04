@@ -104,7 +104,29 @@
 
   /* box texts */
 
-  
+  .b1img {
+    object-fit: fill;
+    width: 20vw;
+    height: 27vh;
+  }
+
+  .box1p1 {
+    background-color: #8c52ff;
+    color: whitesmoke;
+    font-family: 'Caveat Brush';
+    font-size: 60px;
+    padding: 20px;
+    padding-left: 32px;
+  }
+
+  .box1p2 {
+    background-color: #8c52ff;
+    color: whitesmoke;
+    font-family: 'Carter One';
+    font-size: 16px;
+    padding: 10px;
+    padding-left: 15px;
+  }
 
 }
 
@@ -146,6 +168,37 @@
     position: relative;
     top: -29vh;
   }
+
+}
+
+
+/* text images */
+
+@media screen and (min-width: 1550px) {
+
+  .b1img1 {
+    width: 20vw;
+    height: 26vh;
+    object-fit: fill;
+  }
+
+  .b1i2{
+    display: none;
+  }
+
+}
+@media screen and (min-width: 1200px) and (max-width: 1550px) {
+
+  .b1img1 {
+    display: none;
+  }
+
+  .b1i2 {
+    width: 20vw;
+    height: 26vh;
+    object-fit: fill;
+  }
+
 }
 
 

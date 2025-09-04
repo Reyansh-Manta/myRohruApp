@@ -27,8 +27,8 @@ export default function UnprotectedHome() {
                     <div className={styles.mainleft}>From Rohru? {"\u00A0"}{"\u00A0"}{"\u00A0"}{"\u00A0"}{"\u00A0"}{"\u00A0"}{"\u00A0"}{"\u00A0"}{"\u00A0"}{"\u00A0"}{"\u00A0"}{"\u00A0"}{"\u00A0"}{"\u00A0"}Explore these</div>
                     <div className={styles.mainright}>
                         <div className={styles.box1}>
-                            <p className={styles.box1p1}>Local News</p>
-                            <p className={styles.box1p2}>Authentic news from all of Rohru</p>
+                            <img src="/localnews.png" alt="" className={styles.b1img1}/>
+                            <img src="/b1i2.png" alt="" className={styles.b1img2}/>
                         </div>
                         <div className={styles.box2}> 
 
