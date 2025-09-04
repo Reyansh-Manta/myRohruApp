@@ -26,22 +26,33 @@ export default function UnprotectedHome() {
                 <div className={styles.mainins}>
                     <div className={styles.mainleft}>From Rohru? {"\u00A0"}{"\u00A0"}{"\u00A0"}{"\u00A0"}{"\u00A0"}{"\u00A0"}{"\u00A0"}{"\u00A0"}{"\u00A0"}{"\u00A0"}{"\u00A0"}{"\u00A0"}{"\u00A0"}{"\u00A0"}Explore these</div>
                     <div className={styles.mainright}>
+
                         <div className={styles.box1}>
-                            <img src="/localnews.png" alt="" className={styles.b1img1}/>
-                            <img src="/b1i2.png" alt="" className={styles.b1img2}/>
+                            <img src="/saru.webp" alt="" className={styles.b1bg} style={{ zIndex: '0', position: 'absolute', objectFit: 'cover' }} />
+                            <div style={{ zIndex: '1', position:'relative', backgroundColor: 'transparent' }}>
+                                <p className={styles.b1s1} style={{ color: '#004aad' }}>Local News</p>
+                            </div>
                         </div>
-                        <div className={styles.box2}> 
+
+                        <div className={styles.box2}>
 
                         </div>
-                        <div className={styles.box3}> 
+
+                        <div className={styles.box3}>
+                            <img src="/apple.jpg" alt="" className={styles.b3bg} style={{ zIndex: '0', position: 'absolute', objectFit: 'cover' }} />
+                            <div style={{ zIndex: '1', position:'relative', backgroundColor: 'transparent' }}>
+                                <p className={styles.b3s1} style={{ color: '#004aad' }}>Orchards</p>
+                            </div>
+                        </div>
+
+                        <div className={styles.box4}>
 
                         </div>
-                        <div className={styles.box4}> 
+
+                        <div className={styles.box5}>
 
                         </div>
-                        <div className={styles.box5}> 
 
-                        </div>
                     </div>
                 </div>
             </div>
