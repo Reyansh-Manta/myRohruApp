@@ -4,6 +4,7 @@ import axios from "axios"
 import Navbar from "../components/Navbar/page"
 import styles from "./create-post.module.css"
 import { useUser } from "../context/UserContext"
+import { useState , useEffect } from "react"
 
 export default function CreatePost() {
 
@@ -88,7 +89,7 @@ export default function CreatePost() {
                     <div>
                         <button className={styles.catbtn}
                             onClick={() => {
-                                const count = 0
+                                let count = 0
                                 count++
                                 if (Number.isInteger(count / 2)) {
                                     setC1(0)
@@ -100,7 +101,7 @@ export default function CreatePost() {
 
                         <button className={styles.catbtn}
                             onClick={() => {
-                                const count = 0
+                                let count = 0
                                 count++
                                 if (Number.isInteger(count / 2)) {
                                     setC2(0)
@@ -112,7 +113,7 @@ export default function CreatePost() {
 
                         <button className={styles.catbtn}
                             onClick={() => {
-                                const count = 0
+                                let count = 0
                                 count++
                                 if (Number.isInteger(count / 2)) {
                                     setC3(0)
@@ -124,7 +125,7 @@ export default function CreatePost() {
 
                         <button className={styles.catbtn}
                             onClick={() => {
-                                const count = 0
+                                let count = 0
                                 count++
                                 if (Number.isInteger(count / 2)) {
                                     setC4(0)
@@ -136,7 +137,7 @@ export default function CreatePost() {
 
                         <button className={styles.catbtn}
                             onClick={() => {
-                                const count = 0
+                                let count = 0
                                 count++
                                 if (Number.isInteger(count / 2)) {
                                     setC5(0)
@@ -148,7 +149,7 @@ export default function CreatePost() {
 
                         <button className={styles.catbtn}
                             onClick={() => {
-                                const count = 0
+                                let count = 0
                                 count++
                                 if (Number.isInteger(count / 2)) {
                                     setC6(0)
@@ -160,7 +161,7 @@ export default function CreatePost() {
 
                         <button className={styles.catbtn}
                             onClick={() => {
-                                const count = 0
+                                let count = 0
                                 count++
                                 if (Number.isInteger(count / 2)) {
                                     setC7(0)
@@ -172,7 +173,7 @@ export default function CreatePost() {
 
                         <button className={styles.catbtn}
                             onClick={() => {
-                                const count = 0
+                                let count = 0
                                 count++
                                 if (Number.isInteger(count / 2)) {
                                     setC8(0)
