@@ -25,7 +25,16 @@
   align-items: center;
 }
 
-/* mainright */
+.maininsd {
+  display: flex;
+  width: 100vw;
+  height: 82vh;
+  align-items: center;
+}
+
+/* mainrcontent */
+
+
 
 @media screen and (min-width: 1220px) {
   .mainright {
@@ -37,6 +46,19 @@
     justify-items: center;
     display: flex;
     top: 50px;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+
+  .maindownleft {
+    position: relative;
+    width: 120vw;
+    padding: 20px;
+    height: 82vh;
+    /* right: 90px; */
+    justify-items: center;
+    display: flex;
+    top: 60px;
     gap: 20px;
     flex-wrap: wrap;
   }
@@ -55,6 +77,19 @@
     gap: 20px;
     flex-wrap: wrap;
   }
+
+  .maindownleft {
+    position: relative;
+    width: 145vw;
+    padding: 20px;
+    height: 82vh;
+    /* right: 65px; */
+    justify-items: center;
+    display: flex;
+    top: 50px;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
 }
 
 
@@ -62,6 +97,7 @@
 
 
 @media screen and (min-width: 1220px) {
+
   .box1 {
     /* background-color: #8c52ff; */
     /* opacity: 0; */
@@ -130,32 +166,58 @@
     width: 20vw;
     height: 30.3vh;
   }
+
+  .boxd1 {
+    margin-left: 50px;
+    width: 23vw;
+    height: 30vh;
+    position: static;
+  }
+
+  .bd1bg {
+    object-fit: cover;
+    width: 23vw;
+    height: 30vh;
+    opacity: 0.91;
+  }
+
+  .boxd2 {
+    width: 30vw;
+    height: 30vh;
+    position: static;
+  }
+
+  .bd2bg {
+    object-fit: cover;
+    width: 30vw;
+    height: 30vh;
+  }
 }
 
 @media screen and (max-width: 1220px) and (min-width: 900px) {
   .box1 {
-    background-color: #8c52ff;
+    /* background-color: #8c52ff; */
     width: 19vw;
     height: 24vh;
     position: static;
   }
 
   .box2 {
-    background-color: #752ffe;
+    /* background-color: #752ffe; */
     width: 25vw;
     height: 24vh;
     position: static;
   }
 
   .box3 {
-    background-color: #8c52ff;
+    /* background-color: #8c52ff; */
     width: 21vw;
     height: 49vh;
     position: static;
   }
 
   .box4 {
-    background-color: #752ffe;
+    /* background-color: #752ffe; */
     width: 26vw;
     height: 23vh;
     position: relative;
@@ -164,7 +226,7 @@
   }
 
   .box5 {
-    background-color: #8c52ff;
+    /* background-color: #8c52ff; */
     width: 18vw;
     height: 23vh;
     position: relative;
@@ -200,10 +262,38 @@
     width: 18vw;
     height: 23vh;
   }
+
+  .boxd1 {
+    margin-top: -69px;
+    margin-left: 40px;
+    width: 21vw;
+    height: 26vh;
+    position: static;
+  }
+
+  .bd1bg {
+    object-fit: cover;
+    width: 21vw;
+    height: 26vh;
+    opacity: 0.92;
+  }
+
+  .boxd2 {
+    width: 28vw;
+    height: 26vh;
+    position: static;
+  }
+
+  .bd2bg {
+    object-fit: cover;
+    width: 28vw;
+    height: 26vh;
+    margin-top: -70px;
+  }
 }
 
 
-/* text images */
+/* text */
 
 @media screen and (min-width: 1480px) {
 
@@ -275,6 +365,43 @@
     background-color: transparent;
     color: black;
   }
+
+  .bd1s1 {
+    font-family: 'Caveat Brush';
+    font-size: 70px;
+    font-weight: 600;
+    padding: 20px;
+    padding-top: 13px;
+    padding-left: 28px;
+    background-color: transparent;
+    color: black;
+  }
+
+  .bd2s1 {
+    font-family: 'Caveat Brush';
+    font-size: 70px;
+    font-weight: 600;
+    line-height: 60px;
+    padding: 20px;
+    padding-top: 0px;
+    padding-left: 15px;
+    background-color: transparent;
+    color: rgb(8, 48, 179);
+  }
+
+  .bd2s2 {
+    font-family: 'Caveat Brush';
+    font-size: 70px;
+    font-weight: 600;
+    line-height: 60px;
+    padding: 20px;
+    margin-top: -20px;
+    padding-top: 0px;
+    padding-left: 15px;
+    background-color: transparent;
+    color: rgb(7, 7, 60);
+  }
+
 }
 
 @media screen and (max-width: 1480px) and (min-width: 1260px) {
@@ -344,6 +471,17 @@
     padding: 20px;
     padding-top: 157px;
     padding-left: 78px;
+    background-color: transparent;
+    color: black;
+  }
+
+  .bd1s1 {
+    font-family: 'Caveat Brush';
+    font-size: 64px;
+    font-weight: 600;
+    padding: 20px;
+    padding-top: 10px;
+    padding-left: 28px;
     background-color: transparent;
     color: black;
   }
@@ -423,6 +561,17 @@
     line-height: 60px;
   }
 
+  .bd1s1 {
+    font-family: 'Caveat Brush';
+    font-size: 54px;
+    font-weight: 600;
+    padding: 20px;
+    padding-top: 10px;
+    padding-left: 28px;
+    background-color: transparent;
+    color: black;
+  }
+
 
 }
 
@@ -498,6 +647,18 @@
     background-color: transparent;
     color: black;
   }
+
+  .bd1s1 {
+    font-family: 'Caveat Brush';
+    font-size: 44px;
+    font-weight: 600;
+    line-height: 45px;
+    padding: 20px;
+    padding-top: 13px;
+    padding-left: 28px;
+    background-color: transparent;
+    color: black;
+  }
 }
 
 
@@ -521,8 +682,24 @@
     color: #004aad;
     font-size: 35;
   }
-}
 
+  .maindownright {
+    position: relative;
+    margin: -50px;
+    bottom: 20px;
+    /* top: 27vh; */
+    width: 700px;
+    height: 15vw;
+    left: -50px;
+    font-family: 'Bungee';
+    transform: rotate(90deg);
+    display: flex;
+    align-items: center;
+    justify-items: center;
+    color: #004aad;
+    font-size: 35;
+  }
+}
 
 @media screen and (max-width: 1200px) and (min-width: 785px) {
   .mainleft {
@@ -535,6 +712,23 @@
     left: -50px;
     font-family: 'Bungee';
     transform: rotate(270deg);
+    display: flex;
+    align-items: center;
+    justify-items: center;
+    color: #004aad;
+    font-size: 35;
+  }
+
+  .maindownright {
+    position: relative;
+    margin: -50px;
+    bottom: 100px;
+    /* top: 27vh; */
+    width: 1000px;
+    height: 15vw;
+    left: 30px;
+    font-family: 'Bungee';
+    transform: rotate(90deg);
     display: flex;
     align-items: center;
     justify-items: center;
@@ -562,10 +756,24 @@
   }
 }
 
-.partition {
-  width: 100vw;
-  height: 6px;
-  background-color: black;
+/* partition  */
+
+@media screen and (min-width: 1200px) {
+  .partition {
+    width: 100vw;
+    height: 6px;
+    background-color: black;
+    top: -20px;
+  }
+}
+
+@media screen and (max-width: 1200px) and (min-width: 900px) {
+  .partition {
+    width: 100vw;
+    height: 6px;
+    background-color: black;
+    top: -120px;
+  }
 }
 
 .linka {
