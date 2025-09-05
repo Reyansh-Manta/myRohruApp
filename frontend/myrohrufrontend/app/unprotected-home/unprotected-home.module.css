@@ -39,7 +39,6 @@
     top: 50px;
     gap: 20px;
     flex-wrap: wrap;
-
   }
 }
 
@@ -86,7 +85,7 @@
   }
 
   .box4 {
-    background-color: #752ffe;
+    /* background-color: #752ffe; */
     width: 27vw;
     height: 30.3vh;
     position: relative;
@@ -99,7 +98,6 @@
     width: 20vw;
     height: 30.3vh;
     position: relative;
-    /* top: -300px; */
     top: -32.6vh;
   }
 
@@ -109,10 +107,28 @@
     height: 27vh;
   }
 
+  .b2bg {
+    object-fit: cover;
+    width: 27vw;
+    height: 27vh;
+  }
+
   .b3bg {
     object-fit: cover;
     width: 20vw;
     height: 60vh;
+  }
+
+  .b4bg {
+    object-fit: cover;
+    width: 27vw;
+    height: 30.3vh;
+  }
+
+  .b5bg {
+    object-fit: cover;
+    width: 20vw;
+    height: 30.3vh;
   }
 }
 
@@ -161,10 +177,28 @@
     height: 24vh;
   }
 
+  .b2bg {
+    object-fit: cover;
+    width: 25vw;
+    height: 24vh;
+  }
+
   .b3bg {
     object-fit: cover;
     width: 21vw;
     height: 49vh;
+  }
+
+  .b4bg {
+    object-fit: cover;
+    width: 26vw;
+    height: 23vh;
+  }
+
+  .b5bg {
+    object-fit: cover;
+    width: 18vw;
+    height: 23vh;
   }
 }
 
@@ -178,19 +212,66 @@
     font-size: 64px;
     font-weight: 580;
     padding: 20px;
-    padding-top: 37px;
+    padding-top: 20px;
     padding-left: 35px;
     background-color: transparent;
     color: #004aad;
   }
 
+  .b2s1 {
+    font-family: 'Caveat Brush';
+    font-size: 70px;
+    font-weight: 599;
+    line-height: 60px;
+    padding: 20px;
+    padding-top: 0px;
+    padding-left: 15px;
+    background-color: transparent;
+    color: rgb(8, 48, 179);
+  }
+
+  .b2s2 {
+    font-family: 'Caveat Brush';
+    font-size: 70px;
+    font-weight: 599;
+    line-height: 60px;
+    padding: 20px;
+    padding-top: 0px;
+    padding-left: 15px;
+    background-color: transparent;
+    color: black;
+  }
+
   .b3s1 {
     font-family: 'Caveat Brush';
-    font-size: 64px;
+    font-size: 70px;
     font-weight: 580;
     padding: 20px;
     padding-top: 37px;
     padding-left: 35px;
+    background-color: transparent;
+    color: black;
+  }
+
+  .b4s1 {
+    font-family: 'Caveat Brush';
+    font-size: 70px;
+    font-weight: 599;
+    padding: 20px;
+    padding-top: 13px;
+    padding-left: 28px;
+    background-color: transparent;
+    color: rgb(20, 2, 122);
+    line-height: 60px;
+  }
+
+  .b5s1 {
+    font-family: 'Caveat Brush';
+    font-size: 70px;
+    font-weight: 599;
+    padding: 20px;
+    padding-top: 167px;
+    padding-left: 88px;
     background-color: transparent;
     color: black;
   }
@@ -203,19 +284,66 @@
     font-size: 54px;
     font-weight: 580;
     padding: 20px;
-    padding-top: 33px;
+    padding-top: 26px;
     padding-left: 28px;
     background-color: transparent;
     color: #004aad;
   }
 
+  .b2s1 {
+    font-family: 'Caveat Brush';
+    font-size: 59px;
+    font-weight: 599;
+    line-height: 40px;
+    padding: 20px;
+    padding-top: 2px;
+    padding-left: 14px;
+    background-color: transparent;
+    color: rgb(8, 48, 179);
+  }
+
+  .b2s2 {
+    font-family: 'Caveat Brush';
+    font-size: 59px;
+    font-weight: 599;
+    line-height: 60px;
+    padding: 20px;
+    padding-top: 0px;
+    padding-left: 14px;
+    background-color: transparent;
+    color: black;
+  }
+
   .b3s1 {
     font-family: 'Caveat Brush';
-    font-size: 54px;
+    font-size: 64px;
     font-weight: 580;
     padding: 20px;
     padding-top: 33px;
     padding-left: 28px;
+    background-color: transparent;
+    color: black;
+  }
+
+  .b4s1 {
+    font-family: 'Caveat Brush';
+    font-size: 64px;
+    font-weight: 599;
+    padding: 20px;
+    padding-top: 10px;
+    padding-left: 28px;
+    background-color: transparent;
+    color: rgb(20, 2, 122);
+    line-height: 60px;
+  }
+
+  .b5s1 {
+    font-family: 'Caveat Brush';
+    font-size: 64px;
+    font-weight: 599;
+    padding: 20px;
+    padding-top: 157px;
+    padding-left: 78px;
     background-color: transparent;
     color: black;
   }
@@ -236,6 +364,65 @@
     color: #004aad;
   }
 
+  .b2s1 {
+    font-family: 'Caveat Brush';
+    font-size: 54px;
+    font-weight: 599;
+    padding: 20px;
+    padding-top: 0px;
+    padding-left: 4px;
+    background-color: transparent;
+    color: rgb(8, 48, 179);
+    line-height: 60px;
+  }
+
+  .b2s2 {
+    font-family: 'Caveat Brush';
+    font-size: 54px;
+    font-weight: 599;
+    padding: 20px;
+    padding-top: 0px;
+    padding-left: 6px;
+    background-color: transparent;
+    color: black;
+    line-height: 30px;
+  }
+
+  .b3s1 {
+    font-family: 'Caveat Brush';
+    font-size: 54px;
+    font-weight: 580;
+    padding: 20px;
+    padding-top: 33px;
+    padding-left: 28px;
+    background-color: transparent;
+    color: black;
+  }
+
+  .b4s1 {
+    font-family: 'Caveat Brush';
+    font-size: 54px;
+    font-weight: 599;
+    padding: 20px;
+    padding-top: 33px;
+    padding-left: 28px;
+    background-color: transparent;
+    color: rgb(20, 2, 122);
+    line-height: 60px;
+  }
+
+  .b5s1 {
+    font-family: 'Caveat Brush';
+    font-size: 54px;
+    font-weight: 599;
+    padding: 20px;
+    padding-top: 163px;
+    padding-left: 28px;
+    background-color: transparent;
+    color: black;
+    line-height: 60px;
+  }
+
 
 }
 
@@ -250,11 +437,67 @@
     line-height: 40px;
     padding-left: 15px;
     background-color: transparent;
-    /* background-color: #8c52ff; */
     color: #004aad;
   }
 
+  .b2s1 {
+    font-family: 'Caveat Brush';
+    font-size: 44px;
+    font-weight: 599;
+    line-height: 10px;
+    padding: 20px;
+    padding-top: 20px;
+    padding-left: 8px;
+    background-color: transparent;
+    color: rgb(8, 48, 179);
+  }
 
+  .b2s2 {
+    font-family: 'Caveat Brush';
+    font-size: 39px;
+    font-weight: 80px;
+    line-height: 20px;
+    padding: 20px;
+    padding-top: 30px;
+    padding-left: 8px;
+    background-color: transparent;
+    color: black;
+  }
+
+  .b3s1 {
+    font-family: 'Caveat Brush';
+    font-size: 44px;
+    font-weight: 580;
+    padding: 20px;
+    padding-top: 33px;
+    padding-left: 28px;
+    background-color: transparent;
+    color: black;
+  }
+
+  .b4s1 {
+    font-family: 'Caveat Brush';
+    font-size: 44px;
+    font-weight: 600;
+    line-height: 45px;
+    padding: 20px;
+    padding-top: 13px;
+    padding-left: 28px;
+    background-color: transparent;
+    color: rgb(20, 2, 122);
+  }
+
+  .b5s1 {
+    font-family: 'Caveat Brush';
+    font-size: 44px;
+    font-weight: 600;
+    line-height: 40px;
+    padding: 20px;
+    padding-top: 139px;
+    padding-left: 28px;
+    background-color: transparent;
+    color: black;
+  }
 }
 
 
@@ -317,4 +560,16 @@
     color: #004aad;
     font-size: 20;
   }
+}
+
+.partition {
+  width: 100vw;
+  height: 6px;
+  background-color: black;
+}
+
+.linka {
+  text-decoration: none;
+  position: relative;
+  object-fit: cover;
 }

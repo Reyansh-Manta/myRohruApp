@@ -27,35 +27,51 @@ export default function UnprotectedHome() {
                     <div className={styles.mainleft}>From Rohru? {"\u00A0"}{"\u00A0"}{"\u00A0"}{"\u00A0"}{"\u00A0"}{"\u00A0"}{"\u00A0"}{"\u00A0"}{"\u00A0"}{"\u00A0"}{"\u00A0"}{"\u00A0"}{"\u00A0"}{"\u00A0"}Explore these</div>
                     <div className={styles.mainright}>
 
-                        <div className={styles.box1}>
-                            <img src="/saru.webp" alt="" className={styles.b1bg} style={{ zIndex: '0', position: 'absolute', objectFit: 'cover' }} />
-                            <div style={{ zIndex: '1', position:'relative', backgroundColor: 'transparent' }}>
-                                <p className={styles.b1s1} style={{ color: '#004aad' }}>Local News</p>
+                            <div className={styles.box1}>
+                        <a href="/local-feed" className={styles.linka}>
+                                <img src="/saru.webp" alt="" className={styles.b1bg} style={{ zIndex: '0', position: 'absolute', objectFit: 'cover' }} />
+                                <div style={{ zIndex: '1', position: 'relative', backgroundColor: 'transparent' }}>
+                                    <p className={styles.b1s1} style={{ color: '#004aad' }}>Local News</p>
+                                </div>
+                        </a>
                             </div>
-                        </div>
-
-                        <div className={styles.box2}>
-
-                        </div>
-
-                        <div className={styles.box3}>
-                            <img src="/apple.jpg" alt="" className={styles.b3bg} style={{ zIndex: '0', position: 'absolute', objectFit: 'cover' }} />
-                            <div style={{ zIndex: '1', position:'relative', backgroundColor: 'transparent' }}>
-                                <p className={styles.b3s1} style={{ color: '#004aad' }}>Orchards</p>
+                            <div className={styles.box2}>
+                        <a href="/announcements" className={styles.linka}>
+                                <img src="/b2.jpg" alt="" className={styles.b2bg} style={{ zIndex: '0', position: 'absolute', objectFit: 'cover' }} />
+                                <div style={{ zIndex: '1', position: 'relative', backgroundColor: 'transparent' }}>
+                                    <p className={styles.b2s1} style={{}}>General</p>
+                                    <p className={styles.b2s2} style={{}}>Announcements</p>
+                                </div>
+                        </a>
                             </div>
-                        </div>
-
-                        <div className={styles.box4}>
-
-                        </div>
-
-                        <div className={styles.box5}>
-
-                        </div>
-
+                            <div className={styles.box3}>
+                        <a href="/orchards" className={styles.linka}>
+                                <img src="/apple.jpg" alt="" className={styles.b3bg} style={{ zIndex: '0', position: 'absolute', objectFit: 'cover' }} />
+                                <div style={{ zIndex: '1', position: 'relative', backgroundColor: 'transparent' }}>
+                                    <p className={styles.b3s1} style={{}}>Orchards</p>
+                                </div>
+                        </a>
+                            </div>
+                            <div className={styles.box4}>
+                        <a href="/weather-roads" className={styles.linka}>
+                                <img src="/b4.jpg" alt="" className={styles.b4bg} style={{ zIndex: '0', position: 'absolute', objectFit: 'cover' }} />
+                                <div style={{ zIndex: '1', position: 'relative', backgroundColor: 'transparent' }}>
+                                    <p className={styles.b4s1} style={{}}>Weather and Roads</p>
+                                </div>
+                        </a>
+                            </div>
+                            <div className={styles.box5}>
+                        <a href="/events" className={styles.linka}>
+                                <img src="/b5.jpg" alt="" className={styles.b5bg} style={{ zIndex: '0', position: 'absolute', objectFit: 'cover' }} />
+                                <div style={{ zIndex: '1', position: 'relative', backgroundColor: 'transparent' }}>
+                                    <p className={styles.b5s1} style={{}}>Events</p>
+                                </div>
+                        </a>
+                            </div>
                     </div>
                 </div>
             </div>
+            <div className={styles.partition}></div>
         </>
     )
 }
