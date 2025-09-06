@@ -1,70 +1,1393 @@
-.cute {
+@import url('https://fonts.googleapis.com/css2?family=Bungee&family=Carter+One&family=Caveat+Brush&display=swap');
+
+.caveat-brush-regular {
+  font-family: "Caveat Brush", cursive;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.carter-one-regular {
+  font-family: "Carter One", system-ui;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.bungee-regular {
+  font-family: "Bungee", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.mainins {
   display: flex;
-  justify-content: center;
+  width: 100vw;
+  height: 82vh;
   align-items: center;
 }
 
-.main{
-  background-color: rgb(234, 223, 210);
-}
-
-.bg {
-  z-index: -1;
-  position: absolute;
-}
-
-.up {
-  margin: 20px;
-  border-bottom: 5px solid black;
-  /* display: flex; */
-  /* justify-content: space-between; */
-  /* align-items: center; */
-}
-
-.up1 {
+.maininsd {
   display: flex;
-  /* justify-content: space-between; */
+  width: 100vw;
+  height: 82vh;
   align-items: center;
-  gap: 40px;
+  margin-left: 100px;
 }
 
-.cards {
-  /* border: 2px solid black; */
-  border-radius: 15px;
+/* mainrcontent */
+
+
+
+@media screen and (min-width: 1220px) {
+  .mainright {
+    position: relative;
+    width: 120vw;
+    padding: 20px;
+    height: 82vh;
+    right: 90px;
+    justify-items: center;
+    display: flex;
+    top: 50px;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+
+  .maindownleft {
+    position: relative;
+    width: 120vw;
+    padding: 20px;
+    height: 82vh;
+    /* right: 90px; */
+    justify-items: center;
+    display: flex;
+    top: 60px;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
 }
 
-.up2 {
-  margin: 20px;
-  padding-left: 15vw;
-  padding-right: 15vw;
-  display: flex;
-  /* justify-content: space-between; */
-  align-items: center;
-  gap: 40px;
+@media screen and (max-width: 1220px) and (min-width: 900px) {
+  .mainright {
+    position: relative;
+    width: 145vw;
+    padding: 20px;
+    height: 82vh;
+    right: 65px;
+    justify-items: center;
+    display: flex;
+    top: 50px;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+
+  .maindownleft {
+    position: relative;
+    width: 145vw;
+    padding: 20px;
+    height: 82vh;
+    /* right: 65px; */
+    justify-items: center;
+    display: flex;
+    top: 50px;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
 }
 
-.sign{
-  width: 20vw;
-  margin-left: 50px;
-  font-size: 35px;
-  font-weight: 900;
+@media screen and (max-width: 900px) {
+  .mainright {
+    position: relative;
+    width: 1120vw;
+    padding: 0px;
+    height: 82vh;
+    right: 30px;
+    justify-items: center;
+    display: flex;
+    top: 50px;
+    gap: 7px;
+    flex-wrap: wrap;
+  }
+
+  .maindownleft {
+    position: relative;
+    width: 85vw;
+    padding: 0px;
+    height: 82vh;
+    /* right: 65px; */
+    left: -80px;
+    justify-items: center;
+    display: flex;
+    top: 50px;
+    gap: 7px;
+    flex-wrap: wrap;
+  }
 }
 
-.down{
-  margin: 20px;
+
+/* boxes and backgrounds */
+
+
+@media screen and (min-width: 1220px) {
+
+  .box1 {
+    /* background-color: #8c52ff; */
+    /* opacity: 0; */
+    width: 20vw;
+    height: 27vh;
+    position: static;
+  }
+
+  .box2 {
+    background-color: #752ffe;
+    width: 27vw;
+    height: 27vh;
+    position: static;
+  }
+
+  .box3 {
+    background-color: #752ffe;
+    width: 20vw;
+    height: 60vh;
+    position: static;
+  }
+
+  .box4 {
+    /* background-color: #752ffe; */
+    width: 27vw;
+    height: 30.3vh;
+    position: relative;
+    /* top: -300px; */
+    top: -32.6vh;
+  }
+
+  .box5 {
+    background-color: #8c52ff;
+    width: 20vw;
+    height: 30.3vh;
+    position: relative;
+    top: -32.6vh;
+  }
+
+  .b1bg {
+    object-fit: cover;
+    width: 20vw;
+    height: 27vh;
+  }
+
+  .b2bg {
+    object-fit: cover;
+    width: 27vw;
+    height: 27vh;
+  }
+
+  .b3bg {
+    object-fit: cover;
+    width: 20vw;
+    height: 60vh;
+  }
+
+  .b4bg {
+    object-fit: cover;
+    width: 27vw;
+    height: 30.3vh;
+  }
+
+  .b5bg {
+    object-fit: cover;
+    width: 20vw;
+    height: 30.3vh;
+  }
+
+  .boxd1 {
+    margin-left: 50px;
+    width: 23vw;
+    height: 30vh;
+    position: static;
+  }
+
+  .bd1bg {
+    object-fit: cover;
+    width: 23vw;
+    height: 30vh;
+    opacity: 0.91;
+  }
+
+  .boxd2 {
+    width: 30vw;
+    height: 30vh;
+    position: static;
+  }
+
+  .bd2bg {
+    object-fit: cover;
+    width: 30vw;
+    height: 30vh;
+  }
+
+  .boxd3 {
+    width: 27vw;
+    height: 30.3vh;
+    position: relative;
+    top: -10vh;
+    left: 50px;
+  }
+
+  .bd3bg {
+    object-fit: cover;
+    width: 27vw;
+    height: 30.3vh;
+  }
+
+  .boxd4 {
+    width: 27vw;
+    height: 30.3vh;
+    position: relative;
+    top: -10vh;
+    left: 50px;
+  }
+
+  .bd4bg {
+    object-fit: cover;
+    width: 27vw;
+    height: 30.3vh;
+    opacity: 0.89;
+  }
 }
 
-.down1{
-  display: flex;
-  align-items: center;
-  gap: 40px;
-  margin-left: 15vw;
+@media screen and (max-width: 1220px) and (min-width: 900px) {
+
+  .box1 {
+    /* background-color: #8c52ff; */
+    width: 19vw;
+    height: 24vh;
+    position: static;
+  }
+
+  .box2 {
+    /* background-color: #752ffe; */
+    width: 25vw;
+    height: 24vh;
+    position: static;
+  }
+
+  .box3 {
+    /* background-color: #8c52ff; */
+    width: 21vw;
+    height: 49vh;
+    position: static;
+  }
+
+  .box4 {
+    /* background-color: #752ffe; */
+    width: 26vw;
+    height: 23vh;
+    position: relative;
+    /* top: -268px; */
+    top: -29vh;
+  }
+
+  .box5 {
+    /* background-color: #8c52ff; */
+    width: 18vw;
+    height: 23vh;
+    position: relative;
+    top: -29vh;
+  }
+
+  .b1bg {
+    object-fit: cover;
+    width: 19vw;
+    height: 24vh;
+  }
+
+  .b2bg {
+    object-fit: cover;
+    width: 25vw;
+    height: 24vh;
+  }
+
+  .b3bg {
+    object-fit: cover;
+    width: 21vw;
+    height: 49vh;
+  }
+
+  .b4bg {
+    object-fit: cover;
+    width: 26vw;
+    height: 23vh;
+  }
+
+  .b5bg {
+    object-fit: cover;
+    width: 18vw;
+    height: 23vh;
+  }
+
+  .boxd1 {
+    margin-top: -69px;
+    margin-left: 40px;
+    width: 22vw;
+    height: 26vh;
+    position: static;
+  }
+
+  .bd1bg {
+    object-fit: cover;
+    width: 22vw;
+    height: 26vh;
+    opacity: 0.92;
+  }
+
+  .boxd2 {
+    width: 31vw;
+    height: 26vh;
+    position: static;
+  }
+
+  .bd2bg {
+    object-fit: cover;
+    width: 31vw;
+    height: 26vh;
+    margin-top: -70px;
+  }
+
+  .boxd3 {
+    width: 26vw;
+    height: 23vh;
+    position: relative;
+    top: -21vh;
+    left: 40px;
+  }
+
+  .bd3bg {
+    object-fit: cover;
+    width: 26vw;
+    height: 23vh;
+  }
+
+  .boxd4 {
+    width: 27vw;
+    height: 23vh;
+    position: relative;
+    top: -21vh;
+    left: 40px;
+  }
+
+  .bd4bg {
+    object-fit: cover;
+    width: 27vw;
+    height: 23vh;
+    opacity: 0.89;
+  }
 }
 
-.down2{
-  margin: 20px;
-  display: flex;
-  align-items: center;
-  gap: 40px;
-  margin-left: 18.5vw;
+@media screen and (max-width: 900px) {
+
+  .box1 {
+    /* background-color: #8c52ff; */
+    width: 19vw;
+    height: 24vh;
+    position: static;
+  }
+
+  .box2 {
+    /* background-color: #752ffe; */
+    width: 25vw;
+    height: 24vh;
+    position: static;
+  }
+
+  .box3 {
+    /* background-color: #8c52ff; */
+    width: 13.1vw;
+    height: 48vh;
+    position: static;
+  }
+
+  .box4 {
+    /* background-color: #752ffe; */
+    width: 26vw;
+    height: 23vh;
+    position: relative;
+    /* top: -268px; */
+    top: -29vh;
+  }
+
+  .box5 {
+    /* background-color: #8c52ff; */
+    width: 19vw;
+    height: 23vh;
+    position: relative;
+    top: -29vh;
+  }
+
+  .b1bg {
+    object-fit: cover;
+    width: 19vw;
+    height: 24vh;
+  }
+
+  .b2bg {
+    object-fit: cover;
+    width: 25vw;
+    height: 24vh;
+  }
+
+  .b3bg {
+    object-fit: cover;
+    width: 13.1vw;
+    height: 48vh;
+  }
+
+  .b4bg {
+    object-fit: cover;
+    width: 26vw;
+    height: 23vh;
+  }
+
+  .b5bg {
+    object-fit: cover;
+    width: 19vw;
+    height: 23vh;
+  }
+
+  .boxd1 {
+    margin-top: -69px;
+    margin-left: 40px;
+    width: 22vw;
+    height: 26vh;
+    position: static;
+  }
+
+  .bd1bg {
+    object-fit: cover;
+    width: 22vw;
+    height: 26vh;
+    opacity: 0.92;
+  }
+
+  .boxd2 {
+    width: 31vw;
+    height: 26vh;
+    position: static;
+  }
+
+  .bd2bg {
+    object-fit: cover;
+    width: 31vw;
+    height: 26vh;
+    margin-top: -70px;
+  }
+
+  .boxd3 {
+    width: 26vw;
+    height: 23vh;
+    position: relative;
+    top: -21vh;
+    left: 40px;
+  }
+
+  .bd3bg {
+    object-fit: cover;
+    width: 26vw;
+    height: 23vh;
+  }
+
+  .boxd4 {
+    width: 27vw;
+    height: 23vh;
+    position: relative;
+    top: -21vh;
+    left: 40px;
+  }
+
+  .bd4bg {
+    object-fit: cover;
+    width: 27vw;
+    height: 23vh;
+    opacity: 0.89;
+  }
+}
+
+
+/* text */
+
+
+@media screen and (min-width: 1480px) {
+
+  .b1s1 {
+    font-family: 'Caveat Brush';
+    font-size: 64px;
+    font-weight: 580;
+    padding: 20px;
+    padding-top: 20px;
+    padding-left: 35px;
+    background-color: transparent;
+    color: #004aad;
+  }
+
+  .b2s1 {
+    font-family: 'Caveat Brush';
+    font-size: 70px;
+    font-weight: 599;
+    line-height: 60px;
+    padding: 20px;
+    padding-top: 0px;
+    padding-left: 15px;
+    background-color: transparent;
+    color: rgb(8, 48, 179);
+  }
+
+  .b2s2 {
+    font-family: 'Caveat Brush';
+    font-size: 70px;
+    font-weight: 599;
+    line-height: 60px;
+    padding: 20px;
+    padding-top: 0px;
+    padding-left: 15px;
+    background-color: transparent;
+    color: black;
+  }
+
+  .b3s1 {
+    font-family: 'Caveat Brush';
+    font-size: 70px;
+    font-weight: 580;
+    padding: 20px;
+    padding-top: 37px;
+    padding-left: 35px;
+    background-color: transparent;
+    color: black;
+  }
+
+  .b4s1 {
+    font-family: 'Caveat Brush';
+    font-size: 70px;
+    font-weight: 599;
+    padding: 20px;
+    padding-top: 13px;
+    padding-left: 28px;
+    background-color: transparent;
+    color: rgb(20, 2, 122);
+    line-height: 60px;
+  }
+
+  .b5s1 {
+    font-family: 'Caveat Brush';
+    font-size: 70px;
+    font-weight: 599;
+    padding: 20px;
+    padding-top: 167px;
+    padding-left: 88px;
+    background-color: transparent;
+    color: black;
+  }
+
+  .bd1s1 {
+    font-family: 'Caveat Brush';
+    font-size: 70px;
+    font-weight: 600;
+    padding: 20px;
+    padding-top: 13px;
+    padding-left: 28px;
+    background-color: transparent;
+    color: black;
+  }
+
+  .bd2s1 {
+    font-family: 'Caveat Brush';
+    font-size: 70px;
+    font-weight: 599;
+    line-height: 60px;
+    padding: 20px;
+    padding-top: 0px;
+    padding-left: 15px;
+    background-color: transparent;
+    color: rgb(8, 48, 179);
+  }
+
+  .bd2s2 {
+    font-family: 'Caveat Brush';
+    font-size: 70px;
+    font-weight: 599;
+    line-height: 60px;
+    padding: 20px;
+    margin-top: -20px;
+    padding-top: 0px;
+    padding-left: 15px;
+    background-color: transparent;
+    color: rgb(7, 7, 60);
+  }
+
+  .bd3s1 {
+    font-family: 'Caveat Brush';
+    font-size: 70px;
+    font-weight: 600;
+    line-height: 60px;
+    padding: 20px;
+    padding-top: 20px;
+    padding-left: 25px;
+    background-color: transparent;
+    color: rgb(8, 48, 179);
+  }
+
+  .bd4s1 {
+    font-family: 'Caveat Brush';
+    font-size: 90px;
+    font-weight: 599;
+    line-height: 60px;
+    padding: 20px;
+    padding-top: 20px;
+    padding-left: 25px;
+    background-color: transparent;
+    color: black;
+  }
+
+}
+
+@media screen and (max-width: 1480px) and (min-width: 1260px) {
+
+  .b1s1 {
+    font-family: 'Caveat Brush';
+    font-size: 54px;
+    font-weight: 580;
+    padding: 20px;
+    padding-top: 26px;
+    padding-left: 28px;
+    background-color: transparent;
+    color: #004aad;
+  }
+
+  .b2s1 {
+    font-family: 'Caveat Brush';
+    font-size: 59px;
+    font-weight: 599;
+    line-height: 40px;
+    padding: 20px;
+    padding-top: 2px;
+    padding-left: 14px;
+    background-color: transparent;
+    color: rgb(8, 48, 179);
+  }
+
+  .b2s2 {
+    font-family: 'Caveat Brush';
+    font-size: 59px;
+    font-weight: 599;
+    line-height: 60px;
+    padding: 20px;
+    padding-top: 0px;
+    padding-left: 14px;
+    background-color: transparent;
+    color: black;
+  }
+
+  .b3s1 {
+    font-family: 'Caveat Brush';
+    font-size: 64px;
+    font-weight: 580;
+    padding: 20px;
+    padding-top: 33px;
+    padding-left: 28px;
+    background-color: transparent;
+    color: black;
+  }
+
+  .b4s1 {
+    font-family: 'Caveat Brush';
+    font-size: 64px;
+    font-weight: 599;
+    padding: 20px;
+    padding-top: 10px;
+    padding-left: 28px;
+    background-color: transparent;
+    color: rgb(20, 2, 122);
+    line-height: 60px;
+  }
+
+  .b5s1 {
+    font-family: 'Caveat Brush';
+    font-size: 64px;
+    font-weight: 599;
+    padding: 20px;
+    padding-top: 165px;
+    /* padding-bottom: 150px; */
+    padding-left: 78px;
+    background-color: transparent;
+    color: black;
+  }
+
+  .bd1s1 {
+    font-family: 'Caveat Brush';
+    font-size: 64px;
+    font-weight: 600;
+    padding: 20px;
+    padding-top: 10px;
+    padding-left: 28px;
+    background-color: transparent;
+    color: black;
+  }
+
+  .bd2s1 {
+    font-family: 'Caveat Brush';
+    font-size: 59px;
+    font-weight: 599;
+    line-height: 40px;
+    padding: 20px;
+    padding-top: 2px;
+    padding-left: 14px;
+    background-color: transparent;
+    color: rgb(8, 48, 179);
+  }
+
+  .bd2s2 {
+    font-family: 'Caveat Brush';
+    font-size: 59px;
+    font-weight: 599;
+    line-height: 60px;
+    padding: 20px;
+    margin-top: -20px;
+    padding-top: 0px;
+    padding-left: 14px;
+    background-color: transparent;
+    color: rgb(7, 7, 60);
+  }
+
+  .bd3s1 {
+    font-family: 'Caveat Brush';
+    font-size: 59px;
+    font-weight: 600;
+    line-height: 60px;
+    padding: 20px;
+    padding-top: 20px;
+    padding-left: 25px;
+    background-color: transparent;
+    color: rgb(8, 48, 179);
+  }
+
+  .bd4s1 {
+    font-family: 'Caveat Brush';
+    font-size: 60px;
+    font-weight: 599;
+    line-height: 60px;
+    padding: 20px;
+    padding-top: 20px;
+    padding-left: 25px;
+    background-color: transparent;
+    color: black;
+  }
+
+}
+
+@media screen and (max-width: 1260px) and (min-width: 1201px) {
+
+  .b1s1 {
+    font-family: 'Caveat Brush';
+    font-size: 50px;
+    font-weight: 580;
+    padding: 20px;
+    padding-top: 37px;
+    padding-left: 20px;
+    background-color: transparent;
+    /* (removed) background-color: #8c52ff; */
+    color: #004aad;
+  }
+
+  .b2s1 {
+    font-family: 'Caveat Brush';
+    font-size: 54px;
+    font-weight: 599;
+    padding: 20px;
+    padding-top: 0px;
+    padding-left: 4px;
+    background-color: transparent;
+    color: rgb(8, 48, 179);
+    line-height: 60px;
+  }
+
+  .b2s2 {
+    font-family: 'Caveat Brush';
+    font-size: 54px;
+    font-weight: 599;
+    padding: 20px;
+    padding-top: 0px;
+    padding-left: 6px;
+    background-color: transparent;
+    color: black;
+    line-height: 30px;
+  }
+
+  .b3s1 {
+    font-family: 'Caveat Brush';
+    font-size: 54px;
+    font-weight: 580;
+    padding: 20px;
+    padding-top: 33px;
+    padding-left: 28px;
+    background-color: transparent;
+    color: black;
+  }
+
+  .b4s1 {
+    font-family: 'Caveat Brush';
+    font-size: 54px;
+    font-weight: 599;
+    padding: 20px;
+    padding-top: 33px;
+    padding-left: 28px;
+    background-color: transparent;
+    color: rgb(20, 2, 122);
+    line-height: 60px;
+  }
+
+  .b5s1 {
+    font-family: 'Caveat Brush';
+    font-size: 54px;
+    font-weight: 599;
+    padding: 20px;
+    padding-top: 163px;
+    padding-left: 28px;
+    background-color: transparent;
+    color: black;
+    line-height: 60px;
+  }
+
+  .bd1s1 {
+    font-family: 'Caveat Brush';
+    font-size: 54px;
+    font-weight: 600;
+    padding: 20px;
+    padding-top: 10px;
+    padding-left: 28px;
+    background-color: transparent;
+    color: black;
+  }
+
+  .bd2s1 {
+    font-family: 'Caveat Brush';
+    font-size: 54px;
+    font-weight: 600;
+    padding: 20px;
+    padding-top: 0px;
+    padding-left: 4px;
+    background-color: transparent;
+    color: rgb(8, 48, 179);
+    line-height: 60px;
+  }
+
+  .bd2s2 {
+    font-family: 'Caveat Brush';
+    font-size: 54px;
+    font-weight: 600;
+    padding: 20px;
+    margin-top: -40px;
+    padding-top: 0px;
+    padding-left: 6px;
+    background-color: transparent;
+    color: rgb(7, 7, 60);
+  }
+
+  .bd3s1 {
+    font-family: 'Caveat Brush';
+    font-size: 54px;
+    font-weight: 599;
+    padding: 20px;
+    padding-top: 20px;
+    padding-left: 25px;
+    background-color: transparent;
+    color: rgb(8, 48, 179);
+  }
+
+  .bd4s1 {
+    font-family: 'Caveat Brush';
+    font-size: 70px;
+    font-weight: 599;
+    line-height: 60px;
+    padding: 20px;
+    padding-top: 20px;
+    padding-left: 25px;
+    background-color: transparent;
+    color: black;
+  }
+
+}
+
+@media screen and (max-width: 1201px) and (min-width: 900px) {
+
+  .b1s1 {
+    font-family: 'Caveat Brush';
+    font-size: 55px;
+    font-weight: 580;
+    padding: 0px;
+    padding-top: 10px;
+    line-height: 40px;
+    padding-left: 15px;
+    background-color: transparent;
+    color: #004aad;
+  }
+
+  .b2s1 {
+    font-family: 'Caveat Brush';
+    font-size: 44px;
+    font-weight: 599;
+    line-height: 10px;
+    padding: 20px;
+    padding-top: 20px;
+    padding-left: 8px;
+    background-color: transparent;
+    color: rgb(8, 48, 179);
+  }
+
+  .b2s2 {
+    font-family: 'Caveat Brush';
+    font-size: 39px;
+    font-weight: 80px;
+    line-height: 20px;
+    padding: 20px;
+    padding-top: 30px;
+    padding-left: 8px;
+    background-color: transparent;
+    color: black;
+  }
+
+  .b3s1 {
+    font-family: 'Caveat Brush';
+    font-size: 44px;
+    font-weight: 580;
+    padding: 20px;
+    padding-top: 33px;
+    padding-left: 28px;
+    background-color: transparent;
+    color: black;
+  }
+
+  .b4s1 {
+    font-family: 'Caveat Brush';
+    font-size: 44px;
+    font-weight: 600;
+    line-height: 45px;
+    padding: 20px;
+    padding-top: 13px;
+    padding-left: 28px;
+    background-color: transparent;
+    color: rgb(20, 2, 122);
+  }
+
+  .b5s1 {
+    font-family: 'Caveat Brush';
+    font-size: 44px;
+    font-weight: 600;
+    line-height: 40px;
+    padding: 20px;
+    padding-top: 139px;
+    padding-left: 28px;
+    background-color: transparent;
+    color: black;
+  }
+
+  .bd1s1 {
+    font-family: 'Caveat Brush';
+    font-size: 44px;
+    font-weight: 600;
+    line-height: 45px;
+    padding: 20px;
+    padding-top: 13px;
+    padding-left: 28px;
+    background-color: transparent;
+    color: black;
+  }
+
+  .bd2s1 {
+    font-family: 'Caveat Brush';
+    font-size: 49px;
+    font-weight: 599;
+    margin-top: -89px;
+    line-height: 20px;
+    padding: 20px;
+    padding-top: 30px;
+    padding-left: 8px;
+    background-color: transparent;
+    color: rgb(8, 48, 179);
+  }
+
+  .bd2s2 {
+    font-family: 'Caveat Brush';
+    font-size: 49px;
+    font-weight: 599;
+    line-height: 20px;
+    padding: 20px;
+    margin-top: -30px;
+    padding-top: 30px;
+    padding-left: 8px;
+    background-color: transparent;
+    color: rgb(7, 7, 60);
+  }
+
+  .bd3s1 {
+    font-family: 'Caveat Brush';
+    font-size: 44px;
+    font-weight: 600;
+    line-height: 40px;
+    padding: 20px;
+    padding-top: 20px;
+    padding-left: 25px;
+    background-color: transparent;
+    color: rgb(8, 48, 179);
+  }
+
+  .bd4s1 {
+    font-family: 'Caveat Brush';
+    font-size: 60px;
+    font-weight: 599;
+    line-height: 40px;
+    padding: 20px;
+    padding-top: 20px;
+    padding-left: 25px;
+    background-color: transparent;
+    color: black;
+  }
+
+}
+
+@media screen and (max-width: 900px) {
+
+  .b1s1 {
+    font-family: 'Caveat Brush';
+    font-size: 30px;
+    font-weight: 580;
+    padding: 0px;
+    padding-top: 10px;
+    line-height: 23px;
+    padding-left: 5px;
+    background-color: transparent;
+    color: #004aad;
+  }
+
+  .b2s1 {
+    font-family: 'Caveat Brush';
+    font-size: 30px;
+    font-weight: 600;
+    line-height: 10px;
+    padding: 20px;
+    padding-top: 10px;
+    padding-left: 4px;
+    background-color: transparent;
+    color: rgb(8, 48, 179);
+  }
+
+  .b2s2 {
+    font-family: 'Caveat Brush';
+    font-size: 15px;
+    font-weight: 600;
+    line-height: 20px;
+    padding: 20px;
+    margin-top: -15px;
+    padding-top: 0px;
+    padding-left: 5px;
+    background-color: transparent;
+    color: black;
+  }
+
+  .b3s1 {
+    font-family: 'Caveat Brush';
+    font-size: 25px;
+    font-weight: 580;
+    padding: 0px;
+    padding-top: 3px;
+    padding-left: 39px;
+    background-color: transparent;
+    color: black;
+    transform: rotate(90deg);
+  }
+
+  .b4s1 {
+    font-family: 'Caveat Brush';
+    font-size: 27px;
+    font-weight: 600;
+    line-height: 25px;
+    padding: 20px;
+    padding-top: 13px;
+    padding-left: 8px;
+    background-color: transparent;
+    color: rgb(20, 2, 122);
+  }
+
+  .b5s1 {
+    font-family: 'Caveat Brush';
+    font-size: 27px;
+    font-weight: 599;
+    line-height: 40px;
+    padding: 20px;
+    padding-top: 129px;
+    padding-left: 3px;
+    background-color: transparent;
+    color: black;
+  }
+
+  .bd1s1 {
+    font-family: 'Caveat Brush';
+    font-size: 30px;
+    font-weight: 600;
+    line-height: 35px;
+    padding: 20px;
+    padding-top: 13px;
+    padding-left: 10px;
+    background-color: transparent;
+    color: black;
+  }
+
+  .bd2s1 {
+    font-family: 'Caveat Brush';
+    font-size: 24px;
+    font-weight: 600;
+    margin-top: -89px;
+    line-height: 20px;
+    padding: 20px;
+    padding-top: 30px;
+    padding-left: 8px;
+    background-color: transparent;
+    color: rgb(8, 48, 179);
+  }
+
+  .bd2s2 {
+    font-family: 'Caveat Brush';
+    font-size: 30px;
+    font-weight: 600;
+    line-height: 5px;
+    padding: 20px;
+    margin-top: -30px;
+    padding-top: 30px;
+    padding-left: 8px;
+    background-color: transparent;
+    color: rgb(7, 7, 60);
+  }
+
+  .bd3s1 {
+    font-family: 'Caveat Brush';
+    font-size: 28px;
+    font-weight: 600;
+    line-height: 25px;
+    padding: 20px;
+    padding-top: 4px;
+    padding-left: 5px;
+    background-color: transparent;
+    color: rgb(8, 48, 179);
+  }
+
+  .bd4s1 {
+    font-family: 'Caveat Brush';
+    font-size: 25px;
+    font-weight: 600;
+    line-height: 40px;
+    padding: 20px;
+    padding-top: 5px;
+    padding-left: 5px;
+    background-color: transparent;
+    color: black;
+  }
+
+}
+
+
+/* main side text */
+
+
+@media screen and (min-width: 1435px) {
+  .mainleft {
+    position: relative;
+    margin: -50px;
+    bottom: 20px;
+    /* top: 27vh; */
+    width: 700px;
+    height: 15vw;
+    left: -50px;
+    font-family: 'Bungee';
+    transform: rotate(270deg);
+    display: flex;
+    align-items: center;
+    justify-items: center;
+    color: #004aad;
+    font-size: 35;
+  }
+
+  .mainlefts {
+    display: none;
+  }
+
+  .maindownright {
+    position: relative;
+    margin: -50px;
+    bottom: 20px;
+    /* top: 27vh; */
+    width: 1000px;
+    height: 15vw;
+    left: -130px;
+    font-family: 'Bungee';
+    transform: rotate(90deg);
+    display: flex;
+    align-items: center;
+    justify-items: center;
+    color: #004aad;
+    font-size: 45;
+  }
+}
+
+@media screen and (min-width: 1200px) and (max-width: 1435px) {
+  .mainleft {
+    position: relative;
+    margin: -50px;
+    bottom: 20px;
+    /* top: 27vh; */
+    width: 700px;
+    height: 15vw;
+    left: -50px;
+    font-family: 'Bungee';
+    transform: rotate(270deg);
+    display: flex;
+    align-items: center;
+    justify-items: center;
+    color: #004aad;
+    font-size: 35;
+  }
+
+  .mainlefts {
+    display: none;
+  }
+
+  .maindownright {
+    position: relative;
+    margin: -50px;
+    bottom: 20px;
+    /* top: 27vh; */
+    width: 970px;
+    height: 15vw;
+    left: -110px;
+    font-family: 'Bungee';
+    transform: rotate(90deg);
+    display: flex;
+    align-items: center;
+    justify-items: center;
+    color: #004aad;
+    font-size: 39;
+  }
+}
+
+@media screen and (max-width: 1200px) and (min-width: 900px) {
+  .mainleft {
+    position: relative;
+    margin: -50px;
+    bottom: 100px;
+    /* top: 27vh; */
+    width: 700px;
+    height: 15vw;
+    left: -50px;
+    font-family: 'Bungee';
+    transform: rotate(270deg);
+    display: flex;
+    align-items: center;
+    justify-items: center;
+    color: #004aad;
+    font-size: 35;
+  }
+
+  .mainlefts {
+    display: none;
+  }
+
+  .maindownright {
+    position: relative;
+    margin: -50px;
+    bottom: 100px;
+    /* top: 27vh; */
+    width: 1000px;
+    height: 15vw;
+    left: -70px;
+    font-family: 'Bungee';
+    transform: rotate(90deg);
+    display: flex;
+    align-items: center;
+    justify-items: center;
+    color: #004aad;
+    font-size: 35;
+  }
+}
+
+@media screen and (max-width: 900px) {
+
+  .mainleft {
+    display: none;
+  }
+
+  .mainlefts {
+    position: relative;
+    margin: 10px;
+    margin-right: 0px;
+    bottom: 20px;
+    /* top: 27vh; */
+    width: 1978px;
+    height: 0vw;
+    left: -37px;
+    font-family: 'Bungee';
+    transform: rotate(270deg);
+    display: flex;
+    align-items: center;
+    justify-items: center;
+    color: #004aad;
+    font-size: 15px;
+    font-weight: 600;
+  }
+
+  .maindownright {
+    position: relative;
+    margin: -50px;
+    bottom: 100px;
+    /* top: 27vh; */
+    width: 200px;
+    height: 15vw;
+    left: -100px;
+    font-family: 'Bungee';
+    transform: rotate(90deg);
+    display: flex;
+    align-items: center;
+    justify-items: center;
+    color: #004aad;
+    font-size: 15;
+    font-weight: 600;
+  }
+}
+
+/* partition  */
+
+@media screen and (min-width: 1200px) {
+  .partition {
+    width: 100vw;
+    height: 6px;
+    background-color: black;
+    top: -20px;
+  }
+}
+
+@media screen and (max-width: 1200px) and (min-width: 900px) {
+  .partition {
+    width: 100vw;
+    height: 6px;
+    background-color: black;
+    top: -120px;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .partition {
+    width: 100vw;
+    height: 6px;
+    background-color: black;
+    top: -120px;
+  }
+}
+
+.linka {
+  text-decoration: none;
+  position: relative;
+  object-fit: cover;
 }

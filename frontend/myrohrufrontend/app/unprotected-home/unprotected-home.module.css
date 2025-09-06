@@ -65,7 +65,7 @@
   }
 }
 
-@media screen and (max-width: 1220px) {
+@media screen and (max-width: 1220px) and (min-width: 900px) {
   .mainright {
     position: relative;
     width: 145vw;
@@ -89,6 +89,35 @@
     display: flex;
     top: 50px;
     gap: 20px;
+    flex-wrap: wrap;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .mainright {
+    position: relative;
+    width: 1120vw;
+    padding: 0px;
+    height: 82vh;
+    right: 30px;
+    justify-items: center;
+    display: flex;
+    top: 50px;
+    gap: 7px;
+    flex-wrap: wrap;
+  }
+
+  .maindownleft {
+    position: relative;
+    width: 85vw;
+    padding: 0px;
+    height: 82vh;
+    /* right: 65px; */
+    left: -80px;
+    justify-items: center;
+    display: flex;
+    top: 50px;
+    gap: 7px;
     flex-wrap: wrap;
   }
 }
@@ -205,7 +234,7 @@
   .bd3bg {
     object-fit: cover;
     width: 27vw;
-    height: 30.3vh;    
+    height: 30.3vh;
   }
 
   .boxd4 {
@@ -220,7 +249,7 @@
     object-fit: cover;
     width: 27vw;
     height: 30.3vh;
-    opacity: 0.89;    
+    opacity: 0.89;
   }
 }
 
@@ -333,7 +362,7 @@
   .bd3bg {
     object-fit: cover;
     width: 26vw;
-    height: 23vh;    
+    height: 23vh;
   }
 
   .boxd4 {
@@ -347,8 +376,136 @@
   .bd4bg {
     object-fit: cover;
     width: 27vw;
-    height: 23vh;   
-    opacity: 0.89; 
+    height: 23vh;
+    opacity: 0.89;
+  }
+}
+
+@media screen and (max-width: 900px) {
+
+  .box1 {
+    /* background-color: #8c52ff; */
+    width: 19vw;
+    height: 24vh;
+    position: static;
+  }
+
+  .box2 {
+    /* background-color: #752ffe; */
+    width: 25vw;
+    height: 24vh;
+    position: static;
+  }
+
+  .box3 {
+    /* background-color: #8c52ff; */
+    width: 13.1vw;
+    height: 48vh;
+    position: static;
+  }
+
+  .box4 {
+    /* background-color: #752ffe; */
+    width: 26vw;
+    height: 23vh;
+    position: relative;
+    /* top: -268px; */
+    top: -29vh;
+  }
+
+  .box5 {
+    /* background-color: #8c52ff; */
+    width: 19vw;
+    height: 23vh;
+    position: relative;
+    top: -29vh;
+  }
+
+  .b1bg {
+    object-fit: cover;
+    width: 19vw;
+    height: 24vh;
+  }
+
+  .b2bg {
+    object-fit: cover;
+    width: 25vw;
+    height: 24vh;
+  }
+
+  .b3bg {
+    object-fit: cover;
+    width: 13.1vw;
+    height: 48vh;
+  }
+
+  .b4bg {
+    object-fit: cover;
+    width: 26vw;
+    height: 23vh;
+  }
+
+  .b5bg {
+    object-fit: cover;
+    width: 19vw;
+    height: 23vh;
+  }
+
+  .boxd1 {
+    margin-top: -69px;
+    margin-left: 40px;
+    width: 22vw;
+    height: 26vh;
+    position: static;
+  }
+
+  .bd1bg {
+    object-fit: cover;
+    width: 22vw;
+    height: 26vh;
+    opacity: 0.92;
+  }
+
+  .boxd2 {
+    width: 31vw;
+    height: 26vh;
+    position: static;
+  }
+
+  .bd2bg {
+    object-fit: cover;
+    width: 31vw;
+    height: 26vh;
+    margin-top: -70px;
+  }
+
+  .boxd3 {
+    width: 26vw;
+    height: 23vh;
+    position: relative;
+    top: -21vh;
+    left: 40px;
+  }
+
+  .bd3bg {
+    object-fit: cover;
+    width: 26vw;
+    height: 23vh;
+  }
+
+  .boxd4 {
+    width: 27vw;
+    height: 23vh;
+    position: relative;
+    top: -21vh;
+    left: 40px;
+  }
+
+  .bd4bg {
+    object-fit: cover;
+    width: 27vw;
+    height: 23vh;
+    opacity: 0.89;
   }
 }
 
@@ -554,7 +711,8 @@
     font-size: 64px;
     font-weight: 599;
     padding: 20px;
-    padding-top: 157px;
+    padding-top: 165px;
+    /* padding-bottom: 150px; */
     padding-left: 78px;
     background-color: transparent;
     color: black;
@@ -843,7 +1001,7 @@
   .bd2s1 {
     font-family: 'Caveat Brush';
     font-size: 49px;
-    font-weight: 600;
+    font-weight: 599;
     margin-top: -89px;
     line-height: 20px;
     padding: 20px;
@@ -856,7 +1014,7 @@
   .bd2s2 {
     font-family: 'Caveat Brush';
     font-size: 49px;
-    font-weight: 600;
+    font-weight: 599;
     line-height: 20px;
     padding: 20px;
     margin-top: -30px;
@@ -881,7 +1039,7 @@
   .bd4s1 {
     font-family: 'Caveat Brush';
     font-size: 60px;
-    font-weight: 600;
+    font-weight: 599;
     line-height: 40px;
     padding: 20px;
     padding-top: 20px;
@@ -892,8 +1050,147 @@
 
 }
 
+@media screen and (max-width: 900px) {
 
-/* mainleft */
+  .b1s1 {
+    font-family: 'Caveat Brush';
+    font-size: 30px;
+    font-weight: 580;
+    padding: 0px;
+    padding-top: 10px;
+    line-height: 23px;
+    padding-left: 5px;
+    background-color: transparent;
+    color: #004aad;
+  }
+
+  .b2s1 {
+    font-family: 'Caveat Brush';
+    font-size: 30px;
+    font-weight: 600;
+    line-height: 10px;
+    padding: 20px;
+    padding-top: 10px;
+    padding-left: 4px;
+    background-color: transparent;
+    color: rgb(8, 48, 179);
+  }
+
+  .b2s2 {
+    font-family: 'Caveat Brush';
+    font-size: 15px;
+    font-weight: 600;
+    line-height: 20px;
+    padding: 20px;
+    margin-top: -15px;
+    padding-top: 0px;
+    padding-left: 5px;
+    background-color: transparent;
+    color: black;
+  }
+
+  .b3s1 {
+    font-family: 'Caveat Brush';
+    font-size: 25px;
+    font-weight: 580;
+    padding: 0px;
+    padding-top: 3px;
+    padding-left: 39px;
+    background-color: transparent;
+    color: black;
+    transform: rotate(90deg);
+  }
+
+  .b4s1 {
+    font-family: 'Caveat Brush';
+    font-size: 27px;
+    font-weight: 600;
+    line-height: 25px;
+    padding: 20px;
+    padding-top: 13px;
+    padding-left: 8px;
+    background-color: transparent;
+    color: rgb(20, 2, 122);
+  }
+
+  .b5s1 {
+    font-family: 'Caveat Brush';
+    font-size: 27px;
+    font-weight: 599;
+    line-height: 40px;
+    padding: 20px;
+    padding-top: 129px;
+    padding-left: 3px;
+    background-color: transparent;
+    color: black;
+  }
+
+  .bd1s1 {
+    font-family: 'Caveat Brush';
+    font-size: 30px;
+    font-weight: 600;
+    line-height: 35px;
+    padding: 20px;
+    padding-top: 13px;
+    padding-left: 10px;
+    background-color: transparent;
+    color: black;
+  }
+
+  .bd2s1 {
+    font-family: 'Caveat Brush';
+    font-size: 24px;
+    font-weight: 600;
+    margin-top: -89px;
+    line-height: 20px;
+    padding: 20px;
+    padding-top: 30px;
+    padding-left: 8px;
+    background-color: transparent;
+    color: rgb(8, 48, 179);
+  }
+
+  .bd2s2 {
+    font-family: 'Caveat Brush';
+    font-size: 30px;
+    font-weight: 600;
+    line-height: 5px;
+    padding: 20px;
+    margin-top: -30px;
+    padding-top: 30px;
+    padding-left: 8px;
+    background-color: transparent;
+    color: rgb(7, 7, 60);
+  }
+
+  .bd3s1 {
+    font-family: 'Caveat Brush';
+    font-size: 28px;
+    font-weight: 600;
+    line-height: 25px;
+    padding: 20px;
+    padding-top: 4px;
+    padding-left: 5px;
+    background-color: transparent;
+    color: rgb(8, 48, 179);
+  }
+
+  .bd4s1 {
+    font-family: 'Caveat Brush';
+    font-size: 25px;
+    font-weight: 600;
+    line-height: 40px;
+    padding: 20px;
+    padding-top: 5px;
+    padding-left: 5px;
+    background-color: transparent;
+    color: black;
+  }
+
+}
+
+
+/* main side text */
 
 
 @media screen and (min-width: 1435px) {
@@ -912,6 +1209,10 @@
     justify-items: center;
     color: #004aad;
     font-size: 35;
+  }
+
+  .mainlefts {
+    display: none;
   }
 
   .maindownright {
@@ -950,6 +1251,10 @@
     font-size: 35;
   }
 
+  .mainlefts {
+    display: none;
+  }
+
   .maindownright {
     position: relative;
     margin: -50px;
@@ -968,7 +1273,7 @@
   }
 }
 
-@media screen and (max-width: 1200px) and (min-width: 785px) {
+@media screen and (max-width: 1200px) and (min-width: 900px) {
   .mainleft {
     position: relative;
     margin: -50px;
@@ -984,6 +1289,10 @@
     justify-items: center;
     color: #004aad;
     font-size: 35;
+  }
+
+  .mainlefts {
+    display: none;
   }
 
   .maindownright {
@@ -1004,22 +1313,47 @@
   }
 }
 
-@media screen and (max-width: 785px) and (min-width: 400px) {
+@media screen and (max-width: 900px) {
+
   .mainleft {
+    display: none;
+  }
+
+  .mainlefts {
     position: relative;
     margin: 10px;
+    margin-right: 0px;
     bottom: 20px;
     /* top: 27vh; */
-    width: 550px;
-    height: 15vw;
-    left: -50px;
+    width: 1978px;
+    height: 0vw;
+    left: -37px;
     font-family: 'Bungee';
     transform: rotate(270deg);
     display: flex;
     align-items: center;
     justify-items: center;
     color: #004aad;
-    font-size: 20;
+    font-size: 15px;
+    font-weight: 600;
+  }
+
+  .maindownright {
+    position: relative;
+    margin: -50px;
+    bottom: 100px;
+    /* top: 27vh; */
+    width: 200px;
+    height: 15vw;
+    left: -100px;
+    font-family: 'Bungee';
+    transform: rotate(90deg);
+    display: flex;
+    align-items: center;
+    justify-items: center;
+    color: #004aad;
+    font-size: 15;
+    font-weight: 600;
   }
 }
 
@@ -1035,6 +1369,15 @@
 }
 
 @media screen and (max-width: 1200px) and (min-width: 900px) {
+  .partition {
+    width: 100vw;
+    height: 6px;
+    background-color: black;
+    top: -120px;
+  }
+}
+
+@media screen and (max-width: 900px) {
   .partition {
     width: 100vw;
     height: 6px;

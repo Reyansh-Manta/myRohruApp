@@ -27,6 +27,8 @@ export default function UnprotectedHome() {
                     <div className={styles.mainins}>
                         <div className={styles.mainleft}>From Rohru? {"\u00A0"}{"\u00A0"}{"\u00A0"}{"\u00A0"}{"\u00A0"}{"\u00A0"}{"\u00A0"}{"\u00A0"}{"\u00A0"}{"\u00A0"}{"\u00A0"}{"\u00A0"}{"\u00A0"}{"\u00A0"}Explore these
                         </div>
+                        <div className={styles.mainlefts}>From Rohru? Explore these
+                        </div>
                         <div className={styles.mainright}>
 
                             <div className={styles.box1}>
@@ -77,7 +79,7 @@ export default function UnprotectedHome() {
                 <div className={styles.maininsd}>
                     <div className={styles.maindownleft}>
                         <div className={styles.boxd1}>
-                            <a href="/weather-roads" className={styles.linka}>
+                            <a href="/wiki" className={styles.linka}>
                                 <img src="/1.webp" alt="" className={styles.bd1bg} style={{ zIndex: '0', position: 'absolute', objectFit: 'cover' }} />
                                 <div style={{ zIndex: '1', position: 'relative', backgroundColor: 'transparent' }}>
                                     <p className={styles.bd1s1} style={{}}>Rohru Wiki</p>
@@ -85,7 +87,7 @@ export default function UnprotectedHome() {
                             </a>
                         </div>
                         <div className={styles.boxd2}>
-                            <a href="/announcements" className={styles.linka}>
+                            <a href="/locations" className={styles.linka}>
                                 <img src="/4.webp" alt="" className={styles.bd2bg} style={{ zIndex: '0', position: 'absolute', objectFit: 'cover' }} />
                                 <div style={{ zIndex: '1', position: 'relative', backgroundColor: 'transparent' }}>
                                     <p className={styles.bd2s1} style={{}}>Must Visit</p>
@@ -94,7 +96,7 @@ export default function UnprotectedHome() {
                             </a>
                         </div>
                         <div className={styles.boxd3}>
-                            <a href="/orchards" className={styles.linka}>
+                            <a href="/facilities" className={styles.linka}>
                                 <img src="/2.jpg" alt="" className={styles.bd3bg} style={{ zIndex: '0', position: 'absolute', objectFit: 'cover' }} />
                                 <div style={{ zIndex: '1', position: 'relative', backgroundColor: 'transparent' }}>
                                     <p className={styles.bd3s1} style={{}}>Local Facilities</p>
@@ -102,7 +104,7 @@ export default function UnprotectedHome() {
                             </a>
                         </div>
                         <div className={styles.boxd4}>
-                            <a href="/events" className={styles.linka}>
+                            <a href="/photo-book" className={styles.linka}>
                                 <img src="/3.jpeg" alt="" className={styles.bd4bg} style={{ zIndex: '0', position: 'absolute', objectFit: 'cover' }} />
                                 <div style={{ zIndex: '1', position: 'relative', backgroundColor: 'transparent' }}>
                                     <p className={styles.bd4s1} style={{}}>Photobook</p>

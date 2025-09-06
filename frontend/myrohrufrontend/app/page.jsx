@@ -21,81 +21,99 @@ export default function HomePage() {
     }, [!checking])
 
     return (
-        <>
-            {/* <img src="./bg.jpg" alt="" style={{ width: "100vw", opacity: "0.8", height: "100vh", position: "fixed", top: "0px" }} className={styles.bg} /> */}
+<>
+            <div style={{ overflowX: 'hidden' }}>
+                <div className={styles.main}>
+                    <Navbar />
+                    <div className={styles.mainins}>
+                        <div className={styles.mainleft}>From Rohru? {"\u00A0"}{"\u00A0"}{"\u00A0"}{"\u00A0"}{"\u00A0"}{"\u00A0"}{"\u00A0"}{"\u00A0"}{"\u00A0"}{"\u00A0"}{"\u00A0"}{"\u00A0"}{"\u00A0"}{"\u00A0"}Explore these
+                        </div>
+                        <div className={styles.mainlefts}>From Rohru? Explore these
+                        </div>
+                        <div className={styles.mainright}>
 
-            <div className={styles.main}>
-                <Navbar />
-                <div className={styles.cute}>
-                    {/* <img src="./Welcome to(1).png" alt="" style={{height: "110px"}} /> */}
+                            <div className={styles.box1}>
+                                <a href="/local-feed" className={styles.linka}>
+                                    <img src="/saru.webp" alt="" className={styles.b1bg} style={{ zIndex: '0', position: 'absolute', objectFit: 'cover' }} />
+                                    <div style={{ zIndex: '1', position: 'relative', backgroundColor: 'transparent' }}>
+                                        <p className={styles.b1s1} style={{ color: '#004aad' }}>Local News</p>
+                                    </div>
+                                </a>
+                            </div>
+                            <div className={styles.box2}>
+                                <a href="/announcements" className={styles.linka}>
+                                    <img src="/b2.jpg" alt="" className={styles.b2bg} style={{ zIndex: '0', position: 'absolute', objectFit: 'cover' }} />
+                                    <div style={{ zIndex: '1', position: 'relative', backgroundColor: 'transparent' }}>
+                                        <p className={styles.b2s1} style={{}}>General</p>
+                                        <p className={styles.b2s2} style={{}}>Announcements</p>
+                                    </div>
+                                </a>
+                            </div>
+                            <div className={styles.box3}>
+                                <a href="/orchards" className={styles.linka}>
+                                    <img src="/apple.jpg" alt="" className={styles.b3bg} style={{ zIndex: '0', position: 'absolute', objectFit: 'cover' }} />
+                                    <div style={{ zIndex: '1', position: 'relative', backgroundColor: 'transparent' }}>
+                                        <p className={styles.b3s1} style={{}}>Orchards</p>
+                                    </div>
+                                </a>
+                            </div>
+                            <div className={styles.box4}>
+                                <a href="/weather-roads" className={styles.linka}>
+                                    <img src="/b4.jpg" alt="" className={styles.b4bg} style={{ zIndex: '0', position: 'absolute', objectFit: 'cover' }} />
+                                    <div style={{ zIndex: '1', position: 'relative', backgroundColor: 'transparent' }}>
+                                        <p className={styles.b4s1} style={{}}>Weather and Roads</p>
+                                    </div>
+                                </a>
+                            </div>
+                            <div className={styles.box5}>
+                                <a href="/events" className={styles.linka}>
+                                    <img src="/b5.jpg" alt="" className={styles.b5bg} style={{ zIndex: '0', position: 'absolute', objectFit: 'cover' }} />
+                                    <div style={{ zIndex: '1', position: 'relative', backgroundColor: 'transparent' }}>
+                                        <p className={styles.b5s1} style={{}}>Events</p>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div className={styles.up}>
-                    <div className={styles.up1}>
-                        <div className={`${styles.sign} ${styles.cards}`}>
-                            <p>From Rohru?</p>
-                            <p>Explore</p>
-                            <p>these!!!</p>
-                        </div>
-                        <div className={`${styles.d1} ${styles.cards}`}>
-                            <a href="/local-feed">
-                                <img src="./Sweet(16).png" alt="" style={{ width: "20vw", borderRadius: "15px", border: "3px", borderColor: "black", borderStyle: "solid" }} />
+                <div style={{ zIndex: '100', position: 'relative' }} className={styles.partition}></div>
+                <div className={styles.maininsd}>
+                    <div className={styles.maindownleft}>
+                        <div className={styles.boxd1}>
+                            <a href="/wiki" className={styles.linka}>
+                                <img src="/1.webp" alt="" className={styles.bd1bg} style={{ zIndex: '0', position: 'absolute', objectFit: 'cover' }} />
+                                <div style={{ zIndex: '1', position: 'relative', backgroundColor: 'transparent' }}>
+                                    <p className={styles.bd1s1} style={{}}>Rohru Wiki</p>
+                                </div>
                             </a>
                         </div>
-                        <div className={`${styles.d2} ${styles.cards}`}>
-                            <a href="/events">
-                                <img src="./Sweet(14).png" alt="" style={{ width: "20vw", borderRadius: "15px", border: "3px", borderColor: "black", borderStyle: "solid" }} />
+                        <div className={styles.boxd2}>
+                            <a href="/locations" className={styles.linka}>
+                                <img src="/4.webp" alt="" className={styles.bd2bg} style={{ zIndex: '0', position: 'absolute', objectFit: 'cover' }} />
+                                <div style={{ zIndex: '1', position: 'relative', backgroundColor: 'transparent' }}>
+                                    <p className={styles.bd2s1} style={{}}>Must Visit</p>
+                                    <p className={styles.bd2s2} style={{}}>Locations</p>
+                                </div>
                             </a>
                         </div>
-                    </div>
-                    <div className={styles.up2}>
-                        <div className={`${styles.d3} ${styles.cards}`}>
-                            <a href="/general">
-                                <img src="./Sweet(12).png" alt="" style={{ width: "20vw", borderRadius: "15px", border: "3px", borderColor: "black", borderStyle: "solid" }} />
+                        <div className={styles.boxd3}>
+                            <a href="/facilities" className={styles.linka}>
+                                <img src="/2.jpg" alt="" className={styles.bd3bg} style={{ zIndex: '0', position: 'absolute', objectFit: 'cover' }} />
+                                <div style={{ zIndex: '1', position: 'relative', backgroundColor: 'transparent' }}>
+                                    <p className={styles.bd3s1} style={{}}>Local Facilities</p>
+                                </div>
                             </a>
                         </div>
-                        <div className={`${styles.d4} ${styles.cards}`}>
-                            <a href="/weathernroads">
-                                <img src="./Sweet(10).png" alt="" style={{ width: "20vw", borderRadius: "15px", border: "3px", borderColor: "black", borderStyle: "solid" }} />
-                            </a>
-                        </div>
-                        <div className={`${styles.d5} ${styles.cards}`}>
-                            <a href="/orchards">
-                                <img src="./Sweet(9).png" alt="" style={{ width: "20vw", borderRadius: "15px", border: "3px", borderColor: "black", borderStyle: "solid" }} />
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <div className={styles.down}>
-                    <div className={styles.down1}>
-                        <div className={`${styles.sign} ${styles.cards}`}>
-                            <a href="/wiki">
-                                <img src="./Sweet(19).png" alt="" style={{ width: "20vw", borderRadius: "15px", border: "3px", borderColor: "black", borderStyle: "solid" }} />
-                            </a>
-                        </div>
-                        <div className={`${styles.d6} ${styles.cards}`}>
-                            <a href="/must-visit">
-                                <img src="./Sweet(20).png" alt="" style={{ width: "20vw", borderRadius: "15px", border: "3px", borderColor: "black", borderStyle: "solid" }} />
-                            </a>
-                        </div>
-                        <div className={`${styles.sign} ${styles.cards}`}>
-                            <p>A Visitor?</p>
-                            <p>Explore</p>
-                            <p>these!!!</p>
-                        </div>
-                    </div>
-                    <div className={styles.down2}>
-                        <div className={`${styles.d7} ${styles.cards}`}>
-                            <a href="/accomodations">
-                                <img src="./Sweet(21).png" alt="" style={{ width: "20vw", borderRadius: "15px", border: "3px", borderColor: "black", borderStyle: "solid" }} />
-                            </a>
-                        </div>
-                        <div className={`${styles.d8} ${styles.cards}`}>
-                            <a href="/tips-from-locals">
-                                <img src="./Sweet(22).png" alt="" style={{ width: "20vw", borderRadius: "15px", border: "3px", borderColor: "black", borderStyle: "solid" }} />
+                        <div className={styles.boxd4}>
+                            <a href="/photo-book" className={styles.linka}>
+                                <img src="/3.jpeg" alt="" className={styles.bd4bg} style={{ zIndex: '0', position: 'absolute', objectFit: 'cover' }} />
+                                <div style={{ zIndex: '1', position: 'relative', backgroundColor: 'transparent' }}>
+                                    <p className={styles.bd4s1} style={{}}>Photobook</p>
+                                </div>
                             </a>
                         </div>
                     </div>
+                    <div className={styles.maindownright}>A Tourist? {"\u00A0"}{"\u00A0"}{"\u00A0"}{"\u00A0"}{"\u00A0"}{"\u00A0"}{"\u00A0"}{"\u00A0"}{"\u00A0"}{"\u00A0"}{"\u00A0"}{"\u00A0"}{"\u00A0"}{"\u00A0"}Explore these</div>
                 </div>
             </div>
         </>
