@@ -22,9 +22,14 @@ export default function Navbar({children}) {
         return (
             <div style={{opacity: "0.9"}}>
             <nav className={styles.nav}>
-                <a href="/">
-                    <img src="/My.png" alt="logo" style={{height: "85px" , top:"10px", position: "relative"}}/>
+                <div className={styles.po00}>
+                <a className={styles.logo} href="/">
+                    <div className={styles.po0}>
+                        <p className={styles.po1}>My</p>
+                        <p className={styles.po2}>Rohru</p>
+                    </div>
                 </a>
+                </div>
                 <ul className={styles.list}>
                     <Link className={`${styles.dashboard} ${styles.link}`} href={"/dashboard"}>
                         Dashboard

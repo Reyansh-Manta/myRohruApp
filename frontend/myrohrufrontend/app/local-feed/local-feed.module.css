@@ -1,34 +1,151 @@
+@import url('https://fonts.googleapis.com/css2?family=Bungee&family=Carter+One&family=Caveat+Brush&display=swap');
+
+.caveat-brush-regular {
+    font-family: "Caveat Brush", cursive;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.carter-one-regular {
+    font-family: "Carter One", system-ui;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.bungee-regular {
+    font-family: "Bungee", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+@media screen and (min-width: 1130px) {
+
+    .mainright {
+        margin-left: 20vw;
+        /* padding: 20px; */
+        padding-top: 100px;
+        /* padding-bottom: 50px; */
+        /* margin-bottom: 50px; */
+        position: fixed;
+        top: 0px;
+        height: 100%;
+        width: 80vw;
+        background-color: #f0f0f0;
+        /* min-height: 100vh; */
+        opacity: 0.95;
+        overflow-y: scroll;
+    }
+
+    .mainleft {
+        padding-top: 50px;
+        width: 20vw;
+        height: 100vh;
+        background-color: #232da3;
+        position: fixed;
+        left: 0;
+        top: 0;
+        opacity: 0.9;
+    }
+
+    .leftpopup {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 1130px) {
+
+    .mainright {
+        margin-left: 5vw;
+        right: 0px;
+        top: 0px;
+        left: 30px;
+        padding-top: 100px;
+        position: absolute;
+        height: 100vh;
+        /* width: 90vw; */
+        background-color: #f0f0f0;
+        opacity: 0.95;
+    }
+
+    .mainleft {
+        display: none;
+    }
+
+    .leftpopup {
+        background-color: #232da3;
+        height: 100vh;
+        position: fixed;
+        left: 0;
+        top: 0;
+        opacity: 0.9;
+        width: 70px;
+        /* padding-right: 5vw; */
+    }
+
+}
+
+
+.SidebarLink {
+    background-color: transparent;
+    display: block;
+    color: white;
+    padding: 16px;
+    text-decoration: none;
+    font-family: 'Bungee';
+    font-size: 20px;
+    font-weight: bold;
+}
+
+
 .p1 {
-    font-style: italic;
-    font-size: 3rem;
+    font-family: 'Carter One', cursive;
+    font-size: 2.6rem;
     font-weight: bolder;
     display: inline-block;
-    color: #046dff;
+    color: #0c48b7;
+    background-color: transparent;
     /* text-shadow: 2px 2px 8px rgba(0, 128, 255, 0.5); */
 }
 
 .p2 {
-    font-style: italic;
-    font-size: 3rem;
+    font-family: 'Carter One', cursive;
+    font-size: 2.6rem;
     font-weight: bolder;
     display: inline-block;
-    color: rgb(255, 123, 0);
+    color: rgb(95, 40, 191);
+    background-color: transparent;
     /* text-shadow: 2px 2px 8px rgba(255, 94, 0, 0.5); */
+}
+
+.mainleft {
+    scrollbar-width: none;
+    /* Firefox */
+    -ms-overflow-style: none;
+    border: 2px solid black;
+    /* IE & Edge */
+}
+
+.mainleft::-webkit-scrollbar {
+    display: none;
+    /* Chrome, Safari */
 }
 
 .cp {
     display: flex;
     justify-content: center;
     align-items: center;
+    width: 100%;
     margin: 10px;
+    background-color: transparent;
 }
 
 .glowButton {
-    background: #ffe8ca;
+    background: #0986ed;
+    font-family: 'Carter One', cursive;
     border: none;
     border-radius: 15px;
     padding: 0.5em 0.8em;
-    color: inherit;
+    color: white;
     cursor: pointer;
     transition: box-shadow 0.2s;
     outline: none;
@@ -59,17 +176,17 @@
 .container {
     width: 40vw;
     height: 29vw;
-    background-color: #ffe8ca;
+    background-color: #513b99;
     opacity: 0.9;
     position: relative;
-    left: 30vw;
+    /* left: 30vw; */
     font-size: 35px;
 }
 
 .incont {
     width: 37vw;
     height: 19vw;
-    background-color: white;
+    background-color: black;
     position: relative;
     left: 1.5vw;
     top: 1.5vw;
@@ -77,25 +194,47 @@
 
 .title {
     position: relative;
+    background-color: transparent;
+    color: rgb(243, 238, 238);
+    font-family: 'Carter One', cursive;
     left: 1.5vw;
     top: 2.5vw;
     font-size: 35px;
     font-weight: bolder;
+    width: auto;
 }
 
 .author {
+    background-color: transparent;
+    color: rgb(243, 238, 238);
+    font-family: 'Carter One', cursive;
     position: absolute;
     left: 1.5vw;
     bottom: 1vw;
     font-size: 20px;
     font-weight: bold;
 }
+
 .date {
+    background-color: transparent;
+    color: rgb(243, 238, 238);
+    font-family: 'Carter One', cursive;
     position: absolute;
     right: 1.5vw;
     bottom: 1vw;
     font-size: 20px;
     font-weight: bold;
+}
+
+.posts {
+    background-color: transparent;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 20px;
+    overflow-y: scroll;
+    margin-bottom: 150px;
 }
 
 @media screen and (max-width: 1125px) and (min-width: 890px) {
@@ -114,6 +253,7 @@
         font-size: 16px;
         font-weight: bold;
     }
+
     .date {
         position: absolute;
         right: 1.5vw;
@@ -124,7 +264,7 @@
 
 }
 
-@media screen and (max-width: 890px) and (min-width: 600px) {
+@media screen and (max-width: 890px) and (min-width: 700px) {
     .title {
         position: relative;
         left: 1.5vw;
@@ -140,6 +280,7 @@
         font-size: 13px;
         font-weight: bold;
     }
+
     .date {
         position: absolute;
         right: 1.5vw;

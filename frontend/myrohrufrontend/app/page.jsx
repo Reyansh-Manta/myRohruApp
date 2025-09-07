@@ -22,7 +22,8 @@ export default function HomePage() {
 
     return (
 <>
-            <div style={{ overflowX: 'hidden' }}>
+{/* <img src="wf.jpg" alt="" style={{width: '100vw' , height: '100vh', zIndex: '-10'}} /> */}
+            <div className={styles.bggg} style={{ overflowX: 'hidden' , zIndex:'1'}}>
                 <div className={styles.main}>
                     <Navbar />
                     <div className={styles.mainins}>
@@ -58,10 +59,10 @@ export default function HomePage() {
                                 </a>
                             </div>
                             <div className={styles.box4}>
-                                <a href="/weather-roads" className={styles.linka}>
+                                <a href="/businesses" className={styles.linka}>
                                     <img src="/b4.jpg" alt="" className={styles.b4bg} style={{ zIndex: '0', position: 'absolute', objectFit: 'cover' }} />
                                     <div style={{ zIndex: '1', position: 'relative', backgroundColor: 'transparent' }}>
-                                        <p className={styles.b4s1} style={{}}>Weather and Roads</p>
+                                        <p className={styles.b4s1} style={{}}>Local Businesses</p>
                                     </div>
                                 </a>
                             </div>

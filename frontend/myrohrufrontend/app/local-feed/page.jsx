@@ -33,35 +33,54 @@ export default function LocalFeedPage() {
 
         return (
             <>
-                <Navbar />
+                <div style={{ position: "sticky", top: "0", zIndex: "100" }}>
+                    <Navbar />
+                </div>
                 <div className={styles.main}>
-                    <img src="/Untitled design.png" alt="" className={styles.bgimage} />
-                    <div className={styles.cp}>
-                        <p className={styles.p1}>Local</p>
-                        <p className={styles.p2}>Feed!</p>
+
+                    <div className={styles.mainleft} style={{ position: "fixed", top: "100px", zIndex: "5", overflowY: "scroll" }}>
+                        <a href="/create-post" className={styles.SidebarLink}>Create Post</a>
+                        <a href="/local-feed" className={styles.SidebarLink}>Local Feed</a>
+                        <a href="/announcements" className={styles.SidebarLink}>Announcements</a>
+                        <a href="/orchards" className={styles.SidebarLink}>Orchards</a>
+                        <a href="/businesses" className={styles.SidebarLink}>Local Businesses</a>
+                        <a href="/events" className={styles.SidebarLink}>Events</a>
+                        <a href="/wiki" className={styles.SidebarLink}>Rohru Wiki</a>
+                        <a href="/locations" className={styles.SidebarLink}>Travel Locations</a>
+                        <a href="/facilities" className={styles.SidebarLink}>Local Facilities</a>
+                        <a href="/photo-book" className={styles.SidebarLink}>Photo Book</a>
                     </div>
-                    <div>
-                        <div>
-                            <button className={`${styles.new} ${styles.glowButton}`} id="new" onClick={() => setsort("new")}>What's new</button>
-                            <button className={`${styles.trending} ${styles.glowButton}`} id="trending" onClick={() => setsort("likes")}>Trending</button>
-                        </div>
-                        <div>
-                            <button className={`${styles.new} ${styles.glowButton}`} id="create-post" onClick={() => router.push("/create-post")}>Create Post</button>
-                        </div>
+                    <div className={styles.leftpopup} style={{ position: "fixed", top: "100px", zIndex: "5", overflowY: "scroll"  }}>
+                        <img src="/menu.png" alt=""  style={{ width: "30px", height: "30px", marginLeft: "15px", marginTop: "15px", backgroundColor: "transparent" }} />
                     </div>
 
-                    {posts.map((post) => (
-                        // <div><h1>hi</h1>
-                        <div className={styles.container} key={post.id}>
-                            <div className={styles.incont}>
-                                <img src={post.image} alt="" style={{}} />
-                            </div>
-                            <p className={styles.title}>{post.title}</p>
-                            <p className={styles.author}>{post.postedBy}</p>
-                            <p className={styles.date}>{post.createdAt}</p>
+                    <img src="/Untitled design.png" alt="" className={styles.bgimage} />
+
+                    <div className={styles.mainright}>
+                        <div className={styles.cp}>
+                            <p className={styles.p1}>Local</p>
+                            <p className={styles.p2}>Feed!</p>
                         </div>
-                        // </div>
-                    ))}
+                        <div style={{ backgroundColor: "transparent", paddingBottom: "20px", paddingLeft: "10px" }}>
+                            <div style={{ backgroundColor: "transparent" }}>
+                                <button className={`${styles.new} ${styles.glowButton}`} id="new" onClick={() => setsort("new")}>What's new</button>
+                                <button className={`${styles.trending} ${styles.glowButton}`} id="trending" onClick={() => setsort("likes")}>Trending</button>
+                            </div>
+                        </div>
+
+                        <div className={styles.posts}>
+                            {posts.map((post) => (
+                                <div className={styles.container} key={post.id}>
+                                    <div className={styles.incont}>
+                                        <img src={post.image} alt="" />
+                                    </div>
+                                    <p className={styles.title}>{post.title}</p>
+                                    <p className={styles.author}>{post.postedBy}</p>
+                                    <p className={styles.date}>{post.createdAt}</p>
+                                </div>
+                            ))}
+                        </div>
+                    </div>
 
                 </div>
             </>

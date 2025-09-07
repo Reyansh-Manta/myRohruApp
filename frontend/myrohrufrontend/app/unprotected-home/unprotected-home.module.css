@@ -33,8 +33,12 @@
   margin-left: 100px;
 }
 
-/* mainrcontent */
+.bggg {
+  background-image: 'url("/wf.jpg")';
+}
 
+
+/* mainrcontent */
 
 
 @media screen and (min-width: 1220px) {
