@@ -36,9 +36,18 @@ export default function LocalFeedPage() {
                 <div style={{ position: "sticky", top: "0", zIndex: "100" }}>
                     <Navbar />
                 </div>
+
                 <div className={styles.main}>
 
-                    <div className={styles.mainleft} style={{ position: "fixed", top: "100px", zIndex: "5", overflowY: "scroll" }}>
+
+                    <input type="checkbox" id="sidetg" hidden />
+                    <label htmlFor="sidetg" style={{ backgroundColor: "transparent", zIndex: "10", width: "40px", height: "40px" , display: "block", position: "fixed", top: "115px" , left: "12px", cursor: "pointer"}}>
+                        <img className={styles.menuIcon} src="/menu.png" alt="" style={{ width: "30px", height: "30px", marginLeft: "7px", marginTop: "5px", backgroundColor: "transparent", zIndex: "10" }} />
+                    </label>
+
+                    {/* <div className={styles.leftpopup}> </div> */}
+
+                    <div className={styles.mainleft} >
                         <a href="/create-post" className={styles.SidebarLink}>Create Post</a>
                         <a href="/local-feed" className={styles.SidebarLink}>Local Feed</a>
                         <a href="/announcements" className={styles.SidebarLink}>Announcements</a>
@@ -50,9 +59,6 @@ export default function LocalFeedPage() {
                         <a href="/facilities" className={styles.SidebarLink}>Local Facilities</a>
                         <a href="/photo-book" className={styles.SidebarLink}>Photo Book</a>
                     </div>
-                    <div className={styles.leftpopup} style={{ position: "fixed", top: "100px", zIndex: "5", overflowY: "scroll"  }}>
-                        <img src="/menu.png" alt=""  style={{ width: "30px", height: "30px", marginLeft: "15px", marginTop: "15px", backgroundColor: "transparent" }} />
-                    </div>
 
                     <img src="/Untitled design.png" alt="" className={styles.bgimage} />
 
@@ -61,7 +67,7 @@ export default function LocalFeedPage() {
                             <p className={styles.p1}>Local</p>
                             <p className={styles.p2}>Feed!</p>
                         </div>
-                        <div style={{ backgroundColor: "transparent", paddingBottom: "20px", paddingLeft: "10px" }}>
+                        <div className={styles.sortButtons} style={{ backgroundColor: "transparent" }}>
                             <div style={{ backgroundColor: "transparent" }}>
                                 <button className={`${styles.new} ${styles.glowButton}`} id="new" onClick={() => setsort("new")}>What's new</button>
                                 <button className={`${styles.trending} ${styles.glowButton}`} id="trending" onClick={() => setsort("likes")}>Trending</button>
