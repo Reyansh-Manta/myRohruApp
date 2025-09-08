@@ -226,11 +226,11 @@
 
 /* post containers */
 
-@media screen and (min-width: 770px) {
+@media screen and (min-width: 1000px) {
     
     .container {
         width: 40vw;
-        height: 29vw;
+        height: 40vw;
         background-color: #513b99;
         opacity: 0.9;
         position: relative;
@@ -240,7 +240,7 @@
     
     .incont {
         width: 37vw;
-        height: 19vw;
+        height: 29vw;
         background-color: black;
         position: relative;
         left: 1.5vw;
@@ -248,11 +248,11 @@
     }
 }
 
-@media screen and (max-width: 770px) {
+@media screen and (max-width: 1000px) and (min-width: 770px) {
     
     .container {
-        width: 55vw;
-        height: 38vw;
+        width: 60vw;
+        height: 65vw;
         background-color: #513b99;
         opacity: 0.9;
         position: relative;
@@ -261,12 +261,56 @@
     }
     
     .incont {
-        width: 50vw;
-        height: 21.5vw;
+        width: 56vw;
+        height: 49vw;
         background-color: black;
         position: relative;
-        left: 2.5vw;
-        top: 2.5vw;
+        left: 2vw;
+        top: 2vw;
+    }
+}
+
+@media screen and (max-width: 600px) and (min-width: 300px) {
+    
+    .container {
+        width: 67vw;
+        height: 74vw;
+        background-color: #513b99;
+        opacity: 0.9;
+        position: relative;
+        /* left: 30vw; */
+        font-size: 35px;
+    }
+    
+    .incont {
+        width: 63vw;
+        height: 54vw;
+        background-color: black;
+        position: relative;
+        left: 2vw;
+        top: 2vw;
+    }
+}
+
+@media screen and (max-width: 770px) and (min-width: 600px) {
+    
+    .container {
+        width: 64vw;
+        height: 70vw;
+        background-color: #513b99;
+        opacity: 0.9;
+        position: relative;
+        /* left: 30vw; */
+        font-size: 35px;
+    }
+    
+    .incont {
+        width: 60vw;
+        height: 50vw;
+        background-color: black;
+        position: relative;
+        left: 2vw;
+        top: 2vw;
     }
 }
 
@@ -329,7 +373,7 @@
         font-family: 'Carter One', cursive;
         width: auto;
         left: 1.5vw;
-        top: 2.2vw;
+        top: 2.7vw;
         font-size: 24px;
         font-weight: bolder;
     }
@@ -341,7 +385,7 @@
         position: absolute;
         left: 1.5vw;
         bottom: 1vw;
-        font-size: 16px;
+        font-size: 18px;
         font-weight: bold;
     }
     
@@ -366,55 +410,55 @@
         font-family: 'Carter One', cursive;
         width: auto;
         left: 1.5vw;
-        top: 2.0vw;
+        top: 2.7vw;
+        font-size: 23px;
+        font-weight: bolder;
+    }
+    
+    .author {
+        background-color: transparent;
+        color: rgb(243, 238, 238);
+        font-family: 'Carter One', cursive;
+        position: absolute;
+        left: 1.5vw;
+        bottom: 1vw;
+        font-size: 18.5px;
+        font-weight: bold;
+    }
+    
+    .date {
+        background-color: transparent;
+        color: rgb(243, 238, 238);
+        font-family: 'Carter One', cursive;
+        position: absolute;
+        right: 1.5vw;
+        bottom: 1vw;
+        font-size: 15px;
+        font-weight: bold;
+    }
+}
+
+@media screen and (max-width: 770px) and (min-width: 600px) {
+    .title {
+        position: relative;
+        background-color: transparent;
+        color: rgb(243, 238, 238);
+        font-family: 'Carter One', cursive;
+        width: auto;
+        left: 2.5vw;
+        top: 2.8vw;
+        font-size: 23px;
+        font-weight: bolder;
+    }
+    
+    .author {
+        background-color: transparent;
+        color: rgb(243, 238, 238);
+        font-family: 'Carter One', cursive;
+        position: absolute;
+        left: 1.5vw;
+        bottom: 1vw;
         font-size: 17px;
-        font-weight: bolder;
-    }
-    
-    .author {
-        background-color: transparent;
-        color: rgb(243, 238, 238);
-        font-family: 'Carter One', cursive;
-        position: absolute;
-        left: 1.5vw;
-        bottom: 1vw;
-        font-size: 13px;
-        font-weight: bold;
-    }
-    
-    .date {
-        background-color: transparent;
-        color: rgb(243, 238, 238);
-        font-family: 'Carter One', cursive;
-        position: absolute;
-        right: 1.5vw;
-        bottom: 1vw;
-        font-size: 13px;
-        font-weight: bold;
-    }
-}
-
-@media screen and (max-width: 770px) and (min-width: 645px) {
-    .title {
-        position: relative;
-        background-color: transparent;
-        color: rgb(243, 238, 238);
-        font-family: 'Carter One', cursive;
-        width: auto;
-        left: 2.5vw;
-        top: 2.8vw;
-        font-size: 18px;
-        font-weight: bolder;
-    }
-    
-    .author {
-        background-color: transparent;
-        color: rgb(243, 238, 238);
-        font-family: 'Carter One', cursive;
-        position: absolute;
-        left: 1.5vw;
-        bottom: 1vw;
-        font-size: 15px;
         font-weight: bold;
     }
     
@@ -430,7 +474,7 @@
     }
 }
 
-@media screen and (max-width: 645px) {
+@media screen and (max-width: 600px) {
     .title {
         position: relative;
         background-color: transparent;
@@ -438,8 +482,8 @@
         font-family: 'Carter One', cursive;
         width: auto;
         left: 2.5vw;
-        top: 2.8vw;
-        font-size: 15px;
+        top: 2.9vw;
+        font-size: 22px;
         font-weight: bolder;
     }
     
@@ -450,7 +494,7 @@
         position: absolute;
         left: 1.5vw;
         bottom: 1vw;
-        font-size: 12px;
+        font-size: 16px;
         font-weight: bold;
     }
     
@@ -461,7 +505,7 @@
         position: absolute;
         right: 1.5vw;
         bottom: 1vw;
-        font-size: 12px;
+        font-size: 14px;
         font-weight: bold;
     }
 }
