@@ -5,7 +5,7 @@ import Link from "next/link"
 import { useEffect, useState } from "react"
 import { useUser } from "@/app/context/UserContext"
 
-export default function Navbar({children}) {
+export default function Navbar({ children }) {
 
     const { loggedIn, checking } = useUser()
     const [islog, setislog] = useState(false)
@@ -20,54 +20,93 @@ export default function Navbar({children}) {
 
     if (islog) {
         return (
-            <div style={{opacity: "0.9"}}>
-            <nav className={styles.nav}>
-                <div className={styles.po00}>
-                <a className={styles.logo} href="/">
-                    <div className={styles.po0}>
-                        <p className={styles.po1}>My</p>
-                        <p className={styles.po2}>Rohru</p>
+            <div style={{ opacity: "0.9" }}>
+                <nav className={styles.nav}>
+                    <div className={styles.po00}>
+                        <a className={styles.logo} href="/">
+                            <div className={styles.po0}>
+                                <p className={styles.po1}>My</p>
+                                <p className={styles.po2}>Rohru</p>
+                            </div>
+                        </a>
                     </div>
-                </a>
-                </div>
-                <ul className={styles.list}>
-                    <Link className={`${styles.dashboard} ${styles.link}`} href={"/dashboard"}>
-                        Dashboard
-                    </Link>
-                    <Link className={`${styles.about} ${styles.link}`} href={"/aboutus"}>
-                        About Us
-                    </Link>
-                </ul>
-            </nav>
-            {children}
+
+                    <input type="checkbox" id="side" hidden />
+                    <label htmlFor="side" style={{ backgroundColor: "transparent", zIndex: "100", width: "40px", height: "40px" , display: "block", position: "fixed", top: "30px" , right: "12px", cursor: "pointer"}}>
+                        <img className={styles.menuIcon} src="/menu.png" alt="" style={{ width: "30px", height: "30px", marginRight: "7px", marginTop: "5px", backgroundColor: "transparent", zIndex: "10" }} />
+                    </label>
+
+                    <div className={styles.navoptions}>
+                        <Link className={` ${styles.linkNavOptions}`} href={"/dashboard"}>
+                            Logout
+                        </Link>
+                        <Link className={` ${styles.linkNavOptions}`} href={"/dashboard"}>
+                            Dashboard
+                        </Link>
+                        <Link className={` ${styles.linkNavOptions}`} href={"/aboutus"}>
+                            About Us
+                        </Link>
+                    </div>
+
+                    <ul className={styles.list}>
+                        <Link className={`${styles.dashboard} ${styles.link}`} href={"/dashboard"}>
+                            Dashboard
+                        </Link>
+                        <Link className={`${styles.about} ${styles.link}`} href={"/aboutus"}>
+                            About Us
+                        </Link>
+                    </ul>
+                </nav>
+                {children}
             </div>
         )
     }
     else {
         return (
             <div>
-            <nav className={styles.nav}>
-                <div className={styles.po00}>
-                <a className={styles.logo} href="/">
-                    <div className={styles.po0}>
-                        <p className={styles.po1}>My</p>
-                        <p className={styles.po2}>Rohru</p>
+                <nav className={styles.nav}>
+                    <div className={styles.po00}>
+                        <a className={styles.logo} href="/">
+                            <div className={styles.po0}>
+                                <p className={styles.po1}>My</p>
+                                <p className={styles.po2}>Rohru</p>
+                            </div>
+                        </a>
                     </div>
-                </a>
-                </div>
-                <ul className={styles.list}>
-                    <Link className={`${styles.dashboard} ${styles.link}`} href={"/login"}>
-                        Login
-                    </Link>
-                    <Link className={`${styles.dashboard} ${styles.link}`} href={"/register"}>
-                        Register
-                    </Link>
-                    <Link className={`${styles.about} ${styles.link}`} href={"/aboutus"}>
-                        About Us
-                    </Link>
-                </ul>
-            </nav>
-            {children}
+
+                    <input type="checkbox" id="side" hidden />
+                    <label htmlFor="side" style={{ backgroundColor: "transparent", zIndex: "100", width: "40px", height: "40px" , display: "block", position: "fixed", top: "30px" , right: "12px", cursor: "pointer"}}>
+                        <img className={styles.menuIcon} src="/menu.png" alt="" style={{ width: "30px", height: "30px", marginRight: "7px", marginTop: "5px", backgroundColor: "transparent", zIndex: "10" }} />
+                    </label>
+
+                    <div className={styles.navoptions}>
+                        <Link className={` ${styles.linkNavOptions}`} href={"/login"}>
+                            Login
+                        </Link>
+                        <Link className={` ${styles.linkNavOptions}`} href={"/register"}>
+                            Register
+                        </Link>
+                        <Link className={` ${styles.linkNavOptions}`} href={"/dashboard"}>
+                            Logout
+                        </Link>
+                        <Link className={` ${styles.linkNavOptions}`} href={"/aboutus"}>
+                            About Us
+                        </Link>
+                    </div>
+
+                    <ul className={styles.list}>
+                        <Link className={`${styles.dashboard} ${styles.link}`} href={"/login"}>
+                            Login
+                        </Link>
+                        <Link className={`${styles.dashboard} ${styles.link}`} href={"/register"}>
+                            Register
+                        </Link>
+                        <Link className={`${styles.about} ${styles.link}`} href={"/aboutus"}>
+                            About Us
+                        </Link>
+                    </ul>
+                </nav>
+                {children}
             </div>
         )
     }

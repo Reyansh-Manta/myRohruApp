@@ -1,4 +1,5 @@
 @import url(https://fonts.googleapis.com/css2?family=Inter:wght@400&family=Poppins:wght@600;700&display=swap);
+@import url('https://fonts.googleapis.com/css2?family=Bungee&family=Carter+One&family=Caveat+Brush&display=swap');
 
 :global(*) {
     margin: 0;
@@ -7,77 +8,222 @@
     /* z-index: 10; */
 }
 
-.logo{
-    text-decoration: none;
+
+@media screen and (min-width: 1060px) {
+    
+    .linkNavOptions {
+        text-decoration: none;
+        color: white;
+        font-weight: 599;
+        font-size: 40px;
+        font-family: 'Caveat Brush', cursive;
+        transition: color 0.2s ease, transform 0.2s ease;
+        background-color: transparent;
+    }
+
+    .navoptions {
+        display: none;
+    }
+
+    :global(#side:checked) ~ .navoptions {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+        position: fixed;
+        top: 80px;
+        right: 0;
+        width: 200px;
+        height: auto;
+        background-color: rgb(49, 52, 203);
+        box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1);
+        z-index: 1000;
+        padding: 20px;
+        box-sizing: border-box;
+    }
+
+    .logo {
+        text-decoration: none;
+    }
+
+    .po00 {
+        position: relative;
+        left: 30px;
+        font-family: 'Poppins';
+        text-decoration: none;
+    }
+
+    .po0 {
+        display: flex;
+        align-items: center;
+        text-decoration: none;
+    }
+
+    .po1 {
+        color: #5400fc;
+        /* font: Poppins; */
+        font-size: 41px;
+        font-weight: 1000;
+        text-decoration: none;
+        font-family: 'Carter One', cursive;
+    }
+
+    .po2 {
+        font-size: 41px;
+        font-weight: 1000;
+        text-decoration: none;
+        color: #3c1190;
+        font-family: 'Carter One', cursive;
+    }
+
+    .nav {
+        border: 1px solid black;
+        background-color: white;
+        border-bottom: 2px solid black;
+        border-top: 1px solid black;
+        box-shadow: 0 1px 5px;
+        display: flex;
+        font-size: larger;
+        padding: 0px;
+        justify-content: flex-start;
+        align-items: center;
+        margin: 0px;
+        margin-top: 0px;
+        height: 100px;
+        gap: 30px;
+        z-index: 100;
+        position: sticky;
+        top: 0px;
+    }
+
+    .list {
+        position: relative;
+        left: 40px;
+        display: flex;
+        list-style: none;
+        color: #8c52ff;
+        gap: 30px;
+        margin: 0;
+        padding: 0;
+    }
+
+    .link {
+        text-decoration: none;
+        color: #7f49ea;
+        font-weight: 700;
+        font-size: 20px;
+        transition: color 0.2s ease, transform 0.2s ease;
+    }
+
+    .link:hover {
+        color: rgb(24, 124, 191);
+        transform: scale(1.05);
+    }
 }
 
-.po00 {
-    position: relative;
-    left: 30px;
-    font-family: 'Poppins';
-    text-decoration: none;
-}
+@media screen and (max-width: 1060px) {
 
-.po0 {
-    display: flex;
-    align-items: center;
-    text-decoration: none;
-}
+    .linkNavOptions {
+        text-decoration: none;
+        color: white;
+        font-weight: 599;
+        font-size: 25px;
+        font-family: 'Caveat Brush', cursive;
+        transition: color 0.2s ease, transform 0.2s ease;
+        background-color: transparent;
+    }    
 
-.po1 {
-    color: #5400fc;
-    /* font: Poppins; */
-    font-size: 35px;
-    font-weight: 1000;
-    text-decoration: none;
-}
+    .navoptions {
+        display: none;
+    }
 
-.po2 {
-    color: #5400fc;
-    font-size: 35px;
-    font-weight: 1000;
-    text-decoration: none;
-}
+    :global(#side:checked) ~ .navoptions {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+        position: fixed;
+        top: 80px;
+        right: 0;
+        width: 135px;
+        height: auto;
+        background-color: rgb(49, 52, 203);
+        box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1);
+        z-index: 1000;
+        padding: 20px;
+        box-sizing: border-box;
+    }
 
-.nav{
-    border: 1px solid black;
-    background-color: white;
-    border-bottom: 2px solid black;
-    border-top: 1px solid black;
-    box-shadow: 0 1px 5px;
-    display: flex;
-    font-size: larger;
-    padding: 0px;
-    justify-content: flex-start;
-    align-items: center;
-    margin: 0px;
-    margin-top: 0px;
-    height: 100px;
-    gap: 30px;
-    z-index: 100;
-    position: sticky;
-    top: 0px;
-}
+    .list {
+        display: none;
+    }
 
-.list{
-    position: relative;
-    left: 40px;
-    display: flex;
-    list-style: none;
-    color: #8c52ff;
-    gap: 30px;
-    margin: 0;
-    padding: 0;
-}
+    .logo {
+        text-decoration: none;
+    }
 
-.link{
-    text-decoration: none;
-    color: #7f49ea;
-    font-weight: 700;
-    transition: color 0.2s ease, transform 0.2s ease;
-}
+    .po00 {
+        position: relative;
+        left: 20px;
+        font-family: 'Poppins';
+        text-decoration: none;
+    }
 
-.link:hover {
-  color: rgb(24, 124, 191);
-  transform: scale(1.05);
+    .po0 {
+        display: flex;
+        align-items: center;
+        text-decoration: none;
+    }
+
+    .po1 {
+        color: #5400fc;
+        /* font: Poppins; */
+        font-size: 30px;
+        font-weight: 1000;
+        text-decoration: none;
+        font-family: 'Carter One', cursive;
+    }
+
+    .po2 {
+        font-size: 30px;
+        font-weight: 1000;
+        text-decoration: none;
+        color: #3c1190;
+        font-family: 'Carter One', cursive;
+    }
+
+    .nav {
+        border: 1px solid black;
+        background-color: white;
+        border-bottom: 2px solid black;
+        border-top: 1px solid black;
+        box-shadow: 0 1px 5px;
+        display: flex;
+        font-size: large;
+        padding: 0px;
+        justify-content: flex-start;
+        align-items: center;
+        margin: 0px;
+        margin-top: 0px;
+        height: 100px;
+        gap: 30px;
+        z-index: 100;
+        position: sticky;
+        top: 0px;
+    }
+
+    .list {
+        display: none;
+    }
+
+    .link {
+        text-decoration: none;
+        color: #7f49ea;
+        font-weight: 700;
+        font-size: 20px;
+        transition: color 0.2s ease, transform 0.2s ease;
+    }
+
+    .link:hover {
+        color: rgb(24, 124, 191);
+        transform: scale(1.05);
+    }
 }
