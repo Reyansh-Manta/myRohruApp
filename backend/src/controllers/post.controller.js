@@ -8,8 +8,8 @@ import { uploadOnCloudinary, deleteFromCloudinary } from '../utils/cloudinary.js
 
 const createPost = asyncHandler(async (req, res) => {
     const { content, title, category } = req.body;
-    
-    req.user._id;
+
+    const usrId = req.user._id;
 
     if (!content || !title || !category) {
         throw new ApiError(400, 'Content, title, and category are required');
@@ -20,12 +20,30 @@ const createPost = asyncHandler(async (req, res) => {
 
     // const postedBy = user.username || user.fullName || 'Anonymous';
 
+    const latestPost = await Post.findOne().sort({ createdAt: -1 });
+
+    const latestPostId = latestPost.id || 0;
+
+    const nid = Number(latestPostId) + 1;
+
+    while (true) {
+        const expos = await Post.find({ id: nid });
+
+        if (expos.length > 0) {
+            String(nid) + "ex"
+        }
+        else {
+            break
+        }
+    }
+
     const postData = {
-        user: userId,
-        postedBy,
+        user: usrId,
+        postedBy: userId,
         content,
         title,
-        category
+        category,
+        id: Number(latestPostId) + 1
     };
 
     if (req.file) {
@@ -46,7 +64,7 @@ const getPostById = asyncHandler(async (req, res) => {
         throw new ApiError(400, 'Post ID is required');
     }
 
-    const post = await Post.findById(postId)
+    const post = await Post.find(id = postId)
 
     if (!post) {
         throw new ApiError(404, 'Post not found');
@@ -58,7 +76,7 @@ const getPostById = asyncHandler(async (req, res) => {
 
 const deletePost = asyncHandler(async (req, res) => {
 
-    const {postId} = req.params;
+    const { postId } = req.params;
 
     if (!postId) {
         throw new ApiError(400, 'Post ID is required');
@@ -71,7 +89,7 @@ const deletePost = asyncHandler(async (req, res) => {
 })
 
 const editPost = asyncHandler(async (req, res) => {
-    const {postId} = req.params;
+    const { postId } = req.params;
     const { content, title, category } = req.body;
 
     if (!postId) {
@@ -101,14 +119,15 @@ const editPostImage = asyncHandler(async (req, res) => {
     }
 
     const post = await Post.findByIdAndUpdate(postId, {
-        image: req.file ? await uploadOnCloudinary(req.file.path) : undefined})
+        image: req.file ? await uploadOnCloudinary(req.file.path) : undefined
+    })
 
     if (!post) {
         throw new ApiError(404, 'Post not found');
-    }   
+    }
 
     return res.status(200).json(new ApiResponse(200, post, 'Post image updated successfully'));
-    
+
 })
 
 const fetchPostsByCategory = asyncHandler(async (req, res) => {

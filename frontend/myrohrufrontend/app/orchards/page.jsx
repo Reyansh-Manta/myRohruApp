@@ -33,7 +33,7 @@ export default function OrchardsPage() {
 
         return (
             <>
-                <div style={{ position: "sticky", top: "0", zIndex: "100" }}>
+                <div style={{ position: "fixed", top: "0px", width: "100%", zIndex: "100" }}>
                     <Navbar />
                 </div>
 

@@ -118,6 +118,7 @@
         color: rgb(24, 124, 191);
         transform: scale(1.05);
     }
+
 }
 
 @media screen and (max-width: 1060px) {
@@ -203,7 +204,7 @@
         align-items: center;
         margin: 0px;
         margin-top: 0px;
-        height: 100px;
+        height: 85px;
         gap: 30px;
         z-index: 100;
         position: sticky;

@@ -33,7 +33,7 @@ export default function LocationsPage() {
 
         return (
             <>
-                <div style={{ position: "sticky", top: "0", zIndex: "100" }}>
+                <div style={{ position: "fixed", top: "0px",width: "100%", zIndex: "100" }}>
                     <Navbar />
                 </div>
 
@@ -75,12 +75,14 @@ export default function LocationsPage() {
                         <div className={styles.posts}>
                             {posts.map((post) => (
                                 <div className={styles.container} key={post.id}>
-                                    <div className={styles.incont}>
-                                        <img src={post.image} alt="" />
-                                    </div>
-                                    <p className={styles.title}>{post.title}</p>
-                                    <p className={styles.author}>{post.postedBy}</p>
+                                    <a href={`/posts/${post.id}`} className={styles.postlink}>
+                                        <div className={styles.incont}>
+                                            <img src={post.image} alt="" />
+                                        </div>
+                                        <p className={styles.title}>{post.title}</p>
+                                        <p className={styles.author}>{post.postedBy}</p>
                                     <p className={styles.date}>{post.createdAt}</p>
+                                    </a>
                                 </div>
                             ))}
                         </div>

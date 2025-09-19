@@ -75,8 +75,8 @@ export default function Navbar({ children }) {
                     </div>
 
                     <input type="checkbox" id="side" hidden />
-                    <label htmlFor="side" style={{ backgroundColor: "transparent", zIndex: "100", width: "40px", height: "40px" , display: "block", position: "fixed", top: "30px" , right: "12px", cursor: "pointer"}}>
-                        <img className={styles.menuIcon} src="/menu.png" alt="" style={{ width: "30px", height: "30px", marginRight: "7px", marginTop: "5px", backgroundColor: "transparent", zIndex: "10" }} />
+                    <label htmlFor="side" className={styles.menuIconLabel} style={{ backgroundColor: "transparent", zIndex: "100", width: "40px", top: "30px", height: "40px", display: "block", position: "fixed", right: "12px", cursor: "pointer" }}>
+                        <img className={styles.menuIcon} src="/menu.png" alt="" style={{ width: "30px", height: "30px", marginRight: "7px", backgroundColor: "transparent", zIndex: "10" }} />
                     </label>
 
                     <div className={styles.navoptions}>
