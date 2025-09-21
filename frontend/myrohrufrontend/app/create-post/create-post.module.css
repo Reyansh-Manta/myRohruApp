@@ -20,17 +20,7 @@
 
 
 @media screen and (min-width: 1210px) {
-/*     
-    .mainright {
-        margin-left: 20vw;
-        padding-top: 100px;
-        top: 0px;
-        height: 100%;
-        width: 80vw;
-        background-color: #f0f0f0;
-        opacity: 0.95;
-        overflow-y: scroll;
-    } */
+
     
     #sidetg {
         display: none;
@@ -41,16 +31,15 @@
     }
     
     .mainleft {
+        position: absolute;
         display: flex;
         flex-direction: column;
-        padding-top: 50px;
         padding-bottom: 50px;
         width: 20vw;
-        height: 100vh;
+        height: 105vh;
         background-color: #232da3;
-        position: absolute;
         left: 0;
-        top: 80px;
+        top: 102px;
         opacity: 0.9;
         z-index: 5;
         overflow-y: scroll;
@@ -151,12 +140,13 @@
         background-color: transparent;
         position: absolute;
         left: 20vw;
-        /* padding-top: 45px; */
+        padding-top: 65px;
+        padding-bottom: 0px;
         /* margin-top: 50px; */
         /* padding-bottom: 50px; */
         /* position: absolute; */
         /* top: 0px; */
-        height: 100vh;
+        /* height: 100vh; */
         width: 80vw;
         /* background-color: #f0f0f0; */
         opacity: 0.95;
@@ -173,7 +163,7 @@
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     width: 60%;
     margin: auto;
-    height: 100%;
+    /* height: 100%; */
     margin-top: 60px;
     /* overflow-y: scroll; */
     /* padding-bottom: 70px; */

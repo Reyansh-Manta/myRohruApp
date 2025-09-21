@@ -47,9 +47,9 @@ const createPost = asyncHandler(async (req, res) => {
     };
 
 
-    if (req.files && req.files.images) {
+    if (req.files && req.files.image) {
         const uploadedImages = [];
-        for (const file of req.files.images) {
+        for (const file of req.files.image) {
             const response = await uploadOnCloudinary(file.path);
             uploadedImages.push(response.url);
             console.log(response.url);

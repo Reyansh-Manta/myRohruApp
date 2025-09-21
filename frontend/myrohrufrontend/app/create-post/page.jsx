@@ -43,8 +43,23 @@ export default function CreatePost() {
 
     async function submitdata(event) {
         try {
-            const formData = new FormData(event.currentTarget)
-            
+            const formData = new FormData()
+
+            formData.append("title", event.currentTarget.title.value)
+            formData.append("content", event.currentTarget.content.value)
+
+            const imageInput = event.currentTarget.querySelector('#image')
+            if (imageInput && imageInput.files) {
+                Array.from(imageInput.files).forEach(file => {
+                    formData.append("image", file)
+                })
+            }
+
+            const cimageInput = event.currentTarget.querySelector('#cimage')
+            if (cimageInput && cimageInput.files[0]) {
+                formData.append("cimage", cimageInput.files[0])
+            }
+
             if (C1 != 0) { categories.push(C1) }
             if (C2 != 0) { categories.push(C2) }
             if (C3 != 0) { categories.push(C3) }
@@ -56,7 +71,10 @@ export default function CreatePost() {
             console.log(formData);
             const response = await axios.post(`http://localhost:2002/api/v1/posts/createPost`,
                 formData,
-                { withCredentials: true }
+                {
+                    withCredentials: true,
+                    // headers: { "Content-Type": "multipart/form-data" }
+                }
             )
             setPosts(response.data.data)
             return true
@@ -93,7 +111,7 @@ export default function CreatePost() {
         console.log(checking);
 
         if (!loggedIn && checking) {
-            router.push('/login')
+            // router.push('/login')
         }
     }, [loggedIn, checking])
 
@@ -136,10 +154,10 @@ export default function CreatePost() {
 
                             <label className={`${styles.labelContent} ${styles.label}`} htmlFor="content">Content</label>
                             <textarea className={`${styles.inputContent} ${styles.input}`} name="content" id="content" placeholder="Enter the content"></textarea>
-                            
+
                             <label className={`${styles.labelImage} ${styles.label}`} htmlFor="image">Image</label>
-                            <input className={`${styles.inputImage} ${styles.input}`} type="file" name="image" id="image" multiple/>
-                    
+                            <input className={`${styles.inputImage} ${styles.input}`} type="file" name="image" id="image" multiple />
+
                             <label className={`${styles.labelImage} ${styles.label}`} htmlFor="cimage">Cover Image</label>
                             <input className={`${styles.inputImage} ${styles.input}`} type="file" name="cimage" id="cimage" />
 
@@ -190,8 +208,8 @@ export default function CreatePost() {
                             <button className={styles.submit} type="submit">Submit</button>
                         </div>
                     </form>
-                    <p style={{ color: "red" , backgroundColor: 'transparent', padding: '5px'}}>{message}</p>
-                    <p style={{ color: "green", backgroundColor: 'transparent', padding: '5px'}}>{mess}</p>
+                    <p style={{ color: "red", backgroundColor: 'transparent', padding: '5px' }}>{message}</p>
+                    <p style={{ color: "green", backgroundColor: 'transparent', padding: '5px' }}>{mess}</p>
 
                 </div>
 
