@@ -27,6 +27,13 @@ export default function CreatePost() {
     const [C5, setC5] = useState(0)
     const [C7, setC7] = useState(0)
     const [C8, setC8] = useState(0)
+    const [Cl1, setCl1] = useState(false)
+    const [Cl2, setCl2] = useState(false)
+    const [Cl3, setCl3] = useState(false)
+    const [Cl4, setCl4] = useState(false)
+    const [Cl5, setCl5] = useState(false)
+    const [Cl7, setCl7] = useState(false)
+    const [Cl8, setCl8] = useState(false)
     const [message, setmessage] = useState("")
     const [mess, setmess] = useState("")
     const [checked, setchecked] = useState(false)
@@ -86,9 +93,10 @@ export default function CreatePost() {
         console.log(checking);
 
         if (!loggedIn && checking) {
-            // router.push('/login')
+            router.push('/login')
         }
     }, [loggedIn, checking])
+
 
     return (
         <>
@@ -97,8 +105,6 @@ export default function CreatePost() {
             </div>
 
             <div className={styles.main}>
-
-
                 <input type="checkbox" id="sidetg" hidden />
                 <label htmlFor="sidetg" style={{ backgroundColor: "transparent", zIndex: "10", width: "40px", height: "40px", display: "block", position: "fixed", top: "115px", left: "12px", cursor: "pointer" }}>
                     <img className={styles.menuIcon} src="/menu.png" alt="" style={{ width: "30px", height: "30px", marginLeft: "7px", marginTop: "5px", backgroundColor: "transparent", zIndex: "10" }} />
@@ -123,59 +129,73 @@ export default function CreatePost() {
 
 
                     <form onSubmit={sub}>
-                        <div>
+                        <div className={styles.form}>
+                            <p className={styles.p1}>Create Post</p>
                             <label className={`${styles.labelTitle} ${styles.label}`} htmlFor="title">Title</label>
                             <input className={`${styles.inputTitle} ${styles.input}`} type="text" name="title" id="title" placeholder="Enter the title" />
 
                             <label className={`${styles.labelContent} ${styles.label}`} htmlFor="content">Content</label>
                             <textarea className={`${styles.inputContent} ${styles.input}`} name="content" id="content" placeholder="Enter the content"></textarea>
-
+                            
+                            <label className={`${styles.labelImage} ${styles.label}`} htmlFor="image">Image</label>
+                            <input className={`${styles.inputImage} ${styles.input}`} type="file" name="image" id="image" />
+                    
                             <label className={`${styles.labelCategory} ${styles.label}`} htmlFor="category">Category</label>
-                            <div>
-                                <button type="button" className={styles.catbtn}
+                            <div className={styles.category}>
+                                <button type="button" className={`${styles.catbtn1} ${Cl1 ? styles.activeb1 : ""} ${styles.catbtn} `}
                                     onClick={() => {
                                         setC1(prev => prev === 0 ? "local-feed" : 0)
+                                        setCl1(prev => !prev)
                                     }}>local-feed</button>
-                                <button type="button" className={styles.catbtn}
+                                <button type="button" className={`${styles.catbtn} ${Cl2 ? styles.activeb1 : ""} ${styles.catbtn2}`}
                                     onClick={() => {
                                         setC2(prev => prev === 0 ? "local-facilities" : 0)
+                                        setCl2(prev => !prev)
                                     }}>local-facilities</button>
 
-                                <button type="button" className={styles.catbtn}
+                                <button type="button" className={`${styles.catbtn} ${Cl3 ? styles.activeb1 : ""} ${styles.catbtn3}`}
                                     onClick={() => {
                                         setC3(prev => prev === 0 ? "events" : 0)
+                                        setCl3(prev => !prev)
                                     }}>events</button>
 
-                                <button type="button" className={styles.catbtn}
+                                <button type="button" className={`${styles.catbtn} ${Cl4 ? styles.activeb1 : ""} ${styles.catbtn4}`}
                                     onClick={() => {
                                         setC4(prev => prev === 0 ? "local-business" : 0)
+                                        setCl4(prev => !prev)
                                     }}>local-business</button>
 
-                                <button type="button" className={styles.catbtn}
+                                <button type="button" className={`${styles.catbtn} ${Cl5 ? styles.activeb1 : ""} ${styles.catbtn5}`}
                                     onClick={() => {
                                         setC5(prev => prev === 0 ? "orchards" : 0)
+                                        setCl5(prev => !prev)
                                     }}>orchards</button>
 
-                                <button type="button" className={styles.catbtn}
+                                <button type="button" className={`${styles.catbtn} ${Cl7 ? styles.activeb1 : ""} ${styles.catbtn6}`}
                                     onClick={() => {
                                         setC7(prev => prev === 0 ? "must-visit-locations" : 0)
+                                        setCl7(prev => !prev)
                                     }}>must-visit-locations</button>
 
-                                <button type="button" className={styles.catbtn}
+                                <button type="button" className={`${styles.catbtn} ${Cl8 ? styles.activeb1 : ""} ${styles.catbtn7}`}
                                     onClick={() => {
-                                        setC8(prev => prev === 0 ? "photobook" : 0)
+                                        setC8(prev => prev === 0 ? "photo-book" : 0)
+                                        setCl8(prev => !prev)
                                     }}>photobook</button>
 
-                                <p style={{ color: "red" }}>{message}</p>
                             </div>
                             <button className={styles.submit} type="submit">Submit</button>
                         </div>
                     </form>
-                    <p style={{ color: "green" }}>{mess}</p>
+                    <p style={{ color: "red" , backgroundColor: 'transparent', padding: '5px'}}>{message}</p>
+                    <p style={{ color: "green", backgroundColor: 'transparent', padding: '5px'}}>{mess}</p>
+
                 </div>
 
             </div>
         </>
     )
+
+
 
 }

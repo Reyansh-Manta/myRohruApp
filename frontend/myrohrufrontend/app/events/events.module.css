@@ -46,7 +46,6 @@
     .mainleft {
         display: flex;
         flex-direction: column;
-        /* align-items: center; */
         padding-top: 50px;
         padding-bottom: 50px;
         width: 20vw;
@@ -54,7 +53,7 @@
         background-color: #232da3;
         position: absolute;
         left: 0;
-        /* top: 100px; */
+        top: 80px;
         opacity: 0.9;
         z-index: 5;
         overflow-y: scroll;
