@@ -15,8 +15,12 @@ const postSchema = new Schema(
             type: String,
             required: true
         },
+        cimage: {
+            type: String, // URL of the cover image stored in cloudinary
+            required: false
+        },
         image: {
-            type: String, // URL of the image stored in cloudinary
+            type: [String], // URL of the image stored in cloudinary
             required: false
         },
         title: {

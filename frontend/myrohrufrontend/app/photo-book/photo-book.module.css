@@ -46,7 +46,6 @@
     .mainleft {
         display: flex;
         flex-direction: column;
-        /* align-items: center; */
         padding-top: 50px;
         padding-bottom: 50px;
         width: 20vw;
@@ -246,6 +245,7 @@
     }
     
     .incont {
+        opacity: 1;
         width: 40vw;
         height: 32vw;
         background-color: black;
@@ -626,4 +626,12 @@
         font-weight: bold;
     }
     
+}
+
+.cimage {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    z-index: 100;
+    opacity: 1;
 }

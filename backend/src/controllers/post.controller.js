@@ -24,13 +24,13 @@ const createPost = asyncHandler(async (req, res) => {
 
     const latestPostId = latestPost.id || 0;
 
-    const nid = Number(latestPostId) + 1;
+    let nid = Number(latestPostId) + 1;
 
     while (true) {
         const expos = await Post.find({ id: nid });
 
         if (expos.length > 0) {
-            String(nid) + "ex"
+            nid = nid + 1
         }
         else {
             break
@@ -42,16 +42,32 @@ const createPost = asyncHandler(async (req, res) => {
         postedBy: userId,
         content,
         title,
-        category,
+        category: JSON.parse(category),
         id: Number(latestPostId) + 1
     };
 
-    if (req.file) {
-        const imageUrl = await uploadOnCloudinary(req.file.path);
-        postData.image = imageUrl;
+
+    if (req.files && req.files.images) {
+        const uploadedImages = [];
+        for (const file of req.files.images) {
+            const response = await uploadOnCloudinary(file.path);
+            uploadedImages.push(response.url);
+            console.log(response.url);
+
+        }
+        postData.image = uploadedImages;
+    }
+
+    if (req.files && req.files.cimage) {
+        const response = await uploadOnCloudinary(req.files.cimage[0].path);
+        postData.cimage = response.url;
+        console.log(response.url);
     }
 
     const post = await Post.create(postData);
+
+    post.id = post._id.toString();
+    await post.save();
 
     return res.status(201).json(new ApiResponse(201, post, 'Post created successfully'));
 })

@@ -44,7 +44,7 @@ export default function CreatePost() {
     async function submitdata(event) {
         try {
             const formData = new FormData(event.currentTarget)
-            const datas = Object.fromEntries(formData.entries())
+            
             if (C1 != 0) { categories.push(C1) }
             if (C2 != 0) { categories.push(C2) }
             if (C3 != 0) { categories.push(C3) }
@@ -52,10 +52,10 @@ export default function CreatePost() {
             if (C5 != 0) { categories.push(C5) }
             if (C7 != 0) { categories.push(C7) }
             if (C8 != 0) { categories.push(C8) }
-            datas.category = categories
-            console.log(datas);
+            formData.append("category", JSON.stringify(categories))
+            console.log(formData);
             const response = await axios.post(`http://localhost:2002/api/v1/posts/createPost`,
-                datas,
+                formData,
                 { withCredentials: true }
             )
             setPosts(response.data.data)
@@ -138,8 +138,11 @@ export default function CreatePost() {
                             <textarea className={`${styles.inputContent} ${styles.input}`} name="content" id="content" placeholder="Enter the content"></textarea>
                             
                             <label className={`${styles.labelImage} ${styles.label}`} htmlFor="image">Image</label>
-                            <input className={`${styles.inputImage} ${styles.input}`} type="file" name="image" id="image" />
+                            <input className={`${styles.inputImage} ${styles.input}`} type="file" name="image" id="image" multiple/>
                     
+                            <label className={`${styles.labelImage} ${styles.label}`} htmlFor="cimage">Cover Image</label>
+                            <input className={`${styles.inputImage} ${styles.input}`} type="file" name="cimage" id="cimage" />
+
                             <label className={`${styles.labelCategory} ${styles.label}`} htmlFor="category">Category</label>
                             <div className={styles.category}>
                                 <button type="button" className={`${styles.catbtn1} ${Cl1 ? styles.activeb1 : ""} ${styles.catbtn} `}

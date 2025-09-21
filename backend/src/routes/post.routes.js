@@ -5,7 +5,7 @@ import { createPost, fetchPostsByCategory } from "../controllers/post.controller
 
 const router = Router()
 
-router.route("/createPost").post(verifyJWT, createPost)
+router.route("/createPost").post(verifyJWT, upload.fields([{ name: "image", maxCount: 5 }, { name: "cimage", maxCount: 1 }]), createPost)
 router.route("/category/:category").get(fetchPostsByCategory)
 
 
