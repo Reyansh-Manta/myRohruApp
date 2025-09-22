@@ -40,6 +40,7 @@
         background-color: #232da3;
         left: 0;
         top: 102px;
+        padding-top: 20px;
         opacity: 0.9;
         z-index: 5;
         overflow-y: scroll;

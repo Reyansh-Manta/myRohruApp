@@ -1,33 +1,37 @@
 "use client"
 
 import axios from "axios"
-import Navbar from "../components/Navbar/page"
+import Navbar from "../../components/Navbar/page"
 import styles from "./photo-book.module.css"
 import Link from "next/link"
 import { useState, useEffect } from "react"
-import { useRouter } from "next/navigation"
+import { useRouter , useParams} from "next/navigation"
+import React from "react"
 
-export default function PhotoBookPage() {
-    const [sort, setsort] = useState("new")
+export default function PostPage() {
+    const params = useParams();
+    const { id } = params
     const [fetchposts, setfetchposts] = useState([false])
-    const [posts, setPosts] = useState([])
+    const [post, setPosts] = useState([])
     const router = useRouter()
-
+    console.log(id);
+    
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const response = await axios.get(`http://localhost:2002/api/v1/posts/category/photo-book?sortBy=${sort}`,
+                const response = await axios.get(`http://localhost:2002/api/v1/posts/post/${id}`,
                     { withCredentials: true }
                 )
-                setPosts(response.data.data)
+                setPosts(response.data.data[0])
+                console.log(response.data.data[0]);
             } catch (error) {
-                throw new Error("Failed to fetch posts")
+                throw new Error("Failed to fetch post")
             } finally {
                 setfetchposts(true)
             }
         }
         fetchData()
-    }, [sort])
+    }, [])
 
     if (fetchposts) {
 
@@ -61,30 +65,17 @@ export default function PhotoBookPage() {
                     <img src="/Untitled design.png" alt="" className={styles.bgimage} />
 
                     <div className={styles.mainright}>
+                        <div className={styles.cp} style={{marginTop:"40px"}}>
+                            <p className={styles.p1}>{`${post.title}`}</p>
+                        </div>
                         <div className={styles.cp}>
-                            <p className={styles.p1}>Photo</p>
-                            <p className={styles.p2}>Book!</p>
+                            <p className={styles.p12}>{`Posted by ${post.postedBy} at ${new Date(post.createdAt).toLocaleString()}`}</p>
                         </div>
-                        <div className={styles.sortButtons} style={{ backgroundColor: "transparent" }}>
-                            <div style={{ backgroundColor: "transparent" }}>
-                                <button className={`${styles.new} ${styles.glowButton}`} id="new" onClick={() => setsort("new")}>What's new</button>
-                                <button className={`${styles.trending} ${styles.glowButton}`} id="trending" onClick={() => setsort("likes")}>Trending</button>
-                            </div>
+                        <div className={styles.cp1}>
+                            <p className={styles.p2}>{`${post.content}`}</p>
                         </div>
-
-                        <div className={styles.posts}>
-                            {posts.map((post) => (
-                                <a href={`/post-open/${post.id}`} key={post.id}>
-                                <div className={styles.container} key={post.id}>
-                                    <div className={styles.incont}>
-                                        <img src={post.cimage} alt="" style={{ zIndex: '100'}} className={styles.cimage} />
-                                    </div>
-                                    <p className={styles.title}>{post.title}</p>
-                                    <p className={styles.author}>{post.postedBy}</p>
-                                    <p className={styles.date}>{post.createdAt}</p>
-                                </div>
-                                </a>
-                            ))}
+                        <div className={styles.pica1} style={{ display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center" , marginBottom:"150px", marginTop:"55px", gap:"20px"}}>
+                            {post.image?.map(image => (<img src={image} alt="" key={image} className={styles.image} style={{ width: "100%", height: "auto" }} />))}
                         </div>
                     </div>
 
@@ -93,6 +84,6 @@ export default function PhotoBookPage() {
         )
     }
     else {
-        <h1>Loading...</h1>
+        {<h1>Loading...</h1>}
     }
 }

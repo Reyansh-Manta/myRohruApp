@@ -75,12 +75,16 @@ const createPost = asyncHandler(async (req, res) => {
 const getPostById = asyncHandler(async (req, res) => {
 
     const { postId } = req.params;
+    console.log(postId);
+    
 
     if (!postId) {
         throw new ApiError(400, 'Post ID is required');
     }
 
-    const post = await Post.find(id = postId)
+    const post = await Post.find({id: postId})
+    console.log(post);
+    
 
     if (!post) {
         throw new ApiError(404, 'Post not found');

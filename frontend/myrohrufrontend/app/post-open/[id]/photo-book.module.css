@@ -1,0 +1,656 @@
+@import url('https://fonts.googleapis.com/css2?family=Bungee&family=Carter+One&family=Caveat+Brush&display=swap');
+
+.caveat-brush-regular {
+    font-family: "Caveat Brush", cursive;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.carter-one-regular {
+    font-family: "Carter One", system-ui;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.bungee-regular {
+    font-family: "Bungee", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+
+@media screen and (min-width: 1210px) {
+    
+    .mainright {
+        margin-left: 20vw;
+        padding-top: 100px;
+        position: fixed;
+        top: 0px;
+        height: 100%;
+        width: 80vw;
+        background-color: #f0f0f0;
+        /* min-height: 100vh; */
+        opacity: 0.95;
+        overflow-y: scroll;
+        /* overflow-x: hidden; */
+    }
+    
+    #sidetg {
+        display: none;
+    }
+    
+    .menuIcon {
+        display: none;
+    }
+    
+    .mainleft {
+        display: flex;
+        flex-direction: column;
+        padding-top: 50px;
+        padding-bottom: 50px;
+        width: 20vw;
+        height: 100%;
+        background-color: #232da3;
+        position: absolute;
+        left: 0;
+        top: 80px;
+        opacity: 0.9;
+        z-index: 5;
+        overflow-y: scroll;
+    }
+    
+    .leftpopup {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 1210px) {
+    
+    .mainright {
+        /* margin-left: 5vw; */
+        padding-top: 100px;
+        position: fixed;
+        top: 0px;
+        height: 100vh;
+        right: 0px;
+        left: 0px;
+        width: 100vw;
+        background-color: #f0f0f0;
+        opacity: 0.95;
+        overflow-y: scroll;
+        overflow-x: hidden;
+    }
+    
+    .mainleft {
+        position: fixed;
+        left: -355px;
+        transition: left 0.3s ease;
+        z-index: 5;
+    }
+    
+    .leftpopup {
+        background-color: #232da3;
+        height: 130vh;
+        position: fixed;
+        left: 0;
+        opacity: 0.9;
+        width: 70px;
+        top: 100px;
+        z-index: 5;
+        overflow-y: scroll;
+    }
+
+    :global(#sidetg:checked) ~ .mainleft {
+        display: flex;
+        flex-direction: column;
+        padding-top: 50px;
+        width: 100vw;
+        height: 100%;
+        background-color: #232da3;
+        position: absolute;
+        padding-bottom: 50px;
+        left: 0;
+        top: 100px;
+        opacity: 0.9; 
+        z-index: 5;
+        overflow-y: scroll
+    }
+}
+
+
+.SidebarLink {
+    background-color: transparent;
+    display: block;
+    color: white;
+    padding: 20px;
+    /* padding-left: 10px; */
+    text-decoration: none;
+    font-family: 'Bungee';
+    font-size: 23px;
+    font-weight: bold;
+}
+
+
+.p1 {
+    font-family: 'Carter One', cursive;
+    font-size: 2.2rem;
+    font-weight: bolder;
+    display: inline-block;
+    color: #0c48b7;
+    background-color: transparent;
+    /* text-shadow: 2px 2px 8px rgba(0, 128, 255, 0.5); */
+}
+.p12 {
+    font-family: 'Carter One', cursive;
+    font-size: 1.8rem;
+    font-weight: bolder;
+    display: inline-block;
+    color: #0c48b7;
+    background-color: transparent;
+    /* text-shadow: 2px 2px 8px rgba(0, 128, 255, 0.5); */
+}
+
+.p2 {
+    font-family: 'Carter One', cursive;
+    font-size: 2.0rem;
+    font-weight: bolder;
+    display: inline-block;
+    color: rgb(95, 40, 191);
+    background-color: transparent;
+    /* text-shadow: 2px 2px 8px rgba(255, 94, 0, 0.5); */
+}
+
+
+
+.cp {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin: 10px;
+    background-color: transparent;
+    /* margin-top: 40px; */
+}
+.cp1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin: 10px;
+    background-color: transparent;
+    margin-top: 40px;
+}
+
+/* sort buttons */
+
+@media screen and (min-width : 650px)  {
+    
+    .glowButton {
+        background: #0986ed;
+        font-family: 'Carter One', cursive;
+        border: none;
+        border-radius: 15px;
+        padding: 0.5em 0.8em;
+        color: white;
+        cursor: pointer;
+        transition: box-shadow 0.2s;
+        outline: none;
+        font-weight: 600;
+        font-size: 19px;
+    }
+    
+    .sortButtons {
+        padding-bottom: 20px;
+        padding-left: 10px;
+    }
+
+}
+
+@media screen and (max-width : 650px) {
+    
+    .glowButton {
+        background: #0986ed;
+        font-family: 'Carter One', cursive;
+        border: none;
+        border-radius: 15px;
+        padding: 0.3em 0.6em;
+        color: white;
+        cursor: pointer;
+        transition: box-shadow 0.2s;
+        outline: none;
+        font-weight: 600;
+        font-size: medium;
+    }
+    
+    .sortButtons {
+        padding-bottom: 20px;
+        padding-left: 30px;
+    }
+}
+
+
+.glowButton:active {
+    box-shadow: 0 0 12px 3px rgba(4, 109, 255, 0.5);
+}
+
+.new {
+    padding: 11px;
+    margin: 10px;
+}
+
+.trending {
+    padding: 11px;
+    margin: 10px;
+}
+
+.bgimage {
+    opacity: 0.5;
+    position: fixed;
+    z-index: -1;
+}
+
+/* post containers */
+
+@media screen and (min-width: 1210px) {
+    
+    .container {
+        width: 43vw;
+        height: 45vw;
+        background-color: #513b99;
+        opacity: 0.9;
+        position: relative;
+        /* left: 30vw; */
+        font-size: 35px;
+    }
+    
+    .incont {
+        opacity: 1;
+        width: 40vw;
+        height: 32vw;
+        background-color: black;
+        position: relative;
+        left: 1.5vw;
+        top: 1.5vw;
+    }
+}
+
+@media screen and (max-width: 1210px) and (min-width: 770px) {
+    
+    .container {
+        width: 60vw;
+        height: 65vw;
+        background-color: #513b99;
+        opacity: 0.9;
+        position: relative;
+        /* left: 30vw; */
+        font-size: 35px;
+    }
+    
+    .incont {
+        width: 56vw;
+        height: 49vw;
+        background-color: black;
+        position: relative;
+        left: 2vw;
+        top: 2vw;
+    }
+}
+
+@media screen and (max-width: 600px) and (min-width: 300px) {
+    
+    .container {
+        width: 67vw;
+        height: 74vw;
+        background-color: #513b99;
+        opacity: 0.9;
+        position: relative;
+        /* left: 30vw; */
+        font-size: 35px;
+    }
+    
+    .incont {
+        width: 63vw;
+        height: 54vw;
+        background-color: black;
+        position: relative;
+        left: 2vw;
+        top: 2vw;
+    }
+}
+
+@media screen and (max-width: 770px) and (min-width: 600px) {
+    
+    .container {
+        width: 64vw;
+        height: 70vw;
+        background-color: #513b99;
+        opacity: 0.9;
+        position: relative;
+        /* left: 30vw; */
+        font-size: 35px;
+    }
+    
+    .incont {
+        width: 60vw;
+        height: 50vw;
+        background-color: black;
+        position: relative;
+        left: 2vw;
+        top: 2vw;
+    }
+}
+
+
+.posts {
+    background-color: transparent;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 20px;
+    overflow-y: scroll;
+    margin-bottom: 150px;
+}
+
+/* title author date */
+@media screen and (min-width: 1900px) {
+    
+    .title {
+        position: relative;
+        background-color: transparent;
+        color: rgb(243, 238, 238);
+        font-family: 'Carter One', cursive;
+        width: auto;
+        left: 1.5vw;
+        top: 2.5vw;
+        font-size: 40px;
+        font-weight: bolder;
+    }
+    
+    .author {
+        background-color: transparent;
+        color: rgb(243, 238, 238);
+        font-family: 'Carter One', cursive;
+        position: absolute;
+        left: 1.5vw;
+        bottom: 1vw;
+        font-size: 25px;
+        font-weight: bold;
+    }
+    
+    .date {
+        background-color: transparent;
+        color: rgb(243, 238, 238);
+        font-family: 'Carter One', cursive;
+        position: absolute;
+        right: 1.5vw;
+        bottom: 1vw;
+        font-size: 25px;
+        font-weight: bold;
+    }
+    
+}
+
+@media screen and (max-width: 1900px) and (min-width: 1125px) {
+    
+    .title {
+        position: relative;
+        background-color: transparent;
+        color: rgb(243, 238, 238);
+        font-family: 'Carter One', cursive;
+        width: auto;
+        left: 1.5vw;
+        top: 2.5vw;
+        font-size: 33px;
+        font-weight: bolder;
+    }
+    
+    .author {
+        background-color: transparent;
+        color: rgb(243, 238, 238);
+        font-family: 'Carter One', cursive;
+        position: absolute;
+        left: 1.5vw;
+        bottom: 1vw;
+        font-size: 20px;
+        font-weight: bold;
+    }
+    
+    .date {
+        background-color: transparent;
+        color: rgb(243, 238, 238);
+        font-family: 'Carter One', cursive;
+        position: absolute;
+        right: 1.5vw;
+        bottom: 1vw;
+        font-size: 20px;
+        font-weight: bold;
+    }
+}
+
+@media screen and (max-width: 1125px) and (min-width: 890px) {
+    .title {
+        position: relative;
+        background-color: transparent;
+        color: rgb(243, 238, 238);
+        font-family: 'Carter One', cursive;
+        width: auto;
+        left: 1.5vw;
+        top: 2.7vw;
+        font-size: 24px;
+        font-weight: bolder;
+    }
+    
+    .author {
+        background-color: transparent;
+        color: rgb(243, 238, 238);
+        font-family: 'Carter One', cursive;
+        position: absolute;
+        left: 1.5vw;
+        bottom: 1vw;
+        font-size: 18px;
+        font-weight: bold;
+    }
+    
+    .date {
+        background-color: transparent;
+        color: rgb(243, 238, 238);
+        font-family: 'Carter One', cursive;
+        position: absolute;
+        right: 1.5vw;
+        bottom: 1vw;
+        font-size: 16px;
+        font-weight: bold;
+    }
+    
+}
+
+@media screen and (max-width: 890px) and (min-width: 770px) {
+    .title {
+        position: relative;
+        background-color: transparent;
+        color: rgb(243, 238, 238);
+        font-family: 'Carter One', cursive;
+        width: auto;
+        left: 1.5vw;
+        top: 2.7vw;
+        font-size: 23px;
+        font-weight: bolder;
+    }
+    
+    .author {
+        background-color: transparent;
+        color: rgb(243, 238, 238);
+        font-family: 'Carter One', cursive;
+        position: absolute;
+        left: 1.5vw;
+        bottom: 1vw;
+        font-size: 18.5px;
+        font-weight: bold;
+    }
+    
+    .date {
+        background-color: transparent;
+        color: rgb(243, 238, 238);
+        font-family: 'Carter One', cursive;
+        position: absolute;
+        right: 1.5vw;
+        bottom: 1vw;
+        font-size: 15px;
+        font-weight: bold;
+    }
+}
+
+@media screen and (max-width: 770px) and (min-width: 600px) {
+    .title {
+        position: relative;
+        background-color: transparent;
+        color: rgb(243, 238, 238);
+        font-family: 'Carter One', cursive;
+        width: auto;
+        left: 2.5vw;
+        top: 2.8vw;
+        font-size: 23px;
+        font-weight: bolder;
+    }
+    
+    .author {
+        background-color: transparent;
+        color: rgb(243, 238, 238);
+        font-family: 'Carter One', cursive;
+        position: absolute;
+        left: 1.5vw;
+        bottom: 1vw;
+        font-size: 17px;
+        font-weight: bold;
+    }
+    
+    .date {
+        background-color: transparent;
+        color: rgb(243, 238, 238);
+        font-family: 'Carter One', cursive;
+        position: absolute;
+        right: 1.5vw;
+        bottom: 1vw;
+        font-size: 15px;
+        font-weight: bold;
+    }
+}
+
+@media screen and (max-width: 600px) and (min-width: 470px) {
+    .title {
+        position: relative;
+        background-color: transparent;
+        color: rgb(243, 238, 238);
+        font-family: 'Carter One', cursive;
+        width: auto;
+        left: 2.5vw;
+        top: 2.9vw;
+        font-size: 19px;
+        font-weight: bolder;
+    }
+    
+    .author {
+        background-color: transparent;
+        color: rgb(243, 238, 238);
+        font-family: 'Carter One', cursive;
+        position: absolute;
+        left: 1.5vw;
+        bottom: 1vw;
+        font-size: 14px;
+        font-weight: bold;
+    }
+    
+    .date {
+        background-color: transparent;
+        color: rgb(243, 238, 238);
+        font-family: 'Carter One', cursive;
+        position: absolute;
+        right: 1.5vw;
+        bottom: 1vw;
+        font-size: 13px;
+        font-weight: bold;
+    }
+}
+    
+@media screen and (max-width: 470px) and (min-width: 390px) {
+    .title {
+        position: relative;
+        background-color: transparent;
+        color: rgb(243, 238, 238);
+        font-family: 'Carter One', cursive;
+        width: auto;
+        left: 2.5vw;
+        top: 3vw;
+        font-size: 16px;
+        font-weight: bolder;
+    }
+    
+    .author {
+        background-color: transparent;
+        color: rgb(243, 238, 238);
+        font-family: 'Carter One', cursive;
+        position: absolute;
+        left: 1.5vw;
+        bottom: 1vw;
+        font-size: 11px;
+        font-weight: bold;
+    }
+    
+    .date {
+        background-color: transparent;
+        color: rgb(243, 238, 238);
+        font-family: 'Carter One', cursive;
+        position: absolute;
+        right: 1.5vw;
+        bottom: 1vw;
+        font-size: 10px;
+        font-weight: bold;
+    }
+    
+}
+
+@media screen and (max-width: 390px) {
+    .title {
+        position: relative;
+        background-color: transparent;
+        color: rgb(243, 238, 238);
+        font-family: 'Carter One', cursive;
+        width: auto;
+        left: 2.5vw;
+        top: 3vw;
+        font-size: 14px;
+        font-weight: bolder;
+    }
+    
+    .author {
+        background-color: transparent;
+        color: rgb(243, 238, 238);
+        font-family: 'Carter One', cursive;
+        position: absolute;
+        left: 1.5vw;
+        bottom: 1vw;
+        font-size: 10px;
+        font-weight: bold;
+    }
+    
+    .date {
+        background-color: transparent;
+        color: rgb(243, 238, 238);
+        font-family: 'Carter One', cursive;
+        position: absolute;
+        right: 1.5vw;
+        bottom: 1vw;
+        font-size: 9px;
+        font-weight: bold;
+    }
+    
+}
+
+.cimage {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    z-index: 100;
+    opacity: 1;
+}
