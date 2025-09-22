@@ -22,7 +22,14 @@ const createPost = asyncHandler(async (req, res) => {
 
     const latestPost = await Post.findOne().sort({ createdAt: -1 });
 
-    const latestPostId = latestPost.id || 0;
+
+    let latestPostId;
+    if (latestPost) {
+        latestPostId = latestPost.id;
+    }
+    else {
+        latestPostId = 0;
+    }
 
     let nid = Number(latestPostId) + 1;
 

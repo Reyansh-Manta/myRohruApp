@@ -73,7 +73,7 @@ export default function CreatePost() {
                 formData,
                 {
                     withCredentials: true,
-                    // headers: { "Content-Type": "multipart/form-data" }
+                    headers: { "Content-Type": "multipart/form-data" }
                 }
             )
             setPosts(response.data.data)
@@ -150,7 +150,7 @@ export default function CreatePost() {
                         <div className={styles.form}>
                             <p className={styles.p1}>Create Post</p>
                             <label className={`${styles.labelTitle} ${styles.label}`} htmlFor="title">Title</label>
-                            <input className={`${styles.inputTitle} ${styles.input}`} type="text" name="title" id="title" placeholder="Enter the title" />
+                            <input className={`${styles.inputTitle} ${styles.input}`} maxLength="50" type="text" name="title" id="title" placeholder="Enter the title" />
 
                             <label className={`${styles.labelContent} ${styles.label}`} htmlFor="content">Content</label>
                             <textarea className={`${styles.inputContent} ${styles.input}`} name="content" id="content" placeholder="Enter the content"></textarea>

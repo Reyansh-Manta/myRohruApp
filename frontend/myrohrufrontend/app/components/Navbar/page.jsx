@@ -37,7 +37,7 @@ export default function Navbar({ children }) {
                     </label>
 
                     <div className={styles.navoptions}>
-                        <Link className={` ${styles.linkNavOptions}`} href={"/dashboard"}>
+                        <Link className={` ${styles.linkNavOptions}`} href={"/logout"}>
                             Logout
                         </Link>
                         <Link className={` ${styles.linkNavOptions}`} href={"/dashboard"}>
@@ -86,7 +86,7 @@ export default function Navbar({ children }) {
                         <Link className={` ${styles.linkNavOptions}`} href={"/register"}>
                             Register
                         </Link>
-                        <Link className={` ${styles.linkNavOptions}`} href={"/dashboard"}>
+                        <Link className={` ${styles.linkNavOptions}`} href={"/logout"}>
                             Logout
                         </Link>
                         <Link className={` ${styles.linkNavOptions}`} href={"/aboutus"}>

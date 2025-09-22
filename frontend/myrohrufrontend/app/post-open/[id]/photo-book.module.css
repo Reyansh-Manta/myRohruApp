@@ -181,12 +181,29 @@
     margin-top: 40px;
 }
 
+.delbtn{
+    position: absolute;
+    top: 110px;
+    right: 20px;
+}
+
+.suredel {
+    position: absolute;
+    top: 150px;
+    right: 20px;
+    background-color: white;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 10;
+}
+
 /* sort buttons */
 
 @media screen and (min-width : 650px)  {
     
     .glowButton {
-        background: #0986ed;
+        background: red;
         font-family: 'Carter One', cursive;
         border: none;
         border-radius: 15px;
@@ -209,7 +226,7 @@
 @media screen and (max-width : 650px) {
     
     .glowButton {
-        background: #0986ed;
+        background: red;
         font-family: 'Carter One', cursive;
         border: none;
         border-radius: 15px;

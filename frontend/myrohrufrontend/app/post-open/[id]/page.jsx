@@ -5,17 +5,28 @@ import Navbar from "../../components/Navbar/page"
 import styles from "./photo-book.module.css"
 import Link from "next/link"
 import { useState, useEffect } from "react"
-import { useRouter , useParams} from "next/navigation"
+import { useRouter, useParams } from "next/navigation"
 import React from "react"
 
 export default function PostPage() {
     const params = useParams();
     const { id } = params
     const [fetchposts, setfetchposts] = useState([false])
+    const [showDeleteConfirmation, setShowDeleteConfirmation] = useState(false);
     const [post, setPosts] = useState([])
     const router = useRouter()
     console.log(id);
-    
+
+    useEffect(() => {
+        if (showDeleteConfirmation) {
+            document.querySelector(`.${styles.suredel}`).style.display = "block"
+        }
+        else {
+            document.querySelector(`.${styles.suredel}`).style.display = "none"
+        }
+    }, [showDeleteConfirmation])
+
+
     useEffect(() => {
         const fetchData = async () => {
             try {
@@ -43,7 +54,6 @@ export default function PostPage() {
 
                 <div className={styles.main}>
 
-
                     <input type="checkbox" id="sidetg" hidden />
                     <label htmlFor="sidetg" style={{ backgroundColor: "transparent", zIndex: "10", width: "40px", height: "40px", display: "block", position: "fixed", top: "115px", left: "12px", cursor: "pointer" }}>
                         <img className={styles.menuIcon} src="/menu.png" alt="" style={{ width: "30px", height: "30px", marginLeft: "7px", marginTop: "5px", backgroundColor: "transparent", zIndex: "10" }} />
@@ -65,17 +75,36 @@ export default function PostPage() {
                     <img src="/Untitled design.png" alt="" className={styles.bgimage} />
 
                     <div className={styles.mainright}>
-                        <div className={styles.cp} style={{marginTop:"40px"}}>
+                        <div className={styles.cp} style={{margin: "5px", marginTop: "55px" }}>
                             <p className={styles.p1}>{`${post.title}`}</p>
                         </div>
-                        <div className={styles.cp}>
+                        <div className={styles.cp} style={{margin: "5px"}}>
                             <p className={styles.p12}>{`Posted by ${post.postedBy} at ${new Date(post.createdAt).toLocaleString()}`}</p>
                         </div>
-                        <div className={styles.cp1}>
+                        <div className={styles.cp1} style={{margin: "5px"}}>
                             <p className={styles.p2}>{`${post.content}`}</p>
                         </div>
-                        <div className={styles.pica1} style={{ display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center" , marginBottom:"150px", marginTop:"55px", gap:"20px"}}>
-                            {post.image?.map(image => (<img src={image} alt="" key={image} className={styles.image} style={{ width: "100%", height: "auto" }} />))}
+                        <div className={styles.pica1} style={{ display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", marginBottom: "150px", marginTop: "55px", gap: "20px" }}>
+                            {post.image?.map(image => (<img src={image} alt="" key={image} className={styles.image} style={{ width: "60%", height: "auto", objectFit: "cover" }} />))}
+                        </div>
+
+                        <button className={`${styles.glowButton} ${styles.delbtn}`} type="checkbox" style={{ paddingBottom: "5px" }} onClick={() => setShowDeleteConfirmation(true)}>Delete Post</button>
+
+                        <div className={styles.suredel}>
+                            <div>
+                                <p className={styles.p1}>Are you sure you want to delete this post?</p>
+                            </div>
+                            <div style={{ display: "flex", gap: "20px", justifyContent: "center", alignItems: "center", marginTop: "20px" }}>
+                                <button className={`${styles.glowButton} `} style={{ marginBottom: "10px" }} onClick={async () => {
+                                    try {
+                                        await axios.delete(`http://localhost:2002/api/v1/posts/delpost/${id}`, { withCredentials: true });
+                                        router.push("/photo-book");
+                                    } catch (error) {
+                                        console.error("Failed to delete post:", error);
+                                    }
+                                }}>Delete</button>
+                                <button className={`${styles.glowButton} `} style={{ marginBottom: "10px", paddingRight: "10px" }} onClick={() => setShowDeleteConfirmation(false)}>Cancel</button>
+                            </div>
                         </div>
                     </div>
 
@@ -84,6 +113,6 @@ export default function PostPage() {
         )
     }
     else {
-        {<h1>Loading...</h1>}
+        { <h1>Loading...</h1> }
     }
 }

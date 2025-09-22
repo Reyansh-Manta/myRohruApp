@@ -74,14 +74,14 @@ export default function PhotoBookPage() {
 
                         <div className={styles.posts}>
                             {posts.map((post) => (
-                                <a href={`/post-open/${post.id}`} key={post.id}>
+                                <a href={`/post-open/${post.id}`} style={{ textDecoration: "none" }} key={post.id}>
                                 <div className={styles.container} key={post.id}>
                                     <div className={styles.incont}>
                                         <img src={post.cimage} alt="" style={{ zIndex: '100'}} className={styles.cimage} />
                                     </div>
-                                    <p className={styles.title}>{post.title}</p>
+                                    <p className={styles.title} style={{textDecoration: "none"}}>{post.title}</p>
                                     <p className={styles.author}>{post.postedBy}</p>
-                                    <p className={styles.date}>{post.createdAt}</p>
+                                    <p className={styles.date}>{new Date(post.createdAt).toLocaleString()}</p>
                                 </div>
                                 </a>
                             ))}
