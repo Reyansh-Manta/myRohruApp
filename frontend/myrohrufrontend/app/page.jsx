@@ -22,10 +22,10 @@ export default function HomePage() {
 
     return (
 <>
-{/* <img src="wf.jpg" alt="" style={{width: '100vw' , height: '100vh', zIndex: '-10'}} /> */}
+{/* <img src="hb.avif" alt="" style={{width: '100vw' , height: '100vh', objectFit: 'cover', position: 'fixed'}} /> */}
             <div className={styles.bggg} style={{ overflowX: 'hidden' , zIndex:'1'}}>
                 <div className={styles.main}>
-                    <Navbar />
+                    <Navbar style={{ zIndex: "10" }} />
                     <div className={styles.mainins}>
                         <div className={styles.mainleft}>From Rohru? {"\u00A0"}{"\u00A0"}{"\u00A0"}{"\u00A0"}{"\u00A0"}{"\u00A0"}{"\u00A0"}{"\u00A0"}{"\u00A0"}{"\u00A0"}{"\u00A0"}{"\u00A0"}{"\u00A0"}{"\u00A0"}Explore these
                         </div>

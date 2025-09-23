@@ -1,0 +1,27 @@
+@import url('https://fonts.googleapis.com/css2?family=Bungee&family=Carter+One&family=Caveat+Brush&display=swap');
+
+.loginBox{
+    background-color: rgba(4, 68, 86, 0.639);
+}
+
+.fontlogin{
+    font-family: 'Bungee';
+    font-weight: bold;
+    font-size: 32px;
+}
+
+.inputField::placeholder {
+    color: white;
+    opacity: 1;
+}
+
+.submitButton {
+    background-color: #044456;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
