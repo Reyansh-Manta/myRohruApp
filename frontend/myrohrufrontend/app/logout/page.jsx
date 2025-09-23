@@ -12,23 +12,21 @@ export default function LogoutPage() {
     async function handleLogout() {
     try {
         const response = await axios.post(`http://localhost:2002/api/v1/users/logout`,
-            
+            {},
             {
                 withCredentials: true
             }
         )
         check = true
+        router.push("/local-feed")
     } catch (error) {
-        console.error("Logout failed:", error);
+        console.log("Logout failed:", error);
         // router.push("/local-feed")
         check = false
+        router.push("/local-feed")
     }
 }
 handleLogout()
 }, [])
-if (check) {
-    router.push("/local-feed")
-} else {
-    // router.push("/local-feed")
-}
+
 }

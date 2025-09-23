@@ -36,7 +36,7 @@ export default function Navbar({ children }) {
                         <img className={styles.menuIcon} src="/menu.png" alt="" style={{ width: "30px", height: "30px", marginRight: "7px", marginTop: "5px", backgroundColor: "transparent", zIndex: "10" }} />
                     </label>
 
-                    <div className={styles.navoptions}>
+                    <div className={styles.navoptions} style={{ zIndex: "10" }}>
                         <Link className={` ${styles.linkNavOptions}`} href={"/logout"}>
                             Logout
                         </Link>
@@ -85,9 +85,6 @@ export default function Navbar({ children }) {
                         </Link>
                         <Link className={` ${styles.linkNavOptions}`} href={"/register"}>
                             Register
-                        </Link>
-                        <Link className={` ${styles.linkNavOptions}`} href={"/logout"}>
-                            Logout
                         </Link>
                         <Link className={` ${styles.linkNavOptions}`} href={"/aboutus"}>
                             About Us
