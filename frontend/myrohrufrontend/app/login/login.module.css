@@ -2,6 +2,8 @@
 
 .loginBox{
     background-color: rgba(4, 68, 86, 0.639);
+    position: absolute;
+    top: 25%;
 }
 
 .fontlogin{

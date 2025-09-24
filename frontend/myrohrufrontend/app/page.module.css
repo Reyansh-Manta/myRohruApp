@@ -137,11 +137,13 @@
     /* opacity: 0; */
     width: 20vw;
     height: 27vh;
+    
     position: static;
   }
 
   .box2 {
-    background-color: #752ffe;
+    background-color: transparent;
+    /* opacity: 0.8; */
     width: 27vw;
     height: 27vh;
     position: static;
@@ -267,7 +269,7 @@
   }
 
   .box2 {
-    /* background-color: #752ffe; */
+    background-color: transparent;
     width: 25vw;
     height: 24vh;
     position: static;
@@ -343,9 +345,10 @@
   }
 
   .boxd2 {
+    position: static;
+    background-color: transparent;
     width: 31vw;
     height: 26vh;
-    position: static;
   }
 
   .bd2bg {
@@ -395,7 +398,7 @@
   }
 
   .box2 {
-    /* background-color: #752ffe; */
+    background-color: transparent;
     width: 25vw;
     height: 24vh;
     position: static;
@@ -474,6 +477,7 @@
     width: 31vw;
     height: 26vh;
     position: static;
+    background-color: transparent;
   }
 
   .bd2bg {
@@ -520,8 +524,8 @@
 @media screen and (min-width: 1480px) {
 
   .b1s1 {
-    font-family: 'Caveat Brush';
-    font-size: 64px;
+    font-family: 'Bungee';
+    font-size: 40px;
     font-weight: 580;
     padding: 20px;
     padding-top: 20px;
@@ -533,7 +537,7 @@
   .b2s1 {
     font-family: 'Caveat Brush';
     font-size: 70px;
-    font-weight: 599;
+    font-weight: 600;
     line-height: 60px;
     padding: 20px;
     padding-top: 0px;
@@ -543,8 +547,8 @@
   }
 
   .b2s2 {
-    font-family: 'Caveat Brush';
-    font-size: 70px;
+    font-family: 'Bungee';
+    font-size: 40px;
     font-weight: 599;
     line-height: 60px;
     padding: 20px;
@@ -557,7 +561,7 @@
   .b3s1 {
     font-family: 'Caveat Brush';
     font-size: 70px;
-    font-weight: 580;
+    font-weight: 600;
     padding: 20px;
     padding-top: 37px;
     padding-left: 35px;
@@ -566,8 +570,8 @@
   }
 
   .b4s1 {
-    font-family: 'Caveat Brush';
-    font-size: 70px;
+    font-family: 'Bungee';
+    font-size: 45px;
     font-weight: 599;
     padding: 20px;
     padding-top: 13px;
@@ -578,11 +582,11 @@
   }
 
   .b5s1 {
-    font-family: 'Caveat Brush';
-    font-size: 70px;
+    font-family: 'Bungee';
+    font-size: 45px;
     font-weight: 599;
     padding: 20px;
-    padding-top: 167px;
+    /* padding-bottom: 300px; */
     padding-left: 88px;
     background-color: transparent;
     color: black;
@@ -612,8 +616,8 @@
   }
 
   .bd2s2 {
-    font-family: 'Caveat Brush';
-    font-size: 70px;
+    font-family: 'Bungee';
+    font-size: 40px;
     font-weight: 599;
     line-height: 60px;
     padding: 20px;
@@ -621,31 +625,31 @@
     padding-top: 0px;
     padding-left: 15px;
     background-color: transparent;
-    color: rgb(7, 7, 60);
+    color: black;
   }
 
   .bd3s1 {
-    font-family: 'Caveat Brush';
-    font-size: 70px;
+    font-family: 'Bungee';
+    font-size: 40px;
     font-weight: 600;
-    line-height: 60px;
+    line-height: 43px;
     padding: 20px;
-    padding-top: 20px;
+    padding-top: 10px;
     padding-left: 25px;
     background-color: transparent;
     color: rgb(8, 48, 179);
   }
 
   .bd4s1 {
-    font-family: 'Caveat Brush';
-    font-size: 90px;
+    font-family: 'Bungee';
+    font-size: 45px;
     font-weight: 599;
     line-height: 60px;
     padding: 20px;
     padding-top: 20px;
     padding-left: 25px;
     background-color: transparent;
-    color: black;
+    color: rgb(4, 4, 52);
   }
 
 }
@@ -653,8 +657,8 @@
 @media screen and (max-width: 1480px) and (min-width: 1260px) {
 
   .b1s1 {
-    font-family: 'Caveat Brush';
-    font-size: 54px;
+    font-family: 'Bungee';
+    font-size: 40px;
     font-weight: 580;
     padding: 20px;
     padding-top: 26px;
@@ -669,17 +673,17 @@
     font-weight: 599;
     line-height: 40px;
     padding: 20px;
-    padding-top: 2px;
+    padding-top: 8px;
     padding-left: 14px;
     background-color: transparent;
     color: rgb(8, 48, 179);
   }
 
   .b2s2 {
-    font-family: 'Caveat Brush';
-    font-size: 59px;
+    font-family: 'Bungee';
+    font-size: 33px;
     font-weight: 599;
-    line-height: 60px;
+    line-height: 54px;
     padding: 20px;
     padding-top: 0px;
     padding-left: 14px;
@@ -699,8 +703,8 @@
   }
 
   .b4s1 {
-    font-family: 'Caveat Brush';
-    font-size: 64px;
+    font-family: 'Bungee';
+    font-size: 40px;
     font-weight: 599;
     padding: 20px;
     padding-top: 10px;
@@ -711,11 +715,11 @@
   }
 
   .b5s1 {
-    font-family: 'Caveat Brush';
-    font-size: 64px;
+    font-family: 'Bungee';
+    font-size: 40px;
     font-weight: 599;
     padding: 20px;
-    padding-top: 165px;
+    /* padding-top: 165px; */
     /* padding-bottom: 150px; */
     padding-left: 78px;
     background-color: transparent;
@@ -746,8 +750,8 @@
   }
 
   .bd2s2 {
-    font-family: 'Caveat Brush';
-    font-size: 59px;
+    font-family: 'Bungee';
+    font-size: 40px;
     font-weight: 599;
     line-height: 60px;
     padding: 20px;
@@ -755,43 +759,43 @@
     padding-top: 0px;
     padding-left: 14px;
     background-color: transparent;
-    color: rgb(7, 7, 60);
+    color: black;
   }
 
   .bd3s1 {
-    font-family: 'Caveat Brush';
-    font-size: 59px;
+    font-family: 'Bungee';
+    font-size: 40px;
     font-weight: 600;
-    line-height: 60px;
+    line-height: 40px;
     padding: 20px;
-    padding-top: 20px;
+    padding-top: 10px;
     padding-left: 25px;
     background-color: transparent;
-    color: rgb(8, 48, 179);
+    color: rgb(32, 56, 134);
   }
 
   .bd4s1 {
-    font-family: 'Caveat Brush';
-    font-size: 60px;
+    font-family: 'Bungee';
+    font-size: 40px;
     font-weight: 599;
     line-height: 60px;
     padding: 20px;
     padding-top: 20px;
     padding-left: 25px;
     background-color: transparent;
-    color: black;
+    color: rgb(4, 4, 52);
   }
 
 }
 
-@media screen and (max-width: 1260px) and (min-width: 1201px) {
+@media screen and (max-width: 1260px) and (min-width: 1221px) {
 
   .b1s1 {
-    font-family: 'Caveat Brush';
-    font-size: 50px;
+    font-family: 'Bungee';
+    font-size: 40px;
     font-weight: 580;
     padding: 20px;
-    padding-top: 37px;
+    padding-top: 25px;
     padding-left: 20px;
     background-color: transparent;
     /* (removed) background-color: #8c52ff; */
@@ -800,19 +804,20 @@
 
   .b2s1 {
     font-family: 'Caveat Brush';
-    font-size: 54px;
+    font-size: 60px;
     font-weight: 599;
     padding: 20px;
-    padding-top: 0px;
+    padding-top: 10px;
     padding-left: 4px;
     background-color: transparent;
     color: rgb(8, 48, 179);
     line-height: 60px;
+    opacity: 1;
   }
 
   .b2s2 {
-    font-family: 'Caveat Brush';
-    font-size: 54px;
+    font-family: 'Bungee';
+    font-size: 30px;
     font-weight: 599;
     padding: 20px;
     padding-top: 0px;
@@ -824,8 +829,8 @@
 
   .b3s1 {
     font-family: 'Caveat Brush';
-    font-size: 54px;
-    font-weight: 580;
+    font-size: 60px;
+    font-weight: 600;
     padding: 20px;
     padding-top: 33px;
     padding-left: 28px;
@@ -834,23 +839,23 @@
   }
 
   .b4s1 {
-    font-family: 'Caveat Brush';
-    font-size: 54px;
+    font-family: 'Bungee';
+    font-size: 40px;
     font-weight: 599;
     padding: 20px;
     padding-top: 33px;
     padding-left: 28px;
     background-color: transparent;
     color: rgb(20, 2, 122);
-    line-height: 60px;
+    line-height: 45px;
   }
 
   .b5s1 {
-    font-family: 'Caveat Brush';
-    font-size: 54px;
+    font-family: 'Bungee';
+    font-size: 40px;
     font-weight: 599;
     padding: 20px;
-    padding-top: 163px;
+    /* padding-top: 163px; */
     padding-left: 28px;
     background-color: transparent;
     color: black;
@@ -881,47 +886,47 @@
   }
 
   .bd2s2 {
-    font-family: 'Caveat Brush';
-    font-size: 54px;
+    font-family: 'Bungee';
+    font-size: 40px;
     font-weight: 600;
     padding: 20px;
     margin-top: -40px;
-    padding-top: 0px;
+    padding-top: 10px;
     padding-left: 6px;
     background-color: transparent;
     color: rgb(7, 7, 60);
   }
 
   .bd3s1 {
-    font-family: 'Caveat Brush';
-    font-size: 54px;
+    font-family: 'Bungee';
+    font-size: 36px;
     font-weight: 599;
     padding: 20px;
-    padding-top: 20px;
-    padding-left: 25px;
+    padding-top: 0px;
+    padding-left: 15px;
     background-color: transparent;
     color: rgb(8, 48, 179);
   }
 
   .bd4s1 {
-    font-family: 'Caveat Brush';
-    font-size: 70px;
+    font-family: 'Bungee';
+    font-size: 40px;
     font-weight: 599;
-    line-height: 60px;
+    line-height: 40px;
     padding: 20px;
-    padding-top: 20px;
+    padding-top: 25px;
     padding-left: 25px;
     background-color: transparent;
-    color: black;
+    color: rgb(4, 4, 52);
   }
 
 }
 
-@media screen and (max-width: 1201px) and (min-width: 900px) {
+@media screen and (max-width: 1221px) and (min-width: 900px) {
 
   .b1s1 {
-    font-family: 'Caveat Brush';
-    font-size: 55px;
+    font-family: 'Bungee';
+    font-size: 40px;
     font-weight: 580;
     padding: 0px;
     padding-top: 10px;
@@ -944,12 +949,12 @@
   }
 
   .b2s2 {
-    font-family: 'Caveat Brush';
-    font-size: 39px;
+    font-family: 'Bungee';
+    font-size: 22px;
     font-weight: 80px;
-    line-height: 20px;
+    line-height: 0px;
     padding: 20px;
-    padding-top: 30px;
+    padding-top: 10px;
     padding-left: 8px;
     background-color: transparent;
     color: black;
@@ -957,8 +962,8 @@
 
   .b3s1 {
     font-family: 'Caveat Brush';
-    font-size: 44px;
-    font-weight: 580;
+    font-size: 50px;
+    font-weight: 600;
     padding: 20px;
     padding-top: 33px;
     padding-left: 28px;
@@ -967,8 +972,8 @@
   }
 
   .b4s1 {
-    font-family: 'Caveat Brush';
-    font-size: 44px;
+    font-family: 'Bungee';
+    font-size: 30px;
     font-weight: 600;
     line-height: 45px;
     padding: 20px;
@@ -979,12 +984,12 @@
   }
 
   .b5s1 {
-    font-family: 'Caveat Brush';
-    font-size: 44px;
+    font-family: 'Bungee';
+    font-size: 30px;
     font-weight: 600;
     line-height: 40px;
     padding: 20px;
-    padding-top: 139px;
+    /* padding-top: 139px; */
     padding-left: 28px;
     background-color: transparent;
     color: black;
@@ -1016,8 +1021,8 @@
   }
 
   .bd2s2 {
-    font-family: 'Caveat Brush';
-    font-size: 49px;
+    font-family: 'Bungee';
+    font-size: 30px;
     font-weight: 599;
     line-height: 20px;
     padding: 20px;
@@ -1029,13 +1034,13 @@
   }
 
   .bd3s1 {
-    font-family: 'Caveat Brush';
-    font-size: 44px;
+    font-family: 'Bungee';
+    font-size: 27px;
     font-weight: 600;
-    line-height: 40px;
+    line-height: 30px;
     padding: 20px;
-    padding-top: 20px;
-    padding-left: 25px;
+    padding-top: 10px;
+    padding-left: 10px;
     background-color: transparent;
     color: rgb(8, 48, 179);
   }

@@ -22,30 +22,30 @@ export default function HomePage() {
 
     return (
 <>
-{/* <img src="hb.avif" alt="" style={{width: '100vw' , height: '100vh', objectFit: 'cover', position: 'fixed'}} /> */}
-            <div className={styles.bggg} style={{ overflowX: 'hidden' , zIndex:'1'}}>
+<img src="lb.jpg" alt="" style={{width: '100%', overflow: 'hidden', height: '100vh', objectFit: 'cover', position: 'fixed'}} />
+            <div className={styles.bggg} style={{ overflow: 'hidden' , zIndex:'1'}}>
                 <div className={styles.main}>
-                    <Navbar style={{ zIndex: "10" }} />
+                    <Navbar/>
                     <div className={styles.mainins}>
-                        <div className={styles.mainleft}>From Rohru? {"\u00A0"}{"\u00A0"}{"\u00A0"}{"\u00A0"}{"\u00A0"}{"\u00A0"}{"\u00A0"}{"\u00A0"}{"\u00A0"}{"\u00A0"}{"\u00A0"}{"\u00A0"}{"\u00A0"}{"\u00A0"}Explore these
+                        <div style={{backgroundColor: "transparent", color: "white"}} className={styles.mainleft}>From Rohru? {"\u00A0"}{"\u00A0"}{"\u00A0"}{"\u00A0"}{"\u00A0"}{"\u00A0"}{"\u00A0"}{"\u00A0"}{"\u00A0"}{"\u00A0"}{"\u00A0"}{"\u00A0"}{"\u00A0"}{"\u00A0"}Explore these
                         </div>
-                        <div className={styles.mainlefts}>From Rohru? Explore these
+                        <div style={{backgroundColor: "transparent", color: "white"}} className={styles.mainlefts}>From Rohru? Explore these
                         </div>
-                        <div className={styles.mainright}>
+                        <div style={{backgroundColor: "transparent"}} className={styles.mainright}>
 
                             <div className={styles.box1}>
                                 <a href="/local-feed" className={styles.linka}>
                                     <img src="/saru.webp" alt="" className={styles.b1bg} style={{ zIndex: '0', position: 'absolute', objectFit: 'cover' }} />
                                     <div style={{ zIndex: '1', position: 'relative', backgroundColor: 'transparent' }}>
-                                        <p className={styles.b1s1} style={{ color: '#004aad' }}>Local News</p>
+                                        <p className={styles.b1s1} style={{ color: 'black' }}>Local News</p>
                                     </div>
                                 </a>
                             </div>
                             <div className={styles.box2}>
                                 <a href="/announcements" className={styles.linka}>
-                                    <img src="/b2.jpg" alt="" className={styles.b2bg} style={{ zIndex: '0', position: 'absolute', objectFit: 'cover' }} />
-                                    <div style={{ zIndex: '1', position: 'relative', backgroundColor: 'transparent' }}>
-                                        <p className={styles.b2s1} style={{}}>General</p>
+                                    <img src="/b2.jpg" alt="" className={styles.b2bg} style={{ zIndex: '0', position: 'absolute', objectFit: 'cover' , opacity: '0.9'}} />
+                                    <div style={{ zIndex: '1', position: 'relative', backgroundColor: 'transparent', opacity: '1' }}>
+                                        <p className={styles.b2s1} style={{opacity: '1'}}>General</p>
                                         <p className={styles.b2s2} style={{}}>Announcements</p>
                                     </div>
                                 </a>
@@ -78,8 +78,8 @@ export default function HomePage() {
                     </div>
                 </div>
                 <div style={{ zIndex: '100', position: 'relative' }} className={styles.partition}></div>
-                <div className={styles.maininsd}>
-                    <div className={styles.maindownleft}>
+                <div style={{backgroundColor: "transparent"}} className={styles.maininsd}>
+                    <div style={{backgroundColor: "transparent"}} className={styles.maindownleft}>
                         <div className={styles.boxd1}>
                             <a href="/wiki" className={styles.linka}>
                                 <img src="/1.webp" alt="" className={styles.bd1bg} style={{ zIndex: '0', position: 'absolute', objectFit: 'cover' }} />
@@ -114,7 +114,7 @@ export default function HomePage() {
                             </a>
                         </div>
                     </div>
-                    <div className={styles.maindownright}>A Tourist? {"\u00A0"}{"\u00A0"}{"\u00A0"}{"\u00A0"}{"\u00A0"}{"\u00A0"}{"\u00A0"}{"\u00A0"}{"\u00A0"}{"\u00A0"}{"\u00A0"}{"\u00A0"}{"\u00A0"}{"\u00A0"}Explore these</div>
+                    <div style={{backgroundColor: "transparent", color: 'white'}} className={styles.maindownright}>A Tourist? {"\u00A0"}{"\u00A0"}{"\u00A0"}{"\u00A0"}{"\u00A0"}{"\u00A0"}{"\u00A0"}{"\u00A0"}{"\u00A0"}{"\u00A0"}{"\u00A0"}{"\u00A0"}{"\u00A0"}{"\u00A0"}Explore these</div>
                 </div>
             </div>
         </>
