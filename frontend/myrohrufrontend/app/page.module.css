@@ -1046,24 +1046,24 @@
   }
 
   .bd4s1 {
-    font-family: 'Caveat Brush';
-    font-size: 60px;
+    font-family: 'Bungee';
+    font-size: 30px;
     font-weight: 599;
     line-height: 40px;
     padding: 20px;
     padding-top: 20px;
     padding-left: 25px;
     background-color: transparent;
-    color: black;
+    color: rgb(4, 4, 52);
   }
 
 }
 
-@media screen and (max-width: 900px) {
+@media screen and (max-width: 900px) and (min-width: 500px) {
 
   .b1s1 {
-    font-family: 'Caveat Brush';
-    font-size: 30px;
+    font-family: 'Bungee';
+    font-size: 22px;
     font-weight: 580;
     padding: 0px;
     padding-top: 10px;
@@ -1086,10 +1086,10 @@
   }
 
   .b2s2 {
-    font-family: 'Caveat Brush';
-    font-size: 15px;
+    font-family: 'Bungee';
+    font-size: 12px;
     font-weight: 600;
-    line-height: 20px;
+    line-height: 23px;
     padding: 20px;
     margin-top: -15px;
     padding-top: 0px;
@@ -1100,8 +1100,8 @@
 
   .b3s1 {
     font-family: 'Caveat Brush';
-    font-size: 25px;
-    font-weight: 580;
+    font-size: 30px;
+    font-weight: 600;
     padding: 0px;
     padding-top: 3px;
     padding-left: 39px;
@@ -1111,24 +1111,24 @@
   }
 
   .b4s1 {
-    font-family: 'Caveat Brush';
-    font-size: 27px;
+    font-family: 'Bungee';
+    font-size: 18px;
     font-weight: 600;
     line-height: 25px;
     padding: 20px;
     padding-top: 13px;
-    padding-left: 8px;
+    padding-left: 5px;
     background-color: transparent;
     color: rgb(20, 2, 122);
   }
 
   .b5s1 {
-    font-family: 'Caveat Brush';
-    font-size: 27px;
+    font-family: 'Bungee';
+    font-size: 20px;
     font-weight: 599;
     line-height: 40px;
     padding: 20px;
-    padding-top: 129px;
+    /* padding-top: 129px; */
     padding-left: 3px;
     background-color: transparent;
     color: black;
@@ -1160,8 +1160,8 @@
   }
 
   .bd2s2 {
-    font-family: 'Caveat Brush';
-    font-size: 30px;
+    font-family: 'Bungee';
+    font-size: 20px;
     font-weight: 600;
     line-height: 5px;
     padding: 20px;
@@ -1173,9 +1173,9 @@
   }
 
   .bd3s1 {
-    font-family: 'Caveat Brush';
-    font-size: 28px;
-    font-weight: 600;
+    font-family: 'Bungee';
+    font-size: 18px;
+    font-weight: 599;
     line-height: 25px;
     padding: 20px;
     padding-top: 4px;
@@ -1185,15 +1185,154 @@
   }
 
   .bd4s1 {
-    font-family: 'Caveat Brush';
-    font-size: 25px;
+    font-family: 'Bungee';
+    font-size: 18px;
     font-weight: 600;
     line-height: 40px;
     padding: 20px;
-    padding-top: 5px;
+    padding-top: 30px;
+    padding-left: 22px;
+    background-color: transparent;
+    color: rgb(4, 4, 52);
+  }
+
+}
+
+@media screen and (max-width: 500px) {
+
+  .b1s1 {
+    font-family: 'Bungee';
+    font-size: 15px;
+    font-weight: 580;
+    padding: 0px;
+    padding-top: 10px;
+    line-height: 23px;
+    padding-left: 5px;
+    background-color: transparent;
+    color: #004aad;
+  }
+
+  .b2s1 {
+    font-family: 'Caveat Brush';
+    font-size: 25px;
+    font-weight: 600;
+    line-height: 10px;
+    padding: 20px;
+    padding-top: 10px;
+    padding-left: 4px;
+    background-color: transparent;
+    color: rgb(8, 48, 179);
+  }
+
+  .b2s2 {
+    font-family: 'Bungee';
+    font-size: 8px;
+    font-weight: 599;
+    line-height: 23px;
+    padding: 20px;
+    margin-top: -15px;
+    padding-top: 0px;
     padding-left: 5px;
     background-color: transparent;
     color: black;
+  }
+
+  .b3s1 {
+    font-family: 'Caveat Brush';
+    font-size: 30px;
+    font-weight: 600;
+    padding: 0px;
+    padding-top: 3px;
+    padding-left: 39px;
+    background-color: transparent;
+    color: black;
+    transform: rotate(90deg);
+  }
+
+  .b4s1 {
+    font-family: 'Bungee';
+    font-size: 11px;
+    font-weight: 600;
+    line-height: 15px;
+    padding: 20px;
+    padding-top: 13px;
+    padding-left: 5px;
+    background-color: transparent;
+    color: rgb(20, 2, 122);
+  }
+
+  .b5s1 {
+    font-family: 'Bungee';
+    font-size: 13px;
+    font-weight: 600;
+    line-height: 40px;
+    padding: 9px;
+    /* padding-top: 129px; */
+    padding-left: 3px;
+    background-color: transparent;
+    color: black;
+  }
+
+  .bd1s1 {
+    font-family: 'Caveat Brush';
+    font-size: 22px;
+    font-weight: 600;
+    line-height: 23px;
+    padding: 20px;
+    padding-top: 13px;
+    padding-left: 10px;
+    background-color: transparent;
+    color: black;
+  }
+
+  .bd2s1 {
+    font-family: 'Caveat Brush';
+    font-size: 18px;
+    font-weight: 600;
+    margin-top: -89px;
+    line-height: 10px;
+    padding: 20px;
+    padding-top: 30px;
+    padding-left: 8px;
+    background-color: transparent;
+    color: rgb(8, 48, 179);
+  }
+
+  .bd2s2 {
+    font-family: 'Bungee';
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 0px;
+    padding: 20px;
+    margin-top: -30px;
+    padding-top: 25px;
+    padding-left: 8px;
+    background-color: transparent;
+    color: rgb(7, 7, 60);
+  }
+
+  .bd3s1 {
+    font-family: 'Bungee';
+    font-size: 12px;
+    font-weight: 599;
+    line-height: 17px;
+    padding: 20px;
+    padding-top: 4px;
+    padding-left: 3px;
+    background-color: transparent;
+    color: rgb(8, 48, 179);
+  }
+
+  .bd4s1 {
+    font-family: 'Bungee';
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 40px;
+    padding: 20px;
+    padding-top: 15px;
+    padding-left: 5px;
+    background-color: transparent;
+    color: rgb(2, 2, 51);
   }
 
 }
@@ -1322,7 +1461,7 @@
   }
 }
 
-@media screen and (max-width: 900px) {
+@media screen and (max-width: 900px) and (min-width: 530px) {
 
   .mainleft {
     display: none;
@@ -1337,6 +1476,49 @@
     width: 1978px;
     height: 0vw;
     left: -37px;
+    font-family: 'Bungee';
+    transform: rotate(270deg);
+    display: flex;
+    align-items: center;
+    justify-items: center;
+    color: #004aad;
+    font-size: 15px;
+    font-weight: 600;
+  }
+
+  .maindownright {
+    position: relative;
+    margin: -50px;
+    bottom: 100px;
+    /* top: 27vh; */
+    width: 200px;
+    height: 15vw;
+    left: -150px;
+    font-family: 'Bungee';
+    transform: rotate(90deg);
+    display: flex;
+    align-items: center;
+    justify-items: center;
+    color: #004aad;
+    font-size: 15;
+    font-weight: 600;
+  }
+}
+@media screen and (max-width: 530px) {
+
+  .mainleft {
+    display: none;
+  }
+
+  .mainlefts {
+    position: relative;
+    margin: 10px;
+    margin-right: 0px;
+    bottom: 70px;
+    /* top: 27vh; */
+    width: 1978px;
+    height: 0vw;
+    left: -20px;
     font-family: 'Bungee';
     transform: rotate(270deg);
     display: flex;
