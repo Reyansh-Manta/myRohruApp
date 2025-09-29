@@ -2,10 +2,11 @@
 
 import axios from "axios"
 import Navbar from "../../components/Navbar/page"
-import styles from "./photo-book.module.css"
+import styles from "./post-open.module.css"
 import Link from "next/link"
 import { useState, useEffect } from "react"
 import { useRouter, useParams } from "next/navigation"
+import { useUser } from "../../context/UserContext"
 import React from "react"
 
 export default function PostPage() {
@@ -14,8 +15,12 @@ export default function PostPage() {
     const [fetchposts, setfetchposts] = useState([false])
     const [showDeleteConfirmation, setShowDeleteConfirmation] = useState(false);
     const [post, setPosts] = useState([])
+    const { loggedIn, checking, user } = useUser()
+    const [same, setsame] = useState(false)
     const router = useRouter()
-    console.log(id);
+    console.log("init: ", same);
+    
+    // console.log(user.username);
 
     useEffect(() => {
         if (showDeleteConfirmation) {
@@ -34,7 +39,7 @@ export default function PostPage() {
                     { withCredentials: true }
                 )
                 setPosts(response.data.data[0])
-                console.log(response.data.data[0]);
+                // console.log(response.data.data[0]);
             } catch (error) {
                 throw new Error("Failed to fetch post")
             } finally {
@@ -43,6 +48,29 @@ export default function PostPage() {
         }
         fetchData()
     }, [])
+
+    useEffect(() => {
+        // console.log(checking);
+        // console.log(same);
+
+        // console.log(user);
+        // console.log(user?.username);
+        // console.log(post.postedBy);
+
+
+        if (!loggedIn && checking) {
+            setsame(false)
+        }
+        else if (user?.username == post.postedBy) {
+            setsame(true)
+            // console.log(same)
+        }
+        else {
+            setsame(false)
+            // console.log(same)
+        }
+        console.log("final: ", same);
+    }, [!checking])
 
     if (fetchposts) {
 
@@ -72,23 +100,23 @@ export default function PostPage() {
                         <a href="/photo-book" className={styles.SidebarLink}>Photo Book</a>
                     </div>
 
-                    <img src="/Untitled design.png" alt="" className={styles.bgimage} />
 
+                    <img src="/Untitled design.png" alt="" className={styles.bgimage} />
                     <div className={styles.mainright}>
-                        <div className={styles.cp} style={{margin: "5px", marginTop: "55px" }}>
+                        <div className={styles.cp} style={{ margin: "5px", marginTop: "55px" }}>
                             <p className={styles.p1}>{`${post.title}`}</p>
                         </div>
-                        <div className={styles.cp} style={{margin: "5px"}}>
+                        <div className={styles.cp} style={{ margin: "5px" }}>
                             <p className={styles.p12}>{`Posted by ${post.postedBy} at ${new Date(post.createdAt).toLocaleString()}`}</p>
                         </div>
-                        <div className={styles.cp1} style={{margin: "5px"}}>
-                            <p className={styles.p2}>{`${post.content}`}</p>
+                        <div className={styles.cp1} style={{ margin: "5px" }}>
+                            <p className={`${styles.p2} ${styles['preserve-format']}`}>{`${post.content}`}</p>
                         </div>
                         <div className={styles.pica1} style={{ display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", marginBottom: "150px", marginTop: "55px", gap: "20px" }}>
                             {post.image?.map(image => (<img src={image} alt="" key={image} className={styles.image} style={{ width: "60%", height: "auto", objectFit: "cover" }} />))}
                         </div>
+                        {same ? <button className={`${styles.glowButton} ${styles.delbtn}`} type="checkbox" style={{ paddingBottom: "5px" }} onClick={() => setShowDeleteConfirmation(true)}>Delete Post</button> : null}
 
-                        <button className={`${styles.glowButton} ${styles.delbtn}`} type="checkbox" style={{ paddingBottom: "5px" }} onClick={() => setShowDeleteConfirmation(true)}>Delete Post</button>
 
                         <div className={styles.suredel}>
                             <div>

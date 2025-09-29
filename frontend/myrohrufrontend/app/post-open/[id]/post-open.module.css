@@ -18,6 +18,10 @@
     font-style: normal;
 }
 
+.preserve-format {
+  white-space: pre-wrap;   /* preserves newlines + wraps text */
+  word-wrap: break-word;   /* breaks long words if needed */
+}
 
 @media screen and (min-width: 1210px) {
     

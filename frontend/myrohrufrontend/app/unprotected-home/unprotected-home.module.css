@@ -571,14 +571,14 @@
 
   .b4s1 {
     font-family: 'Bungee';
-    font-size: 45px;
+    font-size: 40px;
     font-weight: 599;
     padding: 20px;
     padding-top: 13px;
     padding-left: 28px;
     background-color: transparent;
     color: rgb(20, 2, 122);
-    line-height: 60px;
+    line-height: 45px;
   }
 
   .b5s1 {
@@ -704,14 +704,14 @@
 
   .b4s1 {
     font-family: 'Bungee';
-    font-size: 40px;
+    font-size: 35px;
     font-weight: 599;
     padding: 20px;
     padding-top: 10px;
     padding-left: 28px;
     background-color: transparent;
     color: rgb(20, 2, 122);
-    line-height: 60px;
+    line-height: 50px;
   }
 
   .b5s1 {
@@ -840,7 +840,7 @@
 
   .b4s1 {
     font-family: 'Bungee';
-    font-size: 40px;
+    font-size: 35px;
     font-weight: 599;
     padding: 20px;
     padding-top: 33px;

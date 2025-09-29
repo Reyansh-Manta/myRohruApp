@@ -27,22 +27,25 @@ export default function LoginPage() {
                 }
             )
 
-            const data = await response.data
+            const data = await response.data.message
+            
+            console.log(data);
 
             if (response.status === 200) {
-                setmessage("logged in successfully")
+                setmessage(data)
 
                 setTimeout(() => {
                     router.push('/')
                 }, 1000);
             }
             else {
-                setmessage("response not generated properly in loginPage")
+                // setmessage("response not generated properly in loginPage")
+                setmessage(data)
             }
 
         } catch (error) {
-            console.error("error sending post request in login page", error)
-            setmessage("error sending post request in login page")
+            // console.error("error sending post request in login page", error)
+            setmessage("Please enter correct credentials or try again later")
         }
     }
 
@@ -112,7 +115,7 @@ export default function LoginPage() {
                         <button className={styles.submitButton} type="submit">SUBMIT</button>
 
                     </form>
-                    {message}
+                    <p style={{ color: "wheat", width: "150px", backgroundColor:"rgba(4, 68, 86, 0)", paddingTop: '10px' }}>{message}</p>
                 </div>
                 <div className={styles.loginFooter} style={{ margin: "5px", marginTop: "0px", textAlign: "center", backgroundColor: "transparent", color: "white" }}>
                     <p style={{backgroundColor: "transparent", fontSize: "17px"}}>Don't have an account? <a href="/register" style={{backgroundColor: "transparent", fontSize: "17px", color: "#fff"}}>Register here</a></p>

@@ -46,28 +46,28 @@ const getNumber = asyncHandler(async (req, res) => {
 })
 
 const registerUser = asyncHandler(async (req, res) => {
-    const { username, fullName, email, password, village, postoffice } = req.body;
+    const { username, fullName, email, password, village, postoffice, phoneNumber } = req.body;
 
-    const phoneNumber = store.get('userNumber');
+    // const phoneNumber = store.get('userNumber');
     if (!username || !fullName || !email || !password || !phoneNumber || !village || !postoffice) {
         throw new ApiError(400, 'All fields are required');
     }
 
-    const existingUser = await User.findOne({ $or: [{ username }, { email }, { phoneNumber }] });
+    const existingUser = await User.findOne({ $or: [{ username }, { email }] });
 
     if (existingUser) {
-        throw new ApiError(400, 'Username, email, or phone number already exists');
+        throw new ApiError(400, 'Username or email already exists');
     }
 
     const profilePictureLocalPath = req.file?.path;
 
-    if (!profilePictureLocalPath) {
-        throw new ApiError(400, 'Profile picture is required');
-    }
-
-    const profilePicture = await uploadOnCloudinary(profilePictureLocalPath);
-    if (!profilePicture) {
-        throw new ApiError(500, 'Failed to upload profile picture');
+    if (profilePictureLocalPath) {
+        // throw new ApiError(400, 'Profile picture is required');
+        
+        const profilePicture = await uploadOnCloudinary(profilePictureLocalPath);
+        if (!profilePicture) {
+            throw new ApiError(500, 'Failed to upload profile picture');
+        }
     }
 
 
@@ -79,7 +79,7 @@ const registerUser = asyncHandler(async (req, res) => {
         phoneNumber,
         village,
         postoffice,
-        profilePicture: profilePicture?.url || "",
+        // profilePicture: profilePicture?.url || "",
     })
 
     const createdUser = await User.findById(user._id).select(
@@ -108,6 +108,7 @@ const loginUser = asyncHandler(async (req, res) => {
 
     const { email, password, phoneNumber } = req.body
 
+
     if (!email && !phoneNumber) {
         throw new ApiError(404, "username or email required")
     }
@@ -117,7 +118,7 @@ const loginUser = asyncHandler(async (req, res) => {
     }
 
     const user = await User.findOne({
-        $or: [{ email }, { phoneNumber }]
+        $and: [{ email }, { phoneNumber }]
     })
 
     if (!user) {

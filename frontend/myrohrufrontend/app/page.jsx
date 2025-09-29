@@ -13,6 +13,9 @@ export default function HomePage() {
     const { loggedIn, checking } = useUser()
 
     useEffect(() => {
+    }, [])
+
+    useEffect(() => {
         console.log(checking);
 
         if (!loggedIn && checking) {

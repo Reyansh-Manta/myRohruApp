@@ -19,6 +19,9 @@ export default function UnprotectedHome() {
         }
     }, [!checking])
 
+    useEffect(() => {
+    }, [])
+
     return (
         <>
 <img src="lb.jpg" alt="" style={{width: '100%', overflow: 'hidden', height: '100vh', objectFit: 'cover', position: 'fixed'}} />
