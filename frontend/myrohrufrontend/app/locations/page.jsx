@@ -16,7 +16,7 @@ export default function LocationsPage() {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const response = await axios.get(`http://localhost:2002/api/v1/posts/category/must-visit-locations?sortBy=${sort}`,
+                const response = await axios.get(`${process.env.BACKEND}/api/v1/posts/category/must-visit-locations?sortBy=${sort}`,
                     { withCredentials: true }
                 )
                 setPosts(response.data.data)

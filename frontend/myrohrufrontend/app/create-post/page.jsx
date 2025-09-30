@@ -69,7 +69,7 @@ export default function CreatePost() {
             if (C8 != 0) { categories.push(C8) }
             formData.append("category", JSON.stringify(categories))
             console.log(formData);
-            const response = await axios.post(`http://localhost:2002/api/v1/posts/createPost`,
+            const response = await axios.post(`${process.env.BACKEND}/api/v1/posts/createPost`,
                 formData,
                 {
                     withCredentials: true,

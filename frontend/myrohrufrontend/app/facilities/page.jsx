@@ -16,7 +16,7 @@ export default function FacilitiesPage() {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const response = await axios.get(`http://localhost:2002/api/v1/posts/category/facilities?sortBy=${sort}`,
+                const response = await axios.get(`${process.env.BACKEND}/api/v1/posts/category/facilities?sortBy=${sort}`,
                     { withCredentials: true }
                 )
                 setPosts(response.data.data)

@@ -16,7 +16,7 @@ export function UserProvider({children}){
     useEffect(() => {
       const checklogin = async()=>{
         try {
-            const response = await axios.get('http://localhost:2002/api/v1/users/current-user', {
+            const response = await axios.get(`${process.env.BACKEND}/api/v1/users/current-user`, {
                 withCredentials: true
             })
             userr = response.data.data;
