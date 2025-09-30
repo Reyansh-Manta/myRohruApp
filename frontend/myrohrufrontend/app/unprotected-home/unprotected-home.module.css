@@ -1350,7 +1350,7 @@
     width: 700px;
     height: 15vw;
     left: -50px;
-    font-family: 'Bungee';
+    font-family: 'Bungee', sans-serif;
     transform: rotate(270deg);
     display: flex;
     align-items: center;
@@ -1390,7 +1390,7 @@
     width: 700px;
     height: 15vw;
     left: -50px;
-    font-family: 'Bungee';
+    font-family: 'Bungee', sans-serif;
     transform: rotate(270deg);
     display: flex;
     align-items: center;
