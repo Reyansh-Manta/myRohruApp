@@ -24,9 +24,9 @@ export default function Navbar({ children }) {
                 <nav className={styles.nav} style={{backgroundColor: "white", margin: "0", padding: "0"}}>
                     <div className={styles.po00}>
                         <a className={styles.logo} href="/">
-                            <div className={styles.po0}>
-                                <p className={styles.po1}>My</p>
-                                <p className={styles.po2}>Rohru</p>
+                            <div className={styles.po0} style={{backgroundColor: "white", margin: "0", padding: "0"}}>
+                                <p className={styles.po1} style={{backgroundColor: "white", margin: "0", padding: "0"}}>My</p>
+                                <p className={styles.po2} style={{backgroundColor: "white", margin: "0", padding: "0"}}>Rohru</p>
                             </div>
                         </a>
                     </div>
@@ -48,7 +48,7 @@ export default function Navbar({ children }) {
                         </Link>
                     </div>
 
-                    <ul className={styles.list}>
+                    <ul className={styles.list} style={{backgroundColor: "white", margin: "0", padding: "0"}}>
                         <Link className={`${styles.dashboard} ${styles.link}`} href={"/dashboard"}>
                             Dashboard
                         </Link>
@@ -79,7 +79,7 @@ export default function Navbar({ children }) {
                         <img className={styles.menuIcon} src="/menu.png" alt="" style={{ width: "30px", height: "30px", marginRight: "7px", backgroundColor: "transparent", zIndex: "10" }} />
                     </label>
 
-                    <div className={styles.navoptions} style={{backgroundColor: "white", margin: "0", padding: "0"}}>
+                    <div className={styles.navoptions} >
                         <Link className={` ${styles.linkNavOptions}`} href={"/login"}>
                             Login
                         </Link>
@@ -91,7 +91,7 @@ export default function Navbar({ children }) {
                         </Link>
                     </div>
 
-                    <ul className={styles.list}>
+                    <ul className={styles.list} style={{backgroundColor: "white", margin: "0", padding: "0"}}>
                         <Link className={`${styles.dashboard} ${styles.link}`} href={"/login"}>
                             Login
                         </Link>
