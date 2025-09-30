@@ -49,10 +49,10 @@ export default function Navbar({ children }) {
                     </div>
 
                     <ul className={styles.list} style={{backgroundColor: "white", margin: "0", padding: "0"}}>
-                        <Link className={`${styles.dashboard} ${styles.link}`} href={"/dashboard"}>
+                        <Link className={`${styles.dashboard} ${styles.link}`} style={{backgroundColor: "white", margin: "0", padding: "0"}} href={"/dashboard"}>
                             Dashboard
                         </Link>
-                        <Link className={`${styles.about} ${styles.link}`} href={"/aboutus"}>
+                        <Link className={`${styles.about} ${styles.link}`} style={{backgroundColor: "white", margin: "0", padding: "0"}} href={"/aboutus"}>
                             About Us
                         </Link>
                     </ul>
@@ -92,13 +92,13 @@ export default function Navbar({ children }) {
                     </div>
 
                     <ul className={styles.list} style={{backgroundColor: "white", margin: "0", padding: "0"}}>
-                        <Link className={`${styles.dashboard} ${styles.link}`} href={"/login"}>
+                        <Link className={`${styles.dashboard} ${styles.link}`} style={{backgroundColor: "white", margin: "0", padding: "0"}} href={"/login"}>
                             Login
                         </Link>
-                        <Link className={`${styles.dashboard} ${styles.link}`} href={"/register"}>
+                        <Link className={`${styles.dashboard} ${styles.link}`} style={{backgroundColor: "white", margin: "0", padding: "0"}} href={"/register"}>
                             Register
                         </Link>
-                        <Link className={`${styles.about} ${styles.link}`} href={"/aboutus"}>
+                        <Link className={`${styles.about} ${styles.link}`} style={{backgroundColor: "white", margin: "0", padding: "0"}} href={"/aboutus"}>
                             About Us
                         </Link>
                     </ul>
