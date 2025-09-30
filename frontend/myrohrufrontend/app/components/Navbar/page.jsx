@@ -20,7 +20,7 @@ export default function Navbar({ children }) {
 
     if (islog) {
         return (
-            <div>
+            <div style={{backgroundColor: "white", margin: "0", padding: "0"}}>
                 <nav className={styles.nav}>
                     <div className={styles.po00}>
                         <a className={styles.logo} href="/">
