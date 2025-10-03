@@ -35,7 +35,8 @@ export default function RegisterPage() {
                 ddata
             ,
                 {
-                    withCredentials: true
+                    withCredentials: true,
+                    headers: { "Content-Type": "multipart/form-data" }
                 }
             )
 
