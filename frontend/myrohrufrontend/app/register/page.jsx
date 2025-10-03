@@ -31,7 +31,7 @@ export default function RegisterPage() {
             }
             console.log(ddata);
 
-            const response = await axios.post(`${process.env.BACKEND}/api/v1/users/register`,
+            const response = await axios.post(`${process.env.NEXT_PUBLIC_BACKEND}/api/v1/users/register`,
                 ddata
             ,
                 {
