@@ -16,7 +16,7 @@ export default function OrchardsPage() {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const response = await axios.get(`${process.env.BACKEND}/api/v1/posts/category/orchards?sortBy=${sort}`,
+                const response = await axios.get(`${process.env.NEXT_PUBLIC_BACKEND}/api/v1/posts/category/orchards?sortBy=${sort}`,
                     { withCredentials: true }
                 )
                 setPosts(response.data.data)

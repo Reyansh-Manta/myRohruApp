@@ -35,7 +35,7 @@ export default function PostPage() {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const response = await axios.get(`${process.env.BACKEND}/api/v1/posts/post/${id}`,
+                const response = await axios.get(`${process.env.NEXT_PUBLIC_BACKEND}/api/v1/posts/post/${id}`,
                     { withCredentials: true }
                 )
                 setPosts(response.data.data[0])

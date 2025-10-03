@@ -17,7 +17,7 @@ export default function LoginPage() {
 
         try {
 
-            const response = await axios.post(`${process.env.BACKEND}/api/v1/users/loginUser`, {
+            const response = await axios.post(`${process.env.NEXT_PUBLIC_BACKEND}/api/v1/users/loginUser`, {
                 email,
                 phoneNumber,
                 password

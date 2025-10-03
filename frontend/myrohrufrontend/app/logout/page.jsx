@@ -11,7 +11,7 @@ export default function LogoutPage() {
     useEffect(() => {
     async function handleLogout() {
     try {
-        const response = await axios.post(`${process.env.BACKEND}/api/v1/users/logout`,
+        const response = await axios.post(`${process.env.NEXT_PUBLIC_BACKEND}/api/v1/users/logout`,
             {},
             {
                 withCredentials: true
