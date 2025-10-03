@@ -104,13 +104,13 @@ export default function PostPage() {
                     <img src="/Untitled design.png" alt="" className={styles.bgimage} />
                     <div className={styles.mainright}>
                         <div className={styles.cp} style={{ margin: "5px", marginTop: "55px" }}>
-                            <p className={styles.p1}>{`${post.title}`}</p>
+                            <p style={{padding: '17px'}} className={styles.p1}>{`${post.title}`}</p>
                         </div>
                         <div className={styles.cp} style={{ margin: "5px" }}>
-                            <p className={styles.p12}>{`Posted by ${post.postedBy} at ${new Date(post.createdAt).toLocaleString()}`}</p>
+                            <p style={{padding: '17px'}} className={styles.p12}>{`Posted by ${post.postedBy} at ${new Date(post.createdAt).toLocaleString()}`}</p>
                         </div>
                         <div className={styles.cp1} style={{ margin: "5px" }}>
-                            <p style={{padding: '20px'}} className={`${styles.p2} ${styles['preserve-format']}`}>{`${post.content}`}</p>
+                            <p style={{padding: '17px'}} className={`${styles.p2} ${styles['preserve-format']}`}>{`${post.content}`}</p>
                         </div>
                         <div className={styles.pica1} style={{ display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", marginBottom: "150px", marginTop: "55px", gap: "20px" }}>
                             {post.image?.map(image => (<img src={image} alt="" key={image} className={styles.image} style={{ width: "60%", height: "auto", objectFit: "cover" }} />))}

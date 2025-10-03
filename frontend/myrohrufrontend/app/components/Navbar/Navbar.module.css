@@ -16,7 +16,7 @@
         color: white;
         font-weight: 599;
         font-size: 40px;
-        font-family: 'Caveat Brush', cursive;
+        font-family: 'Carter One', 'Caveat Brush', cursive;
         transition: color 0.2s ease, transform 0.2s ease;
         background-color: transparent;
     }
@@ -64,7 +64,7 @@
         font-size: 41px;
         font-weight: 1000;
         text-decoration: none;
-        font-family: 'Carter One', cursive;
+        font-family: 'Carter One', 'Caveat Brush', cursive;
     }
 
     .po2 {
@@ -72,7 +72,7 @@
         font-weight: 1000;
         text-decoration: none;
         color: #3c1190;
-        font-family: 'Carter One', cursive;
+        font-family: 'Carter One', 'Caveat Brush', cursive;
     }
 
     .nav {
@@ -128,7 +128,7 @@
         color: white;
         font-weight: 599;
         font-size: 25px;
-        font-family: 'Caveat Brush', cursive;
+        font-family: 'Carter One', 'Caveat Brush', cursive;
         transition: color 0.2s ease, transform 0.2s ease;
         background-color: transparent;
     }    
@@ -180,7 +180,7 @@
         font-size: 30px;
         font-weight: 1000;
         text-decoration: none;
-        font-family: 'Carter One', cursive;
+        font-family: 'Carter One', 'Caveat Brush', cursive;
     }
 
     .po2 {
@@ -188,7 +188,7 @@
         font-weight: 1000;
         text-decoration: none;
         color: #3c1190;
-        font-family: 'Carter One', cursive;
+        font-family: 'Carter One', 'Caveat Brush', cursive;
     }
 
     .nav {

@@ -1201,7 +1201,7 @@
 @media screen and (max-width: 500px) {
 
   .b1s1 {
-    font-family: 'Bungee';
+    font-family: 'Bungee', 'Caveat Brush';
     font-size: 15px;
     font-weight: 580;
     padding: 0px;
@@ -1225,7 +1225,7 @@
   }
 
   .b2s2 {
-    font-family: 'Bungee';
+    font-family: 'Bungee', 'Caveat Brush';
     font-size: 8px;
     font-weight: 599;
     line-height: 23px;
@@ -1250,7 +1250,7 @@
   }
 
   .b4s1 {
-    font-family: 'Bungee';
+    font-family: 'Bungee', 'Caveat Brush';
     font-size: 11px;
     font-weight: 600;
     line-height: 15px;
@@ -1262,7 +1262,7 @@
   }
 
   .b5s1 {
-    font-family: 'Bungee';
+    font-family: 'Bungee', 'Caveat Brush';
     font-size: 13px;
     font-weight: 600;
     line-height: 40px;
@@ -1299,7 +1299,7 @@
   }
 
   .bd2s2 {
-    font-family: 'Bungee';
+    font-family: 'Bungee', 'Caveat Brush';
     font-size: 14px;
     font-weight: 600;
     line-height: 0px;
@@ -1312,7 +1312,7 @@
   }
 
   .bd3s1 {
-    font-family: 'Bungee';
+    font-family: 'Bungee', 'Caveat Brush';
     font-size: 12px;
     font-weight: 599;
     line-height: 17px;
@@ -1324,7 +1324,7 @@
   }
 
   .bd4s1 {
-    font-family: 'Bungee';
+    font-family: 'Bungee', 'Caveat Brush';
     font-size: 12px;
     font-weight: 600;
     line-height: 40px;
