@@ -15,6 +15,10 @@ app.use(express.urlencoded({
 app.use(express.static("public"))
 app.use(cookieParser())
 
+app.get("/", (req, res) => {
+  res.send("Backend is live ✅");
+});
+
 import userRouter from "./routes/user.routes.js"
 import postRouter from "./routes/post.routes.js"
 
