@@ -67,8 +67,8 @@ export default function FacilitiesPage() {
                         </div>
                         <div className={styles.sortButtons} style={{ backgroundColor: "transparent" }}>
                             <div style={{ backgroundColor: "transparent" }}>
-                                <button className={`${styles.new} ${styles.glowButton}`} id="new" onClick={() => setsort("new")}>What's new</button>
-                                <button className={`${styles.trending} ${styles.glowButton}`} id="trending" onClick={() => setsort("likes")}>Trending</button>
+                                {/* <button className={`${styles.new} ${styles.glowButton}`} id="new" onClick={() => setsort("new")}>What's new</button>
+                                <button className={`${styles.trending} ${styles.glowButton}`} id="trending" onClick={() => setsort("likes")}>Trending</button> */}
                             </div>
                         </div>
 
