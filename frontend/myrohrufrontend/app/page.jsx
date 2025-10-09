@@ -80,7 +80,7 @@ export default function HomePage() {
                         </div>
                     </div>
                 </div>
-                <div style={{ zIndex: '100', position: 'relative' }} className={styles.partition}></div>
+                {/* <div style={{ zIndex: '100', position: 'relative' }} className={styles.partition}></div> */}
                 <div style={{backgroundColor: "transparent"}} className={styles.maininsd}>
                     <div style={{backgroundColor: "transparent"}} className={styles.maindownleft}>
                         <div className={styles.boxd1}>
