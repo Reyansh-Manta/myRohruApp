@@ -74,16 +74,16 @@ export default function LocationsPage() {
 
                         <div className={styles.posts}>
                             {posts.map((post) => (
+                                <Link href={`/post-open/${post.id}`} key={post.id}>
                                 <div className={styles.container} key={post.id}>
-                                    <a href={`/posts/${post.id}`} className={styles.postlink}>
-                                        <div className={styles.incont}>
-                                            <img src={post.image} alt="" />
-                                        </div>
-                                        <p className={styles.title}>{post.title}</p>
-                                        <p className={styles.author}>{post.postedBy}</p>
+                                    <div className={styles.incont}>
+                                        <img className="width: inherit; height: inherit;" src={post.image || "/placeholder.png"} alt="" />
+                                    </div>
+                                    <p className={styles.title}>{post.title}</p>
+                                    <p className={styles.author}>{post.postedBy}</p>
                                     <p className={styles.date}>{post.createdAt}</p>
-                                    </a>
                                 </div>
+                                </Link>
                             ))}
                         </div>
                     </div>

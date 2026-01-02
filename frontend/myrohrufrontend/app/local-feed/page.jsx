@@ -76,7 +76,7 @@ export default function LocalFeedPage() {
 
                         <div className={styles.posts}>
                             {posts.map((post) => (
-                                <Link href={`/post/?id=${post.id}`} key={post.id}>
+                                <Link href={`/post-open/${post.id}`} key={post.id}>
                                 <div className={styles.container}>
                                     <div className={styles.incont}>
                                         <img className="width: inherit; height: inherit;" src={post.image || "/placeholder.png"} alt="" />
