@@ -112,8 +112,8 @@ export default function PostPage() {
                         <div className={styles.cp1} style={{ margin: "5px" }}>
                             <p style={{padding: '17px'}} className={`${styles.p2} ${styles['preserve-format']}`}>{`${post.content}`}</p>
                         </div>
-                        <div className={styles.pica1} style={{ display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", marginBottom: "150px", marginTop: "55px", gap: "20px" }}>
-                            {post.image?.map(image => (<img src={image} alt="" key={image} className={styles.image} style={{ width: "60%", height: "auto", objectFit: "cover" , paddingBottom: "20px"}} />))}
+                        <div className={styles.pica1} style={{ display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", marginBottom: "150px", marginTop: "55px", gap: "20px", backgroundColor: "transparent" }}>
+                            {post.image?.map(image => (<img src={image} alt="" key={image} className={styles.image} style={{ width: "60%", height: "auto", objectFit: "cover" , paddingBottom: "20px", backgroundColor: "transparent"}} />))}
                         </div>
                         {same ? <button className={`${styles.glowButton} ${styles.delbtn}`} type="checkbox" style={{ paddingBottom: "5px" }} onClick={() => setShowDeleteConfirmation(true)}>Delete Post</button> : null}
 
