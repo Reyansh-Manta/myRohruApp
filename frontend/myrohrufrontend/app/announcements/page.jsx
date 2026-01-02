@@ -81,7 +81,7 @@ export default function AnnouncementsPage() {
                                     </div>
                                     <p className={styles.title}>{post.title}</p>
                                     <p className={styles.author}>{post.postedBy}</p>
-                                    <p className={styles.date}>{post.createdAt}</p>
+                                    <p className={styles.date}>{new Date(post.createdAt).toLocaleString()}</p>
                                 </div>
                                 </Link>
                             ))}
