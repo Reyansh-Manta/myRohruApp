@@ -248,6 +248,8 @@
         width: 40vw;
         height: 32vw;
         background-color: black;
+        cursor: pointer;
+        object-fit: contain;
         position: relative;
         left: 1.5vw;
         top: 1.5vw;
@@ -270,6 +272,8 @@
         width: 56vw;
         height: 49vw;
         background-color: black;
+        cursor: pointer;
+        object-fit: contain;
         position: relative;
         left: 2vw;
         top: 2vw;

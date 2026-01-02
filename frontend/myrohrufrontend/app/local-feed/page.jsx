@@ -76,7 +76,8 @@ export default function LocalFeedPage() {
 
                         <div className={styles.posts}>
                             {posts.map((post) => (
-                                <div className={styles.container} key={post.id}>
+                                <Link href={`/post/${post.id}`} key={post.id}>
+                                <div className={styles.container}>
                                     <div className={styles.incont}>
                                         <img src={post.image || "/placeholder.png"} alt="" />
                                     </div>
@@ -84,7 +85,8 @@ export default function LocalFeedPage() {
                                     <p className={styles.author}>{post.postedBy}</p>
                                     <p className={styles.date}>{post.createdAt}</p>
                                 </div>
-                            ))}
+                                </Link>
+                           ))}
                         </div>
                     </div>
 
