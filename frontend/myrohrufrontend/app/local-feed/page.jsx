@@ -79,7 +79,7 @@ export default function LocalFeedPage() {
                                 <Link href={`/post/${post.id}`} key={post.id}>
                                 <div className={styles.container}>
                                     <div className={styles.incont}>
-                                        <img src={post.image || "/placeholder.png"} alt="" />
+                                        <img className="object-fit: cover;" src={post.image || "/placeholder.png"} alt="" />
                                     </div>
                                     <p className={styles.title}>{post.title}</p>
                                     <p className={styles.author}>{post.postedBy}</p>
