@@ -249,7 +249,7 @@
         height: 32vw;
         background-color: black;
         cursor: pointer;
-        object-fit: contain;
+        object-fit: cover;
         position: relative;
         left: 1.5vw;
         top: 1.5vw;
@@ -273,7 +273,7 @@
         height: 49vw;
         background-color: black;
         cursor: pointer;
-        object-fit: contain;
+        object-fit: cover;
         position: relative;
         left: 2vw;
         top: 2vw;
