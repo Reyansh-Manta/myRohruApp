@@ -77,7 +77,7 @@ export default function OrchardsPage() {
                                 <Link href={`/post-open/${post.id}`} key={post.id}>
                                 <div className={styles.container} key={post.id}>
                                     <div className={styles.incont}>
-                                        <img className="width: inherit; height: inherit;" src={post.image || "/placeholder.png"} alt="" />
+                                        <img style={{ width: "inherit", height: "inherit" }} src={post.image || "/placeholder.png"} alt="" />
                                     </div>
                                     <p className={styles.title}>{post.title}</p>
                                     <p className={styles.author}>{post.postedBy}</p>
