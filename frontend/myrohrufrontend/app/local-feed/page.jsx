@@ -78,7 +78,7 @@ export default function LocalFeedPage() {
                             {posts.map((post) => (
                                 <div className={styles.container} key={post.id}>
                                     <div className={styles.incont}>
-                                        <img src={post.image} alt="" />
+                                        <img src={post.image || "/placeholder.png"} alt="" />
                                     </div>
                                     <p className={styles.title}>{post.title}</p>
                                     <p className={styles.author}>{post.postedBy}</p>
