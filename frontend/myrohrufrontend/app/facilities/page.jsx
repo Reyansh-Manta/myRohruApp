@@ -76,8 +76,8 @@ export default function FacilitiesPage() {
                             {posts.map((post) => (
                                 <Link href={`/post-open/${post.id}`} key={post.id}>
                                 <div className={styles.container} key={post.id}>
-                                    <div className={styles.incont}>
-                                        <img style={{ width: "inherit", height: "inherit" }} src={post.image || "/placeholder.png"} alt="" />
+                                    <div style={{display: "flex", justifyContent: "center", alignItems: "center"}} className={styles.incont}>
+                                        <img style={{ width: "inherit"}} src={post.image || "/placeholder.png"} alt="" />
                                     </div>
                                     <p className={styles.title}>{post.title}</p>
                                     <p className={styles.author}>{post.postedBy}</p>
