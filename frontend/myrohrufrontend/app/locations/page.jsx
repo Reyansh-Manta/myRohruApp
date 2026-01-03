@@ -77,7 +77,7 @@ export default function LocationsPage() {
                                 <Link href={`/post-open/${post.id}`} key={post.id}>
                                 <div className={styles.container} key={post.id}>
                                     <div style={{display: "flex", justifyContent: "center", alignItems: "center"}} className={styles.incont}>
-                                        <img style={{ width: "inherit"}} src={post?.image?.trim() || "/placeholder.png"} alt="" />
+                                        <img style={{ width: "inherit"}} src={post.image == ""? "/placeholder.png" : post.image} alt="" />
                                     </div>
                                     <p className={styles.title}>{post.title}</p>
                                     <p className={styles.author}>{post.postedBy}</p>
